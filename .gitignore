@@ -1,0 +1,21 @@
+# Misc project files
+
+*.idea/*
+*.log
+*.DS_Store
+*Thumbs.db
+*.sass-cache/
+*.sql
+
+node_modules
+
+# Craft stuff
+
+craft/app/
+craft/plugins/
+craft/storage/*
+!/craft/storage/logo/*
+craft/config/license.key
+
+# Composer's vendor folder
+vendor/
