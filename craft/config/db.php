@@ -19,7 +19,7 @@ return array(
     'password' => 'secret',
   ),
 
-  'gundalowjuice.com' => array(
+  'craft.gundalowjuice.com' => array(
     'database' => getenv('db'),
     'user' => getenv('db_username'),
     'password' => getenv('db_password'),

@@ -19,9 +19,9 @@ return array(
   ),
 
   // production
-  'gundalowjuice.com' => array(
+  'craft.gundalowjuice.com' => array(
     'cooldownDuration' => 0,
-    'siteUrl'   => 'http://www.gundalowjuice.com',
+    'siteUrl'   => 'http://craft.gundalowjuice.com',
   )
 
 );
