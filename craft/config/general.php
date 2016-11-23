@@ -8,5 +8,20 @@
  */
 
 return array(
+  '*' => array(
+    'omitScriptNameInUrls' => true,
+  ),
+
+  // dev
+  'gundalowjuice.dev' => array(
+    'devMode' => true,
+    'siteUrl'   => 'http://gundalowjuice.dev',
+  ),
+
+  // production
+  'gundalowjuice.com' => array(
+    'cooldownDuration' => 0,
+    'siteUrl'   => 'http://www.gundalowjuice.com',
+  )
 
 );
