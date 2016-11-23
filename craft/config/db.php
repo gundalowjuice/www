@@ -8,20 +8,20 @@
  */
 
 return array(
+  '*' => array(
+    'server' => 'localhost',
+    'tablePrefix' => 'craft',
+  ),
 
-	// The database server name or IP address. Usually this is 'localhost' or '127.0.0.1'.
-	'server' => 'localhost',
+  'gundalowjuice.dev' => array(
+    'database' => 'gundalowjuice',
+    'user' => 'homestead',
+    'password' => 'secret',
+  ),
 
-	// The name of the database to select.
-	'database' => '',
-
-	// The database username to connect with.
-	'user' => 'root',
-
-	// The database password to connect with.
-	'password' => '',
-
-	// The prefix to use when naming tables. This can be no more than 5 characters.
-	'tablePrefix' => 'craft',
-
+  'gundalowjuice.com' => array(
+    'database' => getenv('db'),
+    'user' => getenv('db_username'),
+    'password' => getenv('db_password'),
+  )
 );
