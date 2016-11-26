@@ -9,19 +9,20 @@
 
 return array(
   '*' => array(
-    'server' => 'localhost',
     'tablePrefix' => 'craft',
   ),
 
   'gundalowjuice.dev' => array(
+    'server' => 'localhost',
     'database' => 'gundalowjuice',
     'user' => 'homestead',
     'password' => 'secret',
   ),
 
   'craft.gundalowjuice.com' => array(
-    'database' => getenv('db'),
-    'user' => getenv('db_username'),
-    'password' => getenv('db_password'),
+    'server' => getenv('DB_HOST'),
+    'database' => getenv('DB_NAME'),
+    'user' => getenv('DB_USER'),
+    'password' => getenv('DB_PASSWORD'),
   )
 );
