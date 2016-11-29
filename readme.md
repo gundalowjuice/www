@@ -6,9 +6,11 @@ At Gundalow Juice, we are way more than just a healthy, delicious-tasting juice.
 
 - [this repo assumes](https://github.com/gundalowjuice/www/blob/master/craft/config/db.php#L15) you are [running Craft locally via homestead](https://medium.com/@mattcollins_6/setting-up-a-local-dev-environment-for-craft-cms-using-laravel-homestead-2724be3954a5) 
 
-- since Craft self-updates, `app`, `plugins` and `storage` are [kept out of the repository](https://github.com/gundalowjuice/www/blob/master/.gitignore#L15)
+- since Craft self-updates, `app`, `plugins` and `storage` are [kept out of the repository](https://github.com/gundalowjuice/www/blob/master/.gitignore#L15), which means these directories have to be added back locally
 
-- for now, `composer.json` only lists the [phpdotenv](https://github.com/vlucas/phpdotenv) dependency, which is only required on the server
+- run `composer install`, which installs [phpdotenv](https://github.com/vlucas/phpdotenv) based on `composer.json` 
+
+- rename `.env.example` to `.env` (there is no need to actually edit `.env` for local development)
 
 - during development, the site is [kept out of search engines](https://github.com/gundalowjuice/www/commit/2b8157f8374702683fd6963ff912a7fd11597a2d) ... I'm making a note here so we remember this once we go live!
 
