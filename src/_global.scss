@@ -9,3 +9,37 @@ h2,
 h3 {
   font-family: $header-font;
 }
+
+/* Links */
+
+a {
+  color: currentColor;
+}
+
+/* SVG Icons */
+
+svg.icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 2em;
+  width: 2em;
+  vertical-align: middle;
+}
+
+[href*="facebook"]:hover {
+  color: #3b5998
+}
+
+[href*="instagram"]:hover {
+  color: #e95950
+}
+[href*="twitter"]:hover {
+  color: #55acee
+}
+
+
+/* Lists */
+
+ul {
+  list-style: none;
+}
