@@ -1,0 +1,105 @@
+footer {
+  color: #999999;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  @media (min-width: 46em){
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1em;
+  }
+
+  h3 {
+    margin: .5em 0;
+    text-transform: uppercase;
+  }
+
+  #contact {
+    order: 2;
+    color: #fff;
+    background-color: #999999;
+
+    @media (min-width: 46em){
+      color: #999999;
+      background-color: inherit;
+      order: 1;
+      text-align: left;
+    }
+
+    p {
+      margin: .5em 0;
+      padding: 0;
+    }
+
+    #social {
+      order: 3;
+
+      @media (min-width: 46em){
+        order: 1;
+      }
+
+      ul {
+        display: flex;
+        justify-content: center;
+        padding: .5em 0 .5em 0;
+
+        @media (min-width: 44em) {
+          justify-content: flex-start;
+        }
+
+        li:nth-child(-n+2){
+          margin-right: 2em;
+        }
+      }
+    }
+  }
+
+  #email-form {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 46em){
+      text-align: right;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media (min-width: 46em){
+        align-items: flex-end
+      }
+
+      input {
+        border: 1px solid #999999;
+        box-shadow: inset .5px .5px .5px #999999;
+        width: 18em;
+        margin: 0 0 1em 0;
+        font-size: 1em;
+        border-radius: 3px;
+        text-align: center;
+        padding: .25em;
+
+        @media (min-width: 44em){
+          text-align: right;
+        }
+      }
+
+      button {
+        background-color: #999999;
+        color: #fff;
+        border-style: none;
+        width: 5em;
+        padding: .5em 0 .25em .1em;
+        font-family: $header-font;
+        font-size: 1em;
+        border-radius: 3px;
+        text-transform: uppercase;
+        margin-bottom: .5em;
+      }
+    }
+  }
+}

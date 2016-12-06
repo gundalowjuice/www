@@ -14,17 +14,17 @@ gulp.task('sass', function(){
     .pipe(gulp.dest('public/assets/css/'))
     .pipe(browserSync.reload({
       stream: true
-    }))
-})
+    }));
+});
 
 gulp.task('watch',['browserSync', 'sass'], function(){
   gulp.watch('src/*.scss', ['sass']);
-  gulp.watch('craft/templates/**/*.html', browserSync.reload);
-})
+  gulp.watch(['craft/templates/**/*.html', 'public/assets/js/index.js'], browserSync.reload);
+});
 
 gulp.task('browserSync', function(){
   browserSync.init({
     proxy: 'gundalowjuice.dev',
     open: false
   });
-})
+});
