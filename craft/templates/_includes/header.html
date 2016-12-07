@@ -19,25 +19,12 @@
               <input type="text" placeholder="search">
             </form>
           </li>
-          <li>
-            <a href="#">Shop</a>
-          </li>
-          <li>
-            <a href="#">Ingredients</a>
-          </li>
-          <li>
-            <a href="#">Press</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-          <li>
-            <a href="#">Store Locator</a>
-          </li>
+      {% if siteNav.navMenu | length %}
+        {% for row in siteNav.navMenu %}
+          <li><a href="{{ row.navUrl }}"> {{ row.navLabel }}</a></li>
+        {% endfor %}
         </ul>
+      {% endif %}
       </nav>
     </li>
     <li id="logo">
