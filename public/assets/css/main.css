@@ -34,15 +34,15 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Josefin Sans", sans-serif; }
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase; }
 
 /* Main */
 body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 100vh; }
+  flex-direction: column; }
   body main {
     -ms-flex: 1;
     flex: 1; }
@@ -205,7 +205,8 @@ footer {
       flex-direction: row;
       -ms-flex-pack: justify;
       justify-content: space-between;
-      margin: 1em; } }
+      padding: 1em;
+      background-color: #fff; } }
   footer h3 {
     margin: .5em 0;
     text-transform: uppercase; }
@@ -360,3 +361,187 @@ footer {
           display: none;
           bottom: 87%;
           right: 1.65em; } }
+
+#shop-juice main#content #product-image {
+  margin: 6em 0; }
+
+#juice-content {
+  margin: 3em 2em; }
+  @media (min-width: 44em) {
+    #juice-content {
+      max-width: 32em;
+      margin: 5em auto; } }
+  #juice-content #juice-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    #juice-content #juice-header.starboard-strawberry h2:nth-of-type(1) {
+      color: #ae3863; }
+    #juice-content #juice-header.sailors-delight h2:nth-of-type(1) {
+      color: #ee7522; }
+    #juice-content #juice-header.watermelon-waves h2:nth-of-type(1) {
+      color: #9cd8d8; }
+    #juice-content #juice-header.harbor-voyage h2:nth-of-type(1) {
+      color: #457bbe; }
+    #juice-content #juice-header.dockside-sunrise h2:nth-of-type(1) {
+      color: #f06177; }
+    #juice-content #juice-header.ss-veggie h2:nth-of-type(1) {
+      color: #81bc41; }
+    #juice-content #juice-header.mainstay-green h2:nth-of-type(1) {
+      color: #0096aa; }
+    @media (min-width: 44em) {
+      #juice-content #juice-header {
+        -ms-flex-direction: row;
+        flex-direction: row; } }
+    #juice-content #juice-header h2 {
+      margin: 0 .5em .5em 0; }
+      @media (min-width: 44em) {
+        #juice-content #juice-header h2 {
+          margin: 1em 0; } }
+
+#button {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  #button form.starboard-strawberry {
+    background-color: #ae3863; }
+  #button form.sailors-delight {
+    background-color: #ee7522; }
+  #button form.dockside-sunrise {
+    background-color: #f06177; }
+  #button form.harbor-voyage {
+    background-color: #457bbe; }
+  #button form.watermelon-waves {
+    background-color: #9cd8d8; }
+  #button form.mainstay-green {
+    background-color: #0096aa; }
+  #button form.ss-veggie {
+    background-color: #81bc41; }
+  #button input[type='submit'] {
+    display: inline-block;
+    height: 38px;
+    padding: 0 30px;
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    cursor: pointer;
+    box-sizing: border-box; }
+
+#index #content {
+  width: 100%; }
+  #index #content #bg-img-wrap {
+    width: 100%; }
+  #index #content #bg-vid-wrapper {
+    z-index: -100;
+    position: relative;
+    top: 11.25em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 35vh; }
+    #index #content #bg-vid-wrapper video#bgvid {
+      background: transparent;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      /* No object-fit support */
+      /* With object-fit support */ }
+      @media (min-aspect-ratio: 16 / 9) {
+        #index #content #bg-vid-wrapper video#bgvid {
+          height: 300%;
+          top: -100%; } }
+      @media (max-aspect-ratio: 16 / 9) {
+        #index #content #bg-vid-wrapper video#bgvid {
+          width: 300%;
+          left: -100%; } }
+      @supports (object-fit: cover) {
+        #index #content #bg-vid-wrapper video#bgvid {
+          height: 100%;
+          width: 100%;
+          top: 11.25em;
+          left: 0;
+          object-fit: cover; } }
+  #index #content #hero {
+    color: white;
+    min-height: 50vh;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    max-width: 28em;
+    padding: 1em;
+    z-index: -1; }
+    @media (min-width: 44em) {
+      #index #content #hero {
+        margin: -8em 0 2em 3em; } }
+  #index #content h1 {
+    margin: 1em 0;
+    text-transform: uppercase; }
+  #index #content p {
+    font-size: 1.25em;
+    line-height: 1.25; }
+  #index #content section#featured-prod {
+    width: 100%;
+    background-color: #fff; }
+    #index #content section#featured-prod #product-wrap {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      width: 100%;
+      margin: 4em auto;
+      background-color: #fff;
+      padding: 4em 0; }
+      @media (min-width: 44em) {
+        #index #content section#featured-prod #product-wrap {
+          -ms-flex-direction: row;
+          flex-direction: row;
+          width: 80%; } }
+      #index #content section#featured-prod #product-wrap h2 {
+        margin: 1em 0;
+        text-align: center; }
+        #index #content section#featured-prod #product-wrap h2.dockside-sunrise {
+          color: #f06177; }
+        #index #content section#featured-prod #product-wrap h2.sailors-delight {
+          color: #ee7522; }
+        #index #content section#featured-prod #product-wrap h2.harbor-voyage {
+          color: #457bbe; }
+        #index #content section#featured-prod #product-wrap h2.watermelon-waves {
+          color: #9cd8d8; }
+        #index #content section#featured-prod #product-wrap h2.starboard-strawberry {
+          color: #ae3863; }
+        #index #content section#featured-prod #product-wrap h2.mainstay-green {
+          color: #0096aa; }
+        #index #content section#featured-prod #product-wrap h2.ss-veggie {
+          color: #81bc41; }
+      #index #content section#featured-prod #product-wrap p {
+        margin-bottom: 1em;
+        padding: 0 1em; }
+      #index #content section#featured-prod #product-wrap #product-content {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-pack: center;
+        justify-content: center; }
+
+@media (max-width: 44em) {
+  #index video#bgvid {
+    display: none; }
+  #index #bg-img-wrap {
+    background: url("/assets/images/gj-homepage-bg.jpg") 50% 100% no-repeat;
+    background-size: cover; } }
