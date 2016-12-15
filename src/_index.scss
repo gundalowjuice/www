@@ -1,0 +1,147 @@
+#index {
+
+  #content{
+
+    width: 100%;
+
+    #bg-img-wrap {
+      width: 100%;
+    }
+
+    #bg-vid-wrapper{
+    z-index: -100;
+    position: relative;
+    top: 11.25em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 35vh;
+
+    video#bgvid {
+      background: transparent;
+   // position: absolute;
+   height: 100%;
+   width: 100%;
+   top: 0;
+   left: 0;
+   /* No object-fit support */
+   @media (min-aspect-ratio: 16/9) {
+     height: 300%;
+     top: -100%;
+   }
+   @media (max-aspect-ratio: 16/9) {
+     width: 300%;
+     left: -100%;
+   }
+   /* With object-fit support */
+   @supports (object-fit: cover) {
+     height: 100%;
+     width: 100%;
+     top: 11.25em;
+     left: 0;
+     object-fit: cover;
+      }
+    }
+  }
+
+    #hero {
+      color: white;
+      min-height: 50vh;
+      display: flex;
+      flex-direction: column;
+      max-width: 28em;
+      padding: 1em;
+      z-index: -1;
+
+
+      @media (min-width: 44em) {
+        margin: -8em 0 2em 3em;
+      }
+    }
+
+    h1 {
+      margin: 1em 0 ;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 1.25em;
+      line-height: 1.25;
+    }
+
+  section#featured-prod {
+    width: 100%;
+    background-color: #fff;
+
+    #product-wrap {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 4em auto;
+      background-color: #fff;
+      padding: 4em 0;
+
+      @media (min-width: 44em) {
+        flex-direction: row;
+        width: 80%;
+      }
+
+      h2 {
+        margin: 1em 0;
+        text-align: center;
+
+        &.dockside-sunrise {
+          color: $dockside-sunrise
+        }
+
+        &.sailors-delight {
+          color: $sailors-delight;
+        }
+
+        &.harbor-voyage {
+          color: $harbor-voyage;
+        }
+
+        &.watermelon-waves {
+          color: $watermelon-waves;
+        }
+
+        &.starboard-strawberry {
+          color: $starboard-strawberry
+        }
+
+        &.mainstay-green {
+          color: $mainstay-green;
+        }
+
+        &.ss-veggie {
+          color: $ss-veggie;
+        }
+      }
+
+      p {
+        margin-bottom: 1em;
+        padding: 0 1em;
+      }
+
+      #product-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+  }
+
+  @media (max-width: 44em) {
+
+    video#bgvid {
+      display: none;
+    }
+
+     #bg-img-wrap {
+      background: url('/assets/images/gj-homepage-bg.jpg') 50% 100% no-repeat;
+      background-size: cover;
+    }
+  }
+}

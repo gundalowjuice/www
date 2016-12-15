@@ -1,0 +1,75 @@
+#juice-content {
+  margin: 3em 2em;
+
+  @media (min-width: 44em){
+    max-width: 32em;
+    margin: 5em auto;
+  }
+
+  #juice-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    &.starboard-strawberry{
+
+      h2:nth-of-type(1) {
+        color: $starboard-strawberry;
+      }
+    }
+
+    &.sailors-delight{
+
+      h2:nth-of-type(1) {
+        color: $sailors-delight;
+      }
+    }
+
+    &.watermelon-waves{
+
+      h2:nth-of-type(1) {
+        color: $watermelon-waves;
+      }
+    }
+
+    &.harbor-voyage{
+
+      h2:nth-of-type(1) {
+        color: $harbor-voyage;
+      }
+    }
+
+    &.dockside-sunrise{
+
+      h2:nth-of-type(1) {
+        color: $dockside-sunrise;
+      }
+    }
+
+    &.ss-veggie{
+
+      h2:nth-of-type(1) {
+        color: $ss-veggie;
+      }
+    }
+
+    &.mainstay-green{
+
+      h2:nth-of-type(1) {
+        color: $mainstay-green;
+      }
+    }
+
+    @media (min-width: 44em) {
+      flex-direction: row;
+    }
+
+    h2 {
+      margin: 0 .5em .5em 0 ;
+
+      @media (min-width: 44em) {
+      margin: 1em 0;
+      }
+    }
+  }
+}

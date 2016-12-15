@@ -22,14 +22,48 @@
  {% set bodyId = "index" %}
 
  {% block content %}
- 	<h1>{{ entry.title }}</h1>
 
- 	{{ entry.body }}
+<div id="bg-img-wrap">
 
- 	<h2>Recent News</h2>
- 	<ul>
- 		{% for entry in craft.entries.section('news').limit(5).find() %}
- 			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
- 		{% endfor %}
- 	</ul>
- {% endblock %}
+  <div id="bg-vid-wrapper">
+   <video playsinline autoplay muted loop id="bgvid">
+     <source src="/assets/video/gundalow-bg-loop.mp4" type='video/mp4'>
+   </video>
+  </div>
+
+  <div id="hero">
+    <h1>{{ entry.heroStatement }}</h1>
+    <p>{{ entry.body }}</p>
+  </div>
+
+  {% set products = entry.featuredJuice %}
+
+  {% for product in products %}
+
+<section id="featured-prod">
+  <div id="product-wrap">
+    <img src="{{ product.productImage.first().getUrl() }}" alt="" />
+
+    <div id="product-content">
+      <h2 class="{{ product.slug }}">{{ product.title }}</h2>
+      <p>
+        {{ product.description }}
+      </p>
+      <div id="button">
+
+        {% set variant = product.defaultVariant %}
+
+        <form class="{{ product.slug }}" method="POST">
+          <input type="hidden" name="action" value="commerce/cart/updateCart">
+          <input type="hidden" name="redirect" value="cart">
+          <input type="hidden" name="qty" value="7">
+          <input type="hidden" name="purchasableId" value="{{ variant.purchasableId }}">
+          <input type="submit" value="Add to cart">
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endfor %}
+{% endblock %}
