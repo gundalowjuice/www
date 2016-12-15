@@ -1,0 +1,79 @@
+{#
+ # Juice index template
+ # -------------------
+ #
+ # This template is loaded whenever http://example.com/news is
+ # requested, because it is located at news/index.html in your
+ # craft/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+
+{% set bodyId = "shop-juice" %}
+
+{% block content %}
+{% set title = "Juice" %}
+  {% set juices = craft.commerce.products.type('juice').find() %}
+
+    <div id="product-image">
+      <div class="carousel">
+        {% for juice in juices %}
+        <div class="carousel-cell {{ juice.slug }}">
+          <img src="{{ juice.productImage.first().getUrl() }}" alt="" />
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div id="juice-content">
+      <div id="juice-header">
+      </div>
+    </div>
+
+
+<div id="button">
+  {% for product in craft.commerce.products.limit(1).find() %}
+
+      {% set variant = product.defaultVariant %}
+
+      <form class="" method="POST">
+          <input type="hidden" name="action" value="commerce/cart/updateCart">
+          <input type="hidden" name="redirect" value="cart">
+          <input type="hidden" name="qty" value="7">
+          <input type="hidden" name="purchasableId" value="">
+          <input type="submit" value="Add to cart">
+      </form>
+
+  {% endfor %}
+</div>
+
+  <!-- <div id="ingredients">
+    <div id="juice-icons">
+      <svg class="icon pineapple-icon">
+        <use xlink:href='#pineapple-icon'></use>
+      </svg>
+      <svg class="icon cucumber-icon">
+        <use xlink:href='#cucumber-icon'></use>
+      </svg>
+      <svg class="icon lime-icon">
+        <use xlink:href='#lime-icon'></use>
+      </svg>
+      <svg class="icon ginger-icon">
+        <use xlink:href='#ginger-icon'></use>
+      </svg>
+      <svg class="icon jalapeno-icon">
+        <use xlink:href='#jalapeno-icon'></use>
+      </svg>
+      </div>
+    <div id="ingredient-content">
+      <p class="pineapple">Nutrient-dense pineapple is an excellent source of Vitamin C.</p>
+      <p class="cucmber">Humans are roughly 70% water. Cucumbers are 95%. It's all about hydration!</p>
+      <p class="lime">Limes are prized for their aroma and are an excellent source of Vitamin C.</p>
+      <p class="ginger">Ginger provides many essential minerals like manganese, crucial for the metabolism and antioxidant systems.</p>
+      <p class="jalapeno">This tasty chili pepper is an excellent source of vitamins including B6 (metabolism) and E (antioxidant).</p>
+    </div>
+  </div> -->
+{% endblock %}
