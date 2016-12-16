@@ -1,6 +1,41 @@
 #ingredients {
-  
+
+    &.starboard-strawberry {
+      color: $starboard-strawberry;
+    }
+    &.dockside-sunrise {
+      color: $dockside-sunrise;
+    }
+    &.harbor-voyage {
+      color: $harbor-voyage;
+    }
+    &.watermelon-waves {
+      color: $watermelon-waves;
+    }
+    &.sailors-delight {
+      color: $sailors-delight;
+    }
+    &.mainstay-green {
+      color: $mainstay-green;
+    }
+    &.ss-veggie {
+      color: $ss-veggie;
+  }
+
   svg.icon {
 
+    &.hide {
+      display: none;
+    }
+  }
+
+  #ingredient-content {
+
+    p {
+
+      &.hide {
+        display: none;
+      }
+    }
   }
 }
