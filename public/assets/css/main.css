@@ -440,6 +440,33 @@ footer {
     cursor: pointer;
     box-sizing: border-box; }
 
+#ingredients.starboard-strawberry {
+  color: #ae3863; }
+
+#ingredients.dockside-sunrise {
+  color: #f06177; }
+
+#ingredients.harbor-voyage {
+  color: #457bbe; }
+
+#ingredients.watermelon-waves {
+  color: #9cd8d8; }
+
+#ingredients.sailors-delight {
+  color: #ee7522; }
+
+#ingredients.mainstay-green {
+  color: #0096aa; }
+
+#ingredients.ss-veggie {
+  color: #81bc41; }
+
+#ingredients svg.icon.hide {
+  display: none; }
+
+#ingredients #ingredient-content p.hide {
+  display: none; }
+
 #index #content {
   width: 100%; }
   #index #content #bg-img-wrap {
