@@ -388,7 +388,7 @@ footer {
       color: #457bbe; }
     #juice-content #juice-header.dockside-sunrise h2:nth-of-type(1) {
       color: #f06177; }
-    #juice-content #juice-header.ss-veggie h2:nth-of-type(1) {
+    #juice-content #juice-header.s-s-veggie h2:nth-of-type(1) {
       color: #81bc41; }
     #juice-content #juice-header.mainstay-green h2:nth-of-type(1) {
       color: #0096aa; }
@@ -419,7 +419,7 @@ footer {
     background-color: #9cd8d8; }
   #button form.mainstay-green {
     background-color: #0096aa; }
-  #button form.ss-veggie {
+  #button form.s-s-veggie {
     background-color: #81bc41; }
   #button input[type='submit'] {
     display: inline-block;
@@ -458,7 +458,7 @@ footer {
 #ingredients.mainstay-green {
   color: #0096aa; }
 
-#ingredients.ss-veggie {
+#ingredients.s-s-veggie {
   color: #81bc41; }
 
 #ingredients svg.icon.hide {
@@ -553,7 +553,7 @@ footer {
           color: #ae3863; }
         #index #content section#featured-prod #product-wrap h2.mainstay-green {
           color: #0096aa; }
-        #index #content section#featured-prod #product-wrap h2.ss-veggie {
+        #index #content section#featured-prod #product-wrap h2.s-s-veggie {
           color: #81bc41; }
       #index #content section#featured-prod #product-wrap p {
         margin-bottom: 1em;
