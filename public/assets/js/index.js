@@ -219,7 +219,6 @@ function ingredient () {
   for (var i = 0; i < product.length; i++) {
     if (product[i].classList.contains('is-selected') && product[i].classList.contains('starboard-strawberry')) {
       target.classList.add('starboard-strawberry')
-<<<<<<< HEAD
       target.classList.remove('dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('dockside-sunrise')) {
       target.classList.add('dockside-sunrise')
@@ -317,11 +316,23 @@ function iconDisplay () {
   }
 }
 
+var iconList = document.querySelector('#icons')
+var ingredientIcons = document.querySelectorAll('#icons svg')
+
+document.addEventListener('click', activeIcon, false)
+
+function activeIcon (e) {
+  if (e.target !== e.currentTarget) {
+    for (var i = 0; i < ingredientIcons.length; i++) {
+      ingredientIcons[i].classList.remove('active')
+       }
+    e.target.classList.add('active')
+  }
+  e.stopPropagation()
+}
+
 carousel.addEventListener('click', iconDisplay, false)
 window.addEventListener('load', iconDisplay, false)
-window.addEventListener('load', function () {
-  console.log('loaded')
-}, false)
 
 // Display ingredient icons based on juice displayed
 
@@ -406,9 +417,9 @@ function activeIcon (e) {
     for (var i = 0; i < ingredientIcons.length; i++) {
       ingredientIcons[i].classList.remove('active')
     }
-    e.target.classList.add('active')
+	e.target.classList.add('active')i
   }
-  e.stopPropagation()
+	e.stopPropagation()
 }
 
 var ingredientContent = document.querySelectorAll('#ingredient-content div') // get all ingredient-content p tags
