@@ -1,4 +1,7 @@
 #ingredients {
+  max-width: 32em;
+  margin: 4em auto;
+  text-align: center;
 
     &.starboard-strawberry {
       color: $starboard-strawberry;
@@ -23,6 +26,10 @@
   }
 
   svg.icon {
+    width: 2.5em;
+    height: 2.5em;
+    margin: .5em;
+    cursor: pointer;
 
     &.hide {
       display: none;
@@ -31,7 +38,38 @@
 
   #ingredient-content {
 
+    h2 {
+      padding: .5em 0 .5em 0;
+    }
+
     p {
+      padding: 0 0 .5em 0;
+    }
+
+    &.starboard-strawberry {
+      background-color: $starboard-strawberry;
+    }
+    &.dockside-sunrise {
+      background-color: $dockside-sunrise;
+    }
+    &.harbor-voyage {
+      background-color: $harbor-voyage;
+    }
+    &.watermelon-waves {
+      background-color: $watermelon-waves;
+    }
+    &.sailors-delight {
+      background-color: $sailors-delight;
+    }
+    &.mainstay-green {
+      background-color: $mainstay-green;
+    }
+    &.ss-veggie {
+      background-color: $ss-veggie;
+  }
+
+    div {
+      color: white;
 
       &.hide {
         display: none;
