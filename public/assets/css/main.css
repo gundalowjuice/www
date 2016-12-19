@@ -440,6 +440,54 @@ footer {
     cursor: pointer;
     box-sizing: border-box; }
 
+#ingredients {
+  max-width: 32em;
+  margin: 4em auto;
+  text-align: center; }
+  #ingredients.starboard-strawberry {
+    color: #ae3863; }
+  #ingredients.dockside-sunrise {
+    color: #f06177; }
+  #ingredients.harbor-voyage {
+    color: #457bbe; }
+  #ingredients.watermelon-waves {
+    color: #9cd8d8; }
+  #ingredients.sailors-delight {
+    color: #ee7522; }
+  #ingredients.mainstay-green {
+    color: #0096aa; }
+  #ingredients.ss-veggie {
+    color: #81bc41; }
+  #ingredients svg.icon {
+    width: 2.5em;
+    height: 2.5em;
+    margin: .5em;
+    cursor: pointer; }
+    #ingredients svg.icon.hide {
+      display: none; }
+  #ingredients #ingredient-content h2 {
+    padding: .5em 0 .5em 0; }
+  #ingredients #ingredient-content p {
+    padding: 0 0 .5em 0; }
+  #ingredients #ingredient-content.starboard-strawberry {
+    background-color: #ae3863; }
+  #ingredients #ingredient-content.dockside-sunrise {
+    background-color: #f06177; }
+  #ingredients #ingredient-content.harbor-voyage {
+    background-color: #457bbe; }
+  #ingredients #ingredient-content.watermelon-waves {
+    background-color: #9cd8d8; }
+  #ingredients #ingredient-content.sailors-delight {
+    background-color: #ee7522; }
+  #ingredients #ingredient-content.mainstay-green {
+    background-color: #0096aa; }
+  #ingredients #ingredient-content.ss-veggie {
+    background-color: #81bc41; }
+  #ingredients #ingredient-content div {
+    color: white; }
+    #ingredients #ingredient-content div.hide {
+      display: none; }
+
 #index #content {
   width: 100%; }
   #index #content #bg-img-wrap {
