@@ -53,6 +53,10 @@ function checkDisplay () {
     products = data
     window.products = products
     juiceChange()
+    contentDisplay()
+    iconDisplay()
+    ingredient()
+    ingredientColor()
     // writeToDocument()
   })
 })(window)
@@ -69,9 +73,14 @@ function juiceChange () {
   var header = document.getElementById('juice-header')
   var purchId = document.querySelector('input[name=purchasableId]')
   var addCart = document.querySelector('#button form')
+  var plusBtn = document.querySelector('#button #plus')
+  var minusBtn = document.querySelector('#button #minus')
   var title = document.createElement('h2')
   var price = document.createElement('h2')
   var description = document.createElement('p')
+
+  console.log(plusBtn)
+  console.log(minusBtn)
 
   for (var i = 0; i < carouselImage.length; i++) {
     // starboard-strawberry
@@ -86,11 +95,14 @@ function juiceChange () {
       title.innerHTML = window.products.data[i].title
       price.innerHTML = window.products.data[i].price
       description.innerHTML = window.products.data[i].description
-      header.classList.remove('harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'main-stay', 'dockside-sunrise')
+      header.classList.remove('harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'dockside-sunrise')
       header.classList.add('starboard-strawberry')
-      addCart.classList.remove('harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'main-stay', 'dockside-sunrise')
-
+      addCart.classList.remove('harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'dockside-sunrise')
       addCart.classList.add('starboard-strawberry')
+      plus.classList.remove('harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'dockside-sunrise')
+      plusBtn.classList.add('starboard-strawberry')
+      minusBtn.classList.remove('harbor-voyage-dark', 's-s-veggie-dark', 'sailors-delight-dark', 'watermelon-waves-dark', 'mainstay-green-dark', 'dockside-sunrise-dark')
+      minusBtn.classList.add('starboard-strawberry-dark')
       header.appendChild(title)
       header.appendChild(price)
       div.appendChild(description)
@@ -102,10 +114,14 @@ function juiceChange () {
           header.removeChild(header.firstChild)
         }
       }
-      header.classList.remove('starboard-strawberry', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'main-stay')
+      header.classList.remove('starboard-strawberry', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green')
       header.classList.add('dockside-sunrise')
-      addCart.classList.remove('starboard-strawberry', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'main-stay')
+      addCart.classList.remove('starboard-strawberry', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green')
       addCart.classList.add('dockside-sunrise')
+      plusBtn.classList.remove('starboard-strawberry', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green')
+      plusBtn.classList.add('dockside-sunrise')
+      minusBtn.classList.remove('starboard-strawberry-dark', 'harbor-voyage-dark', 's-s-veggie-dark', 'sailors-delight-dark', 'watermelon-waves-dark', 'mainstay-green-dark')
+      minusBtn.classList.add('dockside-sunrise-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
       price.innerHTML = window.products.data[i].price
@@ -125,6 +141,10 @@ function juiceChange () {
       header.classList.add('mainstay-green')
       addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves')
       addCart.classList.add('mainstay-green')
+      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves')
+      plusBtn.classList.add('mainstay-green')
+      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'harbor-voyage-dark', 's-s-veggie-dark', 'sailors-delight-dark', 'watermelon-waves-dark')
+      minusBtn.classList.add('mainstay-green-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
       price.innerHTML = window.products.data[i].price
@@ -144,6 +164,10 @@ function juiceChange () {
       header.classList.add('sailors-delight')
       addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 's-s-veggie', 'watermelon-waves', 'mainstay-green')
       addCart.classList.add('sailors-delight')
+      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 's-s-veggie', 'watermelon-waves', 'mainstay-green')
+      plusBtn.classList.add('sailors-delight')
+      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 's-s-veggie-dark', 'watermelon-waves-dark', 'mainstay-green-dark')
+      minusBtn.classList.add('sailors-delight-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
       price.innerHTML = window.products.data[i].price
@@ -151,7 +175,7 @@ function juiceChange () {
       header.appendChild(title)
       header.appendChild(price)
       div.appendChild(description)
-    } // s-s-veggie
+    } // ss-veggie
     else if (carouselImage[i].classList.contains('is-selected') && carouselImage[i].classList.contains('s-s-veggie')) {
       if (div.hasChildNodes()) {
         div.removeChild(div.childNodes[2])
@@ -159,10 +183,14 @@ function juiceChange () {
           header.removeChild(header.firstChild)
         }
       }
-      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 'watermelon-waves', 's-s-veggie')
+      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 'watermelon-waves', 'ss-veggie')
       header.classList.add('s-s-veggie')
-      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 'watermelon-waves', 's-s-veggie')
+      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 'watermelon-waves', 'ss-veggie')
       addCart.classList.add('s-s-veggie')
+      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 'watermelon-waves', 'ss-veggie')
+      plusBtn.classList.add('s-s-veggie')
+      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'harbor-voyage-dark', 'mainstay-green-dark', 'sailors-delight-dark', 'watermelon-waves')
+      minusBtn.classList.add('s-s-veggie-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
       price.innerHTML = window.products.data[i].price
@@ -182,6 +210,10 @@ function juiceChange () {
       header.classList.add('watermelon-waves')
       addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 's-s-veggie')
       addCart.classList.add('watermelon-waves')
+      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 's-s-veggie')
+      plusBtn.classList.add('watermelon-waves')
+      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'harbor-voyage-dark', 'mainstay-green-dark', 'sailors-delight-dark', 's-s-veggie-dark')
+      minusBtn.classList.add('watermelon-waves-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
       price.innerHTML = window.products.data[i].price
@@ -201,6 +233,10 @@ function juiceChange () {
       header.classList.add('harbor-voyage')
       addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie')
       addCart.classList.add('harbor-voyage')
+      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie')
+      plusBtn.classList.add('harbor-voyage')
+      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'mainstay-green-dark', 'sailors-delight-dark', 's-s-veggie-dark')
+      minusBtn.classList.add('harbor-voyage-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
       price.innerHTML = window.products.data[i].price
@@ -237,10 +273,10 @@ function ingredient () {
       target.classList.add('mainstay-green')
       target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 's-s-veggie')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('s-s-veggie')) {
-      target.classList.add('ss-veggie')
+      target.classList.add('s-s-veggie')
       target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green')
     } else {
-
+      console.log('no juice selected')
     }
   }
 }
@@ -318,6 +354,7 @@ function iconDisplay () {
 }
 
 
+
 var iconList = document.querySelector('#icons')
 var ingredientIcons = document.querySelectorAll('#icons svg')
 
@@ -327,90 +364,10 @@ function activeIcon (e) {
   if (e.target !== e.currentTarget) {
     for (var i = 0; i < ingredientIcons.length; i++) {
       ingredientIcons[i].classList.remove('active')
-       }
+    }
     e.target.classList.add('active')
   }
   e.stopPropagation()
-}
-
-carousel.addEventListener('click', iconDisplay, false)
-window.addEventListener('load', iconDisplay, false)
-
-// Display ingredient icons based on juice displayed
-
-function iconDisplay () {
-  var carousel = document.getElementsByClassName('carousel-cell') // get product carousel
-  var icons = document.querySelectorAll('#icons svg') // get ingredient icons
-  console.log(icons)
-
-// Iterate over products to find is-selected class
-  for (var i = 0; i < carousel.length; i++) {
-    if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('starboard-strawberry')) {
-// iterate over icons and remove hide class
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('ss')) {
-          icons[j].classList.remove('hide')
-          console.log(icons[j].classList)
-        } else {
-          icons[j].classList.add('hide') // add hide class
-        }
-      } // iterate over icons and remove hide class
-    } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('dockside-sunrise')) {
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('ds')) {
-          icons[j].classList.remove('hide')
-          console.log(icons[j].classList)
-        } else {
-          icons[j].classList.add('hide') // add hide class
-        }
-      } // iterate over icons and remove hide class
-    } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('harbor-voyage')) {
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('hv')) {
-          icons[j].classList.remove('hide')
-          console.log(icons[j].classList)
-        } else {
-          icons[j].classList.add('hide') // add hide class
-        }
-      } // iterate over icons and remove hide class
-    } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('sailors-delight')) {
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('sd')) {
-          icons[j].classList.remove('hide')
-          console.log(icons[j].classList)
-        } else {
-          icons[j].classList.add('hide') // add hide class
-        }
-      } // iterate over icons and remove hide class
-    } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('watermelon-waves')) {
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('ww')) {
-          icons[j].classList.remove('hide')
-          console.log(icons[j].classList)
-        } else {
-          icons[j].classList.add('hide') // add hide class
-        }
-      } // iterate over icons and remove hide class
-    } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('s-s-veggie')) {
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('ss-veg')) {
-          icons[j].classList.remove('hide')
-          console.log(icons[j].classList)
-        } else {
-          icons[j].classList.add('hide') // add hide class
-        }
-      } // iterate over icons and remove hide class
-    } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('mainstay-green')) {
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('mg')) {
-          icons[j].classList.remove('hide')
-          console.log(icons[j].classList)
-        } else {
-          icons[j].classList.add('hide') //add hide class
-        }
-      } 
-    }
-  }
 }
 
 var ingredientContent = document.querySelectorAll('#ingredient-content div') // get all ingredient-content p tags
@@ -418,6 +375,17 @@ var ingredientContent = document.querySelectorAll('#ingredient-content div') // 
 document.addEventListener('click', contentDisplay, false)
 
 function contentDisplay () {
+  
+// hide ingredient content on juice change
+
+  for (var i = 0; i < ingredientIcons.length; i++) {
+    if ( ingredientContent[i].classList.contains('hide') ) {
+      console.log('yup')
+    } else {
+      ingredientContent[i].classList.add('hide')
+    }
+  }
+
   for (var i = 0; i < ingredientIcons.length; i++) {
     if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('apple-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
@@ -575,7 +543,6 @@ function contentDisplay () {
   }
 }
 
-
 carousel.addEventListener('click', ingredientColor, false)
 
 function ingredientColor () {
@@ -584,24 +551,24 @@ function ingredientColor () {
   for (var i = 0; i < product.length; i++) {
     if (product[i].classList.contains('is-selected') && product[i].classList.contains('starboard-strawberry')) {
       target.classList.add('starboard-strawberry')
-      target.classList.remove('dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 'ss-veggie')
+      target.classList.remove('dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('dockside-sunrise')) {
       target.classList.add('dockside-sunrise')
-      target.classList.remove('starboard-strawberry', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 'ss-veggie')
+      target.classList.remove('starboard-strawberry', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('harbor-voyage')) {
       target.classList.add('harbor-voyage')
-      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 'ss-veggie')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('watermelon-waves')) {
       target.classList.add('watermelon-waves')
-      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'sailors-delight', 'mainstay-green', 'ss-veggie')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'sailors-delight', 'mainstay-green', 's-s-veggie')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('sailors-delight')) {
       target.classList.add('sailors-delight')
-      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'mainstay-green', 'ss-veggie')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'mainstay-green', 's-s-veggie')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('mainstay-green')) {
       target.classList.add('mainstay-green')
-      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'ss-veggie')
-    } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('ss-veggie')) {
-      target.classList.add('ss-veggie')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 's-s-veggie')
+    } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('s-s-veggie')) {
+      target.classList.add('s-s-veggie')
       target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green')
     } else {
 
@@ -609,3 +576,49 @@ function ingredientColor () {
   }
 }
 
+var total = 0
+var addButton = document.getElementById('plus')
+var minusButton = document.getElementById('minus')
+
+addButton.addEventListener('click', addCart, false)
+minusButton.addEventListener('click', minusCart, false)
+carousel.addEventListener('click', zeroButton, false)
+
+function addCart () {
+  var target = document.getElementById('add-to-cart')
+  var qty = document.querySelector('input[name=qty]')
+
+  total += 7
+
+  target.value = 'add ' + total + ' to cart'
+  qty.value = total
+
+  console.log(total)
+}
+
+function minusCart () {
+  var target = document.getElementById('add-to-cart')
+  var qty = document.querySelector('input[name=qty]')
+
+  if (total > 0) {
+    total -= 7
+    target.value = ('add ' + total + ' to cart')
+    qty.value = total
+  } else if (total === 0){
+    target.value = ('add to basket')
+    qty.value = total
+  }
+  console.log(total)
+}
+
+function zeroButton () {
+  var target = document.getElementById('add-to-cart')
+  var qty = document.querySelector('input[name=qty]')
+
+  total = 0
+
+  target.value = 'Add to Cart'
+  qty.value = total
+
+  console.log(total)
+}
