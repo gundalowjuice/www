@@ -624,6 +624,23 @@ footer {
       #index #content section#featured-prod #product-wrap p {
         margin-bottom: 1em;
         padding: 0 1em; }
+      #index #content section#featured-prod #product-wrap #minus {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px; }
+        #index #content section#featured-prod #product-wrap #minus.starboard-strawberry {
+          background-color: #951F4A; }
+        #index #content section#featured-prod #product-wrap #minus.sailors-delight {
+          background-color: #D55C09; }
+        #index #content section#featured-prod #product-wrap #minus.dockside-sunrise {
+          background-color: #D7485E; }
+        #index #content section#featured-prod #product-wrap #minus.harbor-voyage {
+          background-color: #2C62A5; }
+        #index #content section#featured-prod #product-wrap #minus.watermelon-waves {
+          background-color: #83BFBF; }
+        #index #content section#featured-prod #product-wrap #minus.mainstay-green {
+          background-color: #007D91; }
+        #index #content section#featured-prod #product-wrap #minus.s-s-veggie {
+          background-color: #68A328; }
       #index #content section#featured-prod #product-wrap #product-content {
         display: -ms-flexbox;
         display: flex;

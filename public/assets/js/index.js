@@ -99,7 +99,7 @@ function juiceChange () {
       header.classList.add('starboard-strawberry')
       addCart.classList.remove('harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'dockside-sunrise')
       addCart.classList.add('starboard-strawberry')
-      plus.classList.remove('harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'dockside-sunrise')
+      plusBtn.classList.remove('harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'dockside-sunrise')
       plusBtn.classList.add('starboard-strawberry')
       minusBtn.classList.remove('harbor-voyage-dark', 's-s-veggie-dark', 'sailors-delight-dark', 'watermelon-waves-dark', 'mainstay-green-dark', 'dockside-sunrise-dark')
       minusBtn.classList.add('starboard-strawberry-dark')
@@ -353,8 +353,6 @@ function iconDisplay () {
   }
 }
 
-
-
 var iconList = document.querySelector('#icons')
 var ingredientIcons = document.querySelectorAll('#icons svg')
 
@@ -375,7 +373,29 @@ var ingredientContent = document.querySelectorAll('#ingredient-content div') // 
 document.addEventListener('click', contentDisplay, false)
 
 function contentDisplay () {
-  
+var iconList = document.querySelector('#icons')
+var ingredientIcons = document.querySelectorAll('#icons svg')
+
+// hide ingredient content on juice change
+
+  for (var i = 0; i < ingredientIcons.length; i++) {
+    if ( ingredientContent[i].classList.contains('hide') ) {
+      console.log('yup')
+    } else {
+      ingredientContent[i].classList.add('hide')
+    }
+  }
+
+    e.target.classList.add('active')
+  }
+//   e.stopPropagation()
+// }
+
+var ingredientContent = document.querySelectorAll('#ingredient-content div') // get all ingredient-content p tags
+
+document.addEventListener('click', contentDisplay, false)
+
+function contentDisplay () {
 // hide ingredient content on juice change
 
   for (var i = 0; i < ingredientIcons.length; i++) {
@@ -576,49 +596,49 @@ function ingredientColor () {
   }
 }
 
-var total = 0
-var addButton = document.getElementById('plus')
-var minusButton = document.getElementById('minus')
-
-addButton.addEventListener('click', addCart, false)
-minusButton.addEventListener('click', minusCart, false)
-carousel.addEventListener('click', zeroButton, false)
-
-function addCart () {
-  var target = document.getElementById('add-to-cart')
-  var qty = document.querySelector('input[name=qty]')
-
-  total += 7
-
-  target.value = 'add ' + total + ' to cart'
-  qty.value = total
-
-  console.log(total)
-}
-
-function minusCart () {
-  var target = document.getElementById('add-to-cart')
-  var qty = document.querySelector('input[name=qty]')
-
-  if (total > 0) {
-    total -= 7
-    target.value = ('add ' + total + ' to cart')
-    qty.value = total
-  } else if (total === 0){
-    target.value = ('add to basket')
-    qty.value = total
-  }
-  console.log(total)
-}
-
-function zeroButton () {
-  var target = document.getElementById('add-to-cart')
-  var qty = document.querySelector('input[name=qty]')
-
-  total = 0
-
-  target.value = 'Add to Cart'
-  qty.value = total
-
-  console.log(total)
-}
+// var total = 0
+// var addButton = document.getElementById('plus')
+// var minusButton = document.getElementById('minus')
+//
+// addButton.addEventListener('click', addCart, false)
+// minusButton.addEventListener('click', minusCart, false)
+// carousel.addEventListener('click', zeroButton, false)
+//
+// function addCart () {
+//   var target = document.getElementById('add-to-cart')
+//   var qty = document.querySelector('input[name=qty]')
+//
+//   total += 7
+//
+//   target.value = 'add ' + total + ' to cart'
+//   qty.value = total
+//
+//   console.log(total)
+// }
+//
+// function minusCart () {
+//   var target = document.getElementById('add-to-cart')
+//   var qty = document.querySelector('input[name=qty]')
+//
+//   if (total > 0) {
+//     total -= 7
+//     target.value = ('add ' + total + ' to cart')
+//     qty.value = total
+//   } else if (total === 0){
+//     target.value = ('add to basket')
+//     qty.value = total
+//   }
+//   console.log(total)
+// }
+//
+// function zeroButton () {
+//   var target = document.getElementById('add-to-cart')
+//   var qty = document.querySelector('input[name=qty]')
+//
+//   total = 0
+//
+//   target.value = 'Add to Cart'
+//   qty.value = total
+//
+//   console.log(total)
+// }
