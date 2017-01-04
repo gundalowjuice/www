@@ -373,7 +373,6 @@ var ingredientContent = document.querySelectorAll('#ingredient-content div') // 
 document.addEventListener('click', contentDisplay, false)
 
 function contentDisplay () {
-
 var iconList = document.querySelector('#icons')
 var ingredientIcons = document.querySelectorAll('#icons svg')
 
@@ -397,7 +396,6 @@ var ingredientContent = document.querySelectorAll('#ingredient-content div') // 
 document.addEventListener('click', contentDisplay, false)
 
 function contentDisplay () {
-
 // hide ingredient content on juice change
 
   for (var i = 0; i < ingredientIcons.length; i++) {
