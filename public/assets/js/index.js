@@ -79,6 +79,9 @@ function juiceChange () {
   var price = document.createElement('h2')
   var description = document.createElement('p')
 
+  console.log(plusBtn)
+  console.log(minusBtn)
+
   for (var i = 0; i < carouselImage.length; i++) {
     // starboard-strawberry
     if (carouselImage[i].classList.contains('is-selected') && carouselImage[i].classList.contains('starboard-strawberry')) {
@@ -350,8 +353,6 @@ function iconDisplay () {
   }
 }
 
-
-
 var iconList = document.querySelector('#icons')
 var ingredientIcons = document.querySelectorAll('#icons svg')
 
@@ -366,6 +367,30 @@ function activeIcon (e) {
   }
   e.stopPropagation()
 }
+
+var ingredientContent = document.querySelectorAll('#ingredient-content div') // get all ingredient-content p tags
+
+document.addEventListener('click', contentDisplay, false)
+
+function contentDisplay () {
+
+var iconList = document.querySelector('#icons')
+var ingredientIcons = document.querySelectorAll('#icons svg')
+
+// hide ingredient content on juice change
+
+  for (var i = 0; i < ingredientIcons.length; i++) {
+    if ( ingredientContent[i].classList.contains('hide') ) {
+      console.log('yup')
+    } else {
+      ingredientContent[i].classList.add('hide')
+    }
+  }
+
+    e.target.classList.add('active')
+  }
+//   e.stopPropagation()
+// }
 
 var ingredientContent = document.querySelectorAll('#ingredient-content div') // get all ingredient-content p tags
 
@@ -572,3 +597,50 @@ function ingredientColor () {
     }
   }
 }
+
+// var total = 0
+// var addButton = document.getElementById('plus')
+// var minusButton = document.getElementById('minus')
+//
+// addButton.addEventListener('click', addCart, false)
+// minusButton.addEventListener('click', minusCart, false)
+// carousel.addEventListener('click', zeroButton, false)
+//
+// function addCart () {
+//   var target = document.getElementById('add-to-cart')
+//   var qty = document.querySelector('input[name=qty]')
+//
+//   total += 7
+//
+//   target.value = 'add ' + total + ' to cart'
+//   qty.value = total
+//
+//   console.log(total)
+// }
+//
+// function minusCart () {
+//   var target = document.getElementById('add-to-cart')
+//   var qty = document.querySelector('input[name=qty]')
+//
+//   if (total > 0) {
+//     total -= 7
+//     target.value = ('add ' + total + ' to cart')
+//     qty.value = total
+//   } else if (total === 0){
+//     target.value = ('add to basket')
+//     qty.value = total
+//   }
+//   console.log(total)
+// }
+//
+// function zeroButton () {
+//   var target = document.getElementById('add-to-cart')
+//   var qty = document.querySelector('input[name=qty]')
+//
+//   total = 0
+//
+//   target.value = 'Add to Cart'
+//   qty.value = total
+//
+//   console.log(total)
+// }
