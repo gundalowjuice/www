@@ -435,10 +435,55 @@ footer {
     text-decoration: none;
     white-space: nowrap;
     background-color: transparent;
-    border-radius: 4px;
-    border: 1px solid #bbb;
+    border-style: none;
     cursor: pointer;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    font: 100%/150% "Josefin Sans", sans-serif; }
+    #button input[type='submit']:focus {
+      outline: none; }
+  #button #minus,
+  #button #plus {
+    width: 2em;
+    border-width: 0;
+    cursor: pointer;
+    font: 150%/150% "Josefin Sans", sans-serif; }
+    #button #minus:focus,
+    #button #plus:focus {
+      outline: none; }
+  #button #minus {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px; }
+    #button #minus.starboard-strawberry-dark {
+      background-color: #951F4A; }
+    #button #minus.sailors-delight-dark {
+      background-color: #D55C09; }
+    #button #minus.dockside-sunrise-dark {
+      background-color: #D7485E; }
+    #button #minus.harbor-voyage-dark {
+      background-color: #2C62A5; }
+    #button #minus.watermelon-waves-dark {
+      background-color: #83BFBF; }
+    #button #minus.mainstay-green-dark {
+      background-color: #007D91; }
+    #button #minus.s-s-veggie-dark {
+      background-color: #68A328; }
+  #button #plus {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px; }
+    #button #plus.starboard-strawberry {
+      background-color: #ae3863; }
+    #button #plus.sailors-delight {
+      background-color: #ee7522; }
+    #button #plus.dockside-sunrise {
+      background-color: #f06177; }
+    #button #plus.harbor-voyage {
+      background-color: #457bbe; }
+    #button #plus.watermelon-waves {
+      background-color: #9cd8d8; }
+    #button #plus.mainstay-green {
+      background-color: #0096aa; }
+    #button #plus.s-s-veggie {
+      background-color: #81bc41; }
 
 #ingredients {
   max-width: 32em;
@@ -481,39 +526,12 @@ footer {
     background-color: #ee7522; }
   #ingredients #ingredient-content.mainstay-green {
     background-color: #0096aa; }
-  #ingredients #ingredient-content.ss-veggie {
+  #ingredients #ingredient-content.s-s-veggie {
     background-color: #81bc41; }
   #ingredients #ingredient-content div {
     color: white; }
     #ingredients #ingredient-content div.hide {
       display: none; }
-
-#ingredients.starboard-strawberry {
-  color: #ae3863; }
-
-#ingredients.dockside-sunrise {
-  color: #f06177; }
-
-#ingredients.harbor-voyage {
-  color: #457bbe; }
-
-#ingredients.watermelon-waves {
-  color: #9cd8d8; }
-
-#ingredients.sailors-delight {
-  color: #ee7522; }
-
-#ingredients.mainstay-green {
-  color: #0096aa; }
-
-#ingredients.s-s-veggie {
-  color: #81bc41; }
-
-#ingredients svg.icon.hide {
-  display: none; }
-
-#ingredients #ingredient-content p.hide {
-  display: none; }
 
 #index #content {
   width: 100%; }
@@ -606,6 +624,23 @@ footer {
       #index #content section#featured-prod #product-wrap p {
         margin-bottom: 1em;
         padding: 0 1em; }
+      #index #content section#featured-prod #product-wrap #minus {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px; }
+        #index #content section#featured-prod #product-wrap #minus.starboard-strawberry {
+          background-color: #951F4A; }
+        #index #content section#featured-prod #product-wrap #minus.sailors-delight {
+          background-color: #D55C09; }
+        #index #content section#featured-prod #product-wrap #minus.dockside-sunrise {
+          background-color: #D7485E; }
+        #index #content section#featured-prod #product-wrap #minus.harbor-voyage {
+          background-color: #2C62A5; }
+        #index #content section#featured-prod #product-wrap #minus.watermelon-waves {
+          background-color: #83BFBF; }
+        #index #content section#featured-prod #product-wrap #minus.mainstay-green {
+          background-color: #007D91; }
+        #index #content section#featured-prod #product-wrap #minus.s-s-veggie {
+          background-color: #68A328; }
       #index #content section#featured-prod #product-wrap #product-content {
         display: -ms-flexbox;
         display: flex;

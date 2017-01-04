@@ -124,6 +124,39 @@
         padding: 0 1em;
       }
 
+      #minus {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+
+        &.starboard-strawberry {
+          background-color: $starboard-strawberry-dark;
+        }
+
+        &.sailors-delight {
+          background-color: $sailors-delight-dark;
+        }
+
+        &.dockside-sunrise {
+          background-color: $dockside-sunrise-dark;
+        }
+
+        &.harbor-voyage {
+          background-color: $harbor-voyage-dark;
+        }
+
+        &.watermelon-waves {
+          background-color: $watermelon-waves-dark;
+        }
+
+        &.mainstay-green {
+          background-color: $mainstay-green-dark;
+        }
+
+        &.s-s-veggie{
+          background-color: $ss-veggie-dark;
+        }
+      }
+
       #product-content {
         display: flex;
         flex-direction: column;
