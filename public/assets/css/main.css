@@ -316,6 +316,9 @@ footer {
     @media (min-width: 44em) {
       #basket-dropdown div {
         width: 50%; } }
+    #basket-dropdown div p {
+      text-align: center;
+      padding-bottom: .5em; }
     #basket-dropdown div table {
       border-spacing: 0;
       width: 100%; }

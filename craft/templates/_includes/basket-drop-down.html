@@ -1,38 +1,40 @@
+{% set cart = craft.commerce.cart %}
+
+
 <section id="basket-dropdown">
+  {% if not cart.lineItems|length %}
+    <div>
+      <p>You haven't added any juice, this makes us sad.</p>
+    </div>
+  {% endif %}
+
+  {% if cart.lineItems|length %}
   <div>
     <table>
       <tr id="head">
         <td>Item</td>
-        <td class="center">Size</td>
         <td class="center">Qty</td>
+        <td class='center'></td>
         <td class="right">Price</td>
 
       </tr>
-      <tr>
-        <td>Juice Name</td>
-        <td class="center">7 Pack</td>
-        <td class="center">1</td>
-        <td class="right">$0.00</td>
-      </tr>
-      <tr>
-        <td>Juice Name</td>
-        <td class="center">7 Pack</td>
-        <td class="center">1</td>
-        <td class="right">$0.00</td>
-      </tr>
-      <tr>
-        <td>Juice Name</td>
-        <td class="center">7 Pack</td>
-        <td class="center">1</td>
-        <td class="right">$0.00</td>
-      </tr>
+      {% for item in cart.lineItems %}
+        <tr>
+          <td>{{ item.description }}</td>
+          <td class="center">{{ item.qty }}</td>
+          <td class='center'></td>
+          <td class="right">{{ item.total|commerceCurrency(cart.currency) }}</td>
+        </tr>
+      {% endfor %}
+
       <tr id="footer">
         <td></td>
         <td></td>
         <td></td>
-        <td class="total right">$0.00</td>
+        <td class="total right">{{ cart.totalPrice|commerceCurrency(cart.currency) }}</td>
       </tr>
     </table>
-    <a href="#">Checkout</a>
+    <a href="/cart">Checkout</a>
   </div>
+  {% endif %}
 </section>
