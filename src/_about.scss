@@ -1,0 +1,39 @@
+#about {
+  #bg {
+    display: none;
+    @media (min-width: 48em) {
+      display: block;
+      text-align: center;
+      margin: 2em 0;
+    }
+  }
+  section{
+    padding: 0 1em;
+
+    @media (min-width: 48em) {
+      max-width: 40em;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 1em 0;
+
+      @media (min-width: 48em) {
+        margin-left: 0
+
+      }
+    }
+    p {
+      margin: 1em 0;
+
+      @media (min-width: 48em) {
+        margin: 0 0 1em;
+      }
+    }
+
+    blockquote {
+      margin: 1.5em;
+      font-size: 1.5em;
+    }
+  }
+}
