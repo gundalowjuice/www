@@ -1,7 +1,7 @@
 {% set cart = craft.commerce.cart %}
 
 
-<section id="basket-dropdown">
+<div id="basket-dropdown">
   {% if not cart.lineItems|length %}
     <div>
       <p>You haven't added any juice, this makes us sad.</p>
@@ -37,4 +37,4 @@
     <a href="/cart">Checkout</a>
   </div>
   {% endif %}
-</section>
+</div>

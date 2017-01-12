@@ -689,3 +689,14 @@ footer {
   #about section blockquote {
     margin: 1.5em;
     font-size: 1.5em; }
+
+#customer-care section {
+  margin: 2em 1em; }
+  @media (min-width: 48em) {
+    #customer-care section {
+      max-width: 40em;
+      margin: 2em auto; } }
+  #customer-care section h1 {
+    margin: 1.5em 0; }
+  #customer-care section h2, #customer-care section p {
+    margin: 0 0 1em; }
