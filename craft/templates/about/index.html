@@ -1,0 +1,45 @@
+{#
+ # About index template
+ # -------------------
+ #
+ # This template is loaded whenever http://example.com/about is
+ # requested, because it is located at about/index.html in your
+ # craft/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+{% set title = "About" %}
+{% set bodyId = "about" %}
+
+{% block content %}
+  <div id='bg'>
+   <iframe src="https://player.vimeo.com/video/{{ entry.videoId }}?color=387a94&title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+   </iframe>
+  </div>
+
+  <section>
+    <h1>{{ entry.title }}</h1>
+
+    {% for block in entry.aboutContent %}
+
+      {% if block.type == 'bodyContent' %}
+        {{ block.text }}
+      {% endif %}
+
+      {% if block.type == 'quote'%}
+      <blockquote>
+        <p>{{ block.quoteText}}</p>
+      </blockquote>
+      {% endif%}
+
+    {% endfor %}
+  </section>
+
+
+
+
+
+{% endblock %}

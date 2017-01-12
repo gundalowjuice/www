@@ -37,6 +37,9 @@ h3 {
   font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase; }
 
+h1 {
+  font-size: 225%; }
+
 /* Main */
 body {
   display: -ms-flexbox;
@@ -658,3 +661,31 @@ footer {
   #index #bg-img-wrap {
     background: url("/assets/images/gj-homepage-bg.jpg") 50% 100% no-repeat;
     background-size: cover; } }
+
+#about #bg {
+  display: none; }
+  @media (min-width: 48em) {
+    #about #bg {
+      display: block;
+      text-align: center;
+      margin: 2em 0; } }
+
+#about section {
+  padding: 0 1em; }
+  @media (min-width: 48em) {
+    #about section {
+      max-width: 40em;
+      margin: 0 auto; } }
+  #about section h1 {
+    margin: 1em 0; }
+    @media (min-width: 48em) {
+      #about section h1 {
+        margin-left: 0; } }
+  #about section p {
+    margin: 1em 0; }
+    @media (min-width: 48em) {
+      #about section p {
+        margin: 0 0 1em; } }
+  #about section blockquote {
+    margin: 1.5em;
+    font-size: 1.5em; }
