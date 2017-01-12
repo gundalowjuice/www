@@ -1,0 +1,53 @@
+{#
+ # Customer Care index template
+ # -------------------
+ #
+ # This template is loaded whenever http://example.com/customer-care is
+ # requested, because it is located at customer-care/index.html in your
+ # craft/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+{% set title = "Customer Care" %}
+{% set bodyId = "customer-care" %}
+
+{% block content %}
+
+  <div id="bg-img" style="background: url({{ entry.backgroundImage.first().getUrl() }})no-repeat center center; background-size: cover; height: 65vh"></div>
+
+  <section>
+    <h1>{{ entry.title }}</h1>
+
+    {% for block in entry.policies %}
+
+      {% if block.type == 'policies' %}
+
+        <h2>{{ block.heading}}</h2>
+
+        {{ block.textContent }}
+
+      {% endif %}
+
+    {% endfor %}
+
+    <h1>frequently asked questions</h1>
+
+    {% for block in entry.faq %}
+
+      {% if block.type == 'faq' %}
+
+        <h2>{{ block.heading }}</h2>
+
+        {{ block.textContent }}
+
+      {% endif %}
+
+    {% endfor %}
+
+
+  </section>
+
+{% endblock %}
