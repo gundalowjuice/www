@@ -291,7 +291,7 @@ function juiceChange () {
       header.appendChild(price)
       div.appendChild(description)
     }
-    else if (carouselImage[i].classList.contains('is-selected') && carouselImage[i].classList.contains('crew-case')) {
+    else if (carouselImage[i].classList.contains('is-selected') && carouselImage[i].classList.contains('compass-case')) {
       if (div.hasChildNodes()) {
         div.removeChild(div.childNodes[2])
         while (header.firstChild) {
