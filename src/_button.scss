@@ -5,31 +5,47 @@
   form {
 
     &.starboard-strawberry {
-      background-color: $starboard-strawberry;
+      background-color: $starboard-strawberry-dark;
     }
 
     &.sailors-delight {
-      background-color: $sailors-delight;
+      background-color: $sailors-delight-dark;
     }
 
     &.dockside-sunrise {
-      background-color: $dockside-sunrise;
+      background-color: $dockside-sunrise-dark;
     }
 
     &.harbor-voyage {
-      background-color: $harbor-voyage;
+      background-color: $harbor-voyage-dark;
     }
 
     &.watermelon-waves {
-      background-color: $watermelon-waves;
+      background-color: $watermelon-waves-dark;
     }
 
     &.mainstay-green {
-      background-color: $mainstay-green;
+      background-color: $mainstay-green-dark;
     }
 
     &.s-s-veggie{
-      background-color: $ss-veggie;
+      background-color: $ss-veggie-dark;
+    }
+
+    &.anchor-case{
+      background-color: $anchor-case-dark;
+    }
+
+    &.compass-case{
+      background-color: $compass-case-dark;
+    }
+
+    &.crew-case{
+      background-color: $crew-case-dark;
+    }
+
+    &.lighthouse-case{
+      background-color: $lighthouse-case-dark;
     }
 
   }
@@ -75,31 +91,47 @@
     border-bottom-left-radius: 4px;
 
     &.starboard-strawberry-dark {
-      background-color: $starboard-strawberry-dark;
+      background-color: $starboard-strawberry;
     }
 
     &.sailors-delight-dark {
-      background-color: $sailors-delight-dark;
+      background-color: $sailors-delight;
     }
 
     &.dockside-sunrise-dark {
-      background-color: $dockside-sunrise-dark;
+      background-color: $dockside-sunrise;
     }
 
     &.harbor-voyage-dark {
-      background-color: $harbor-voyage-dark;
+      background-color: $harbor-voyage;
     }
 
     &.watermelon-waves-dark {
-      background-color: $watermelon-waves-dark;
+      background-color: $watermelon-waves;
     }
 
     &.mainstay-green-dark {
-      background-color: $mainstay-green-dark;
+      background-color: $mainstay-green;
     }
 
     &.s-s-veggie-dark{
-      background-color: $ss-veggie-dark;
+      background-color: $ss-veggie;
+    }
+
+    &.anchor-case{
+      background-color: $anchor-case;
+    }
+
+    &.compass-case{
+      background-color: $compass-case;
+    }
+
+    &.crew-case{
+      background-color: $crew-case;
+    }
+
+    &.lighthouse-case{
+      background-color: $lighthouse-case;
     }
   }
 
@@ -133,6 +165,22 @@
 
     &.s-s-veggie{
       background-color: $ss-veggie;
+    }
+
+    &.anchor-case{
+      background-color: $anchor-case;
+    }
+
+    &.compass-case{
+      background-color: $compass-case;
+    }
+
+    &.crew-case{
+      background-color: $crew-case;
+    }
+
+    &.lighthouse-case{
+      background-color: $lighthouse-case;
     }
   }
 }
