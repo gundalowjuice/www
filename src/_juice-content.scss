@@ -60,6 +60,34 @@
       }
     }
 
+    &.anchor-case {
+
+      h2:nth-of-type(1) {
+        color: $anchor-case;
+      }
+    }
+
+    &.compass-case{
+
+      h2:nth-of-type(1) {
+        color: $compass-case;
+      }
+    }
+
+    &.crew-case{
+
+      h2:nth-of-type(1) {
+        color: $crew-case;
+      }
+    }
+
+    &.lighthouse-case{
+
+      h2:nth-of-type(1) {
+        color: $lighthouse-case;
+      }
+    }
+
     @media (min-width: 44em) {
       flex-direction: row;
     }
