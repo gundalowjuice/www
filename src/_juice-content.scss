@@ -11,6 +11,11 @@
     justify-content: space-between;
     flex-direction: column;
 
+    h2:nth-of-type(2) {
+      text-transform: lowercase;
+      font-weight: normal;
+    }
+
     &.starboard-strawberry{
 
       h2:nth-of-type(1) {

@@ -384,6 +384,9 @@ footer {
     justify-content: space-between;
     -ms-flex-direction: column;
     flex-direction: column; }
+    #juice-content #juice-header h2:nth-of-type(2) {
+      text-transform: lowercase;
+      font-weight: normal; }
     #juice-content #juice-header.starboard-strawberry h2:nth-of-type(1) {
       color: #ae3863; }
     #juice-content #juice-header.sailors-delight h2:nth-of-type(1) {
@@ -523,6 +526,11 @@ footer {
     #button #plus.lighthouse-case {
       background-color: #666666; }
 
+#pack-info > p {
+  max-width: 24em;
+  margin: 2em auto;
+  text-align: center; }
+
 #ingredients {
   max-width: 32em;
   margin: 4em auto;
@@ -574,15 +582,23 @@ footer {
 #index #content {
   width: 100%; }
   #index #content #bg-img-wrap {
-    width: 100%; }
+    width: 100%;
+    height: 60vh; }
+    @media (min-width: 44em) {
+      #index #content #bg-img-wrap #bg-img {
+        display: none; } }
   #index #content #bg-vid-wrapper {
-    z-index: -100;
-    position: relative;
-    top: 11.25em;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 35vh; }
+    display: none; }
+    @media (min-width: 44em) {
+      #index #content #bg-vid-wrapper {
+        display: block;
+        z-index: -100;
+        position: relative;
+        top: 5.25em;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 35vh; } }
     #index #content #bg-vid-wrapper video#bgvid {
       background: transparent;
       height: 100%;
@@ -615,10 +631,14 @@ footer {
     flex-direction: column;
     max-width: 28em;
     padding: 1em;
-    z-index: -1; }
+    position: relative;
+    top: -200px; }
     @media (min-width: 44em) {
       #index #content #hero {
-        margin: -8em 0 2em 3em; } }
+        z-index: -1; } }
+    @media (min-width: 44em) {
+      #index #content #hero {
+        margin: 4em 0 2em 3em; } }
   #index #content h1 {
     margin: 1em 0;
     text-transform: uppercase; }
@@ -689,15 +709,16 @@ footer {
 
 @media (max-width: 44em) {
   #index video#bgvid {
-    display: none; }
-  #index #bg-img-wrap {
-    background: url("/assets/images/gj-homepage-bg.jpg") 50% 100% no-repeat;
-    background-size: cover; } }
+    display: none; } }
 
-#about #bg {
+@media (min-width: 48em) {
+  #about #bg-img {
+    display: none; } }
+
+#about #bg-video {
   display: none; }
   @media (min-width: 48em) {
-    #about #bg {
+    #about #bg-video {
       display: block;
       text-align: center;
       margin: 2em 0; } }
