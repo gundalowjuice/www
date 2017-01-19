@@ -24,7 +24,8 @@
  {% block content %}
 
 <div id="bg-img-wrap">
-
+  <div id="bg-img" style="background: url({{ entry.backgroundImage.first().getUrl() }})no-repeat center center; background-size: cover; height: 65vh">
+  </div>
   <div id="bg-vid-wrapper">
    <video playsinline autoplay muted loop id="bgvid">
      <source src="/assets/video/gundalow-bg-loop.mp4" type='video/mp4'>
@@ -35,6 +36,7 @@
     <h1>{{ entry.heroStatement }}</h1>
     <p>{{ entry.body }}</p>
   </div>
+</div>
 
   {% set products = entry.featuredJuice %}
 
