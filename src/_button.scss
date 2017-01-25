@@ -1,6 +1,7 @@
 #button {
   display: flex;
   justify-content: center;
+  color: #fff;
 
   form {
 
@@ -80,6 +81,7 @@
     border-width: 0;
     cursor: pointer;
     font: 150%/150% $body-font;
+    color: #fff;
 
     &:focus {
       outline: none;

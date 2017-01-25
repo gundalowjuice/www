@@ -416,6 +416,8 @@ footer {
       #shipping-info p:nth-of-type(2) {
         display: block;
         padding: .5em; } }
+    #shipping-info p:nth-of-type(2) a {
+      hover: #000; }
 
 #basket-dropdown {
   display: none;
@@ -532,7 +534,8 @@ footer {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  color: #fff; }
   #button form.starboard-strawberry {
     background-color: #951F4A; }
   #button form.sailors-delight {
@@ -580,7 +583,8 @@ footer {
     width: 2em;
     border-width: 0;
     cursor: pointer;
-    font: 150%/150% "Josefin Sans", sans-serif; }
+    font: 150%/150% "Josefin Sans", sans-serif;
+    color: #fff; }
     #button #minus:focus,
     #button #plus:focus {
       outline: none; }
