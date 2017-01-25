@@ -140,36 +140,40 @@
         padding: 0 1em;
       }
 
+      #plus, #minus {
+        color: #fff;
+      }
+
       #minus {
         border-top-left-radius: 4px;
         border-bottom-left-radius: 4px;
 
         &.starboard-strawberry {
-          background-color: $starboard-strawberry-dark;
+          background-color: $starboard-strawberry;
         }
 
         &.sailors-delight {
-          background-color: $sailors-delight-dark;
+          background-color: $sailors-delight;
         }
 
         &.dockside-sunrise {
-          background-color: $dockside-sunrise-dark;
+          background-color: $dockside-sunrise;
         }
 
         &.harbor-voyage {
-          background-color: $harbor-voyage-dark;
+          background-color: $harbor-voyage;
         }
 
         &.watermelon-waves {
-          background-color: $watermelon-waves-dark;
+          background-color: $watermelon-waves;
         }
 
         &.mainstay-green {
-          background-color: $mainstay-green-dark;
+          background-color: $mainstay-green;
         }
 
         &.s-s-veggie{
-          background-color: $ss-veggie-dark;
+          background-color: $ss-veggie;
         }
       }
 

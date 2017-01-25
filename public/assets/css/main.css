@@ -791,23 +791,25 @@ footer {
       #index #content section#featured-prod #product-wrap p {
         margin-bottom: 1em;
         padding: 0 1em; }
+      #index #content section#featured-prod #product-wrap #plus, #index #content section#featured-prod #product-wrap #minus {
+        color: #fff; }
       #index #content section#featured-prod #product-wrap #minus {
         border-top-left-radius: 4px;
         border-bottom-left-radius: 4px; }
         #index #content section#featured-prod #product-wrap #minus.starboard-strawberry {
-          background-color: #951F4A; }
+          background-color: #ae3863; }
         #index #content section#featured-prod #product-wrap #minus.sailors-delight {
-          background-color: #D55C09; }
+          background-color: #ee7522; }
         #index #content section#featured-prod #product-wrap #minus.dockside-sunrise {
-          background-color: #D7485E; }
+          background-color: #f06177; }
         #index #content section#featured-prod #product-wrap #minus.harbor-voyage {
-          background-color: #2C62A5; }
+          background-color: #457bbe; }
         #index #content section#featured-prod #product-wrap #minus.watermelon-waves {
-          background-color: #83BFBF; }
+          background-color: #9cd8d8; }
         #index #content section#featured-prod #product-wrap #minus.mainstay-green {
-          background-color: #007D91; }
+          background-color: #0096aa; }
         #index #content section#featured-prod #product-wrap #minus.s-s-veggie {
-          background-color: #68A328; }
+          background-color: #81bc41; }
       #index #content section#featured-prod #product-wrap #product-content {
         display: -ms-flexbox;
         display: flex;
