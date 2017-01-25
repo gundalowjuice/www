@@ -1,5 +1,7 @@
 {% extends '_layout' %}
 
+{% set bodyId = 'checkout-addresses' %}
+
 {% set cart = craft.commerce.cart %}
 
 {% block content %}
@@ -8,10 +10,9 @@
 
     {# UI when at least one address exists #}
 
-    <div class="row">
-        <div class="twelve columns">
+    <div class="address">
             <form method="post">
-
+              <div class="address-container">
                 <input type="hidden" name="action" value="commerce/cart/updateCart">
                 <input type="hidden" name="redirect" value="checkout/shipping"/>
 
@@ -36,7 +37,11 @@
                 <label for="sameAddress"><input id="sameAddress" name="sameAddress" type="checkbox" checked="checked"/><span class="label-body">Use same address for
                 billing</span></label>
 
+              </div>
+
                 <br>
+
+              <div class="address-container">
 
                 {% include '_includes/addresses/fieldset' with {
                     title: "Billing Address"|t,
@@ -46,10 +51,10 @@
 
                 <input type="submit" class="button button-primary" value="Confirm addresses">
 
+              </div>
+
             </form>
 
-
-        </div>
     </div>
 
     {% includejs %}

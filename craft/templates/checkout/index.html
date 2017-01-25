@@ -1,3 +1,5 @@
+{% set bodyId = "checkout" %}
+
 {% if currentUser %}
     {% redirect 'addresses' %}
 {% endif %}
@@ -9,7 +11,7 @@
 {% block content %}
 
     <div class="row">
-        <div class="six columns">
+        <div class='email'>
 
             <h3>Already Registered ?</h3>
 
@@ -40,7 +42,7 @@
 
         </div>
 
-        <div class="six columns">
+        <div class='email'>
 
             <h3>Guest Checkout</h3>
 
