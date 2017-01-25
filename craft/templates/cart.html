@@ -79,18 +79,22 @@
     <h3>Return Policy</h3>
     <p>All sales are final and returns are not accepted.  If your order was processed and sent incorrectly, please let us know.</p>
   </div>
-  <table id='subtotal'>
-    <tbody>
-      <tr>
-        <td>
-          <h3>Subtotal</h3>
-        </td>
-        <td>
-          <h3>{{ cart.itemTotal|commerceCurrency(cart.currency) }}</h3>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div id="order">
+    <table id='subtotal'>
+      <tbody>
+        <tr>
+          <td>
+            <h3>Subtotal</h3>
+          </td>
+          <td>
+            <h3>{{ cart.itemTotal|commerceCurrency(cart.currency) }}</h3>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a class="button button-primary" href="{{ url('checkout') }}">Checkout</a>
+  </div>
 </section>
+
 {% endif %}
 {% endblock %}
