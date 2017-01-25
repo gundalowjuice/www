@@ -93,7 +93,7 @@ function juiceChange () {
       }
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
-      price.innerHTML = (window.products.data[i].price + ' / bottle')
+      price.innerHTML = ('$' + window.products.data[i].price + ' / bottle')
       description.innerHTML = window.products.data[i].description
       header.classList.remove('harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'dockside-sunrise', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
       header.classList.add('starboard-strawberry')
@@ -124,7 +124,7 @@ function juiceChange () {
       minusBtn.classList.add('dockside-sunrise-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
-      price.innerHTML = (window.products.data[i].price + ' / bottle')
+      price.innerHTML = ('$' + window.products.data[i].price + ' / bottle')
       description.innerHTML = window.products.data[i].description
       header.appendChild(title)
       header.appendChild(price)
@@ -147,7 +147,7 @@ function juiceChange () {
       minusBtn.classList.add('mainstay-green-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
-      price.innerHTML = (window.products.data[i].price + ' / bottle')
+      price.innerHTML = ('$' + window.products.data[i].price + ' / bottle')
       description.innerHTML = window.products.data[i].description
       header.appendChild(title)
       header.appendChild(price)
@@ -170,7 +170,7 @@ function juiceChange () {
       minusBtn.classList.add('sailors-delight-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
-      price.innerHTML = (window.products.data[i].price + ' / bottle')
+      price.innerHTML = ('$' + window.products.data[i].price + ' / bottle')
       description.innerHTML = window.products.data[i].description
       header.appendChild(title)
       header.appendChild(price)
@@ -193,7 +193,7 @@ function juiceChange () {
       minusBtn.classList.add('s-s-veggie-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
-      price.innerHTML = (window.products.data[i].price + ' / bottle')
+      price.innerHTML = ('$' + window.products.data[i].price + ' / bottle')
       description.innerHTML = window.products.data[i].description
       header.appendChild(title)
       header.appendChild(price)
@@ -216,7 +216,7 @@ function juiceChange () {
       minusBtn.classList.add('watermelon-waves-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
-      price.innerHTML = (window.products.data[i].price + ' / bottle')
+      price.innerHTML = ('$' + window.products.data[i].price + ' / bottle')
       description.innerHTML = window.products.data[i].description
       header.appendChild(title)
       header.appendChild(price)
@@ -239,7 +239,7 @@ function juiceChange () {
       minusBtn.classList.add('harbor-voyage-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
-      price.innerHTML = (window.products.data[i].price + ' / bottle')
+      price.innerHTML = ('$' + window.products.data[i].price + ' / bottle')
       description.innerHTML = window.products.data[i].description
       header.appendChild(title)
       header.appendChild(price)
@@ -262,7 +262,7 @@ function juiceChange () {
       minusBtn.classList.add('lighthouse-case')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
-      price.innerHTML = (window.products.data[i].price + ' / case')
+      price.innerHTML = ('$' + window.products.data[i].price + ' / case')
       description.innerHTML = window.products.data[i].description
       header.appendChild(title)
       header.appendChild(price)
@@ -285,7 +285,7 @@ function juiceChange () {
       minusBtn.classList.add('crew-case')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
-      price.innerHTML = (window.products.data[i].price + ' / case')
+      price.innerHTML = ('$' + window.products.data[i].price + ' / case')
       description.innerHTML = window.products.data[i].description
       header.appendChild(title)
       header.appendChild(price)
@@ -308,7 +308,7 @@ function juiceChange () {
       minusBtn.classList.add('compass-case')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
-      price.innerHTML = (window.products.data[i].price + ' / case')
+      price.innerHTML = ('$' + window.products.data[i].price + ' / case')
       description.innerHTML = window.products.data[i].description
       header.appendChild(title)
       header.appendChild(price)
@@ -331,7 +331,7 @@ function juiceChange () {
       minusBtn.classList.add('anchor-case')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
-      price.innerHTML = (window.products.data[i].price + ' / case')
+      price.innerHTML = ('$' + window.products.data[i].price + ' / case')
       description.innerHTML = window.products.data[i].description
       header.appendChild(title)
       header.appendChild(price)
