@@ -1,8 +1,12 @@
 {% extends '_layout' %}
 
+{% set bodyId = 'payment' %}
+
 {% set cart = craft.commerce.cart %}
 
 {% block content %}
+
+{% include '_includes/meter' %}
 
 	<div class="row">
 
