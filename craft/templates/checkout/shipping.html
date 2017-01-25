@@ -1,10 +1,13 @@
 {% extends '_layout' %}
 
-{% set bodyId = 'shipping-confirm' %}
+{% set bodyId = 'shipping' %}
 
 {% set cart = craft.commerce.cart %}
 
 {% block content %}
+{% include '_includes/meter' %}
+
+  <div id='shipping-address'>
     <h3>Shipping Method</h3>
     <div class="row">
 
@@ -72,4 +75,5 @@
             </div>
         </div>
     </div>
+  </div>
 {% endblock %}

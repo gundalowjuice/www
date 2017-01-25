@@ -1036,3 +1036,98 @@ footer {
         margin-bottom: 1em; }
       #checkout-addresses .address form .address-container .address-fieldset input {
         float: right; }
+
+#payment main {
+  width: 90%;
+  margin: 2em auto; }
+  @media (min-width: 44em) {
+    #payment main {
+      width: 50%; } }
+
+.steps {
+  margin: 3em auto;
+  width: 90%; }
+  @media (min-width: 44em) {
+    .steps {
+      width: 60%; } }
+
+.steps ul {
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  margin-bottom: 0; }
+
+.steps ul li {
+  list-style: none;
+  display: block;
+  -ms-flex: 1;
+  flex: 1; }
+
+.steps ul li {
+  color: #aaa; }
+
+.steps ul li a {
+  color: #aaa; }
+
+.steps ul li.done {
+  color: #58595b;
+  opacity: .5; }
+
+.steps ul li.done a {
+  color: #58595b; }
+
+.steps ul li.sel {
+  color: #58595b;
+  opacity: 1; }
+
+.steps ul li.sel a {
+  color: #58595b; }
+
+.steps .meter {
+  height: 10px;
+  position: relative;
+  border: 1px solid #58595b;
+  border-radius: 10px;
+  padding: 3px;
+  margin-bottom: 10px; }
+
+.steps .meter > span {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: #58595b;
+  position: relative;
+  overflow: hidden; }
+
+@media (max-width: 750px) {
+  .steps ul {
+    display: block;
+    margin-left: 24px; }
+  .steps ul li {
+    list-style: decimal;
+    display: list-item; }
+  .steps .meter {
+    display: none; } }
+
+#shipping #shipping-address {
+  width: 90%;
+  margin: 2em auto; }
+  @media (min-width: 44em) {
+    #shipping #shipping-address {
+      width: 45%; } }
+  #shipping #shipping-address .one-third {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: start;
+    justify-content: flex-start; }
+    @media (min-width: 44em) {
+      #shipping #shipping-address .one-third {
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-pack: justify;
+        justify-content: space-between; } }

@@ -1,0 +1,22 @@
+#shipping {
+  #shipping-address {
+    width: 90%;
+    margin: 2em auto;
+
+    @media (min-width: 44em) {
+      width: 45%;
+    }
+
+  .one-third {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    @media (min-width: 44em) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  }
+}
