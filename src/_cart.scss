@@ -146,15 +146,18 @@
       }
     }
 
-    #subtotal {
-      margin: auto;
+    #order {
+      text-align: center;
+      #subtotal {
+        margin: auto;
 
-      @media (min-width: 48em) {
-        margin: 1em;
-      }
+        @media (min-width: 48em) {
+          margin: 1em;
+        }
 
-      h3 {
-        margin: .5em;
+        h3 {
+          margin: .5em;
+        }
       }
     }
   }
