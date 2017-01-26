@@ -47,6 +47,7 @@
           <!-- <input type="hidden" name="redirect" value="cart"> -->
           <input type="hidden" name="qty" value="">
           <input type="hidden" name="purchasableId" value="">
+          {{ getCsrfInput() }}
            <input id='add-to-cart' type="submit" value="Add to cart">
       </form>
       <button id='plus'>+</button>

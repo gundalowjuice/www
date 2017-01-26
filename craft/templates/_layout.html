@@ -22,6 +22,8 @@
 
  <body {% if bodyId is defined %}id= {{ bodyId}} {% endif %}>
 
+   {% set cart = craft.commerce.cart %}
+
 	 {% include '_includes/header' %}
 
    {% include '_includes/shipping-info' %}
