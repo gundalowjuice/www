@@ -1,5 +1,7 @@
 {% extends '_layout' %}
 
+{% set bodyId = 'order' %}
+
 {% set number = craft.request.param('number') %}
 {% set order = craft.commerce.orders.number(number).first() %}
 
@@ -9,14 +11,14 @@
 
 {% block content %}
 
-    <div class="row">
-        <div class="twelve columns">
+    <div class="container">
+        <div class="flex-wrapper">
 
             {% if currentUser %}<p><a href="{{ url('customer') }}">My Orders</a></p>{% endif %}
             <h1>Order #{{ order.id }}</h1>
 
 
-            <div class="row">
+            <div class="order-details">
                 <div class="four columns">
                     <h4>Details</h4>
 
@@ -61,8 +63,7 @@
                 {% for item in order.lineItems %}
                     <tr>
                         <td>
-                            <strong>{{ item.description }}</strong><br>
-                            SKU: {{ item.sku }}
+                            {{ item.description }}
                         </td>
                         <td>
                             {% if item.onSale %}
@@ -79,7 +80,7 @@
                 {% for adjustment in order.adjustments %}
                     <tr>
                         <td>{{ adjustment.type }}</td>
-                        <td colspan="2"><strong>{{ adjustment.name }}</strong><br>({{ adjustment.description }})</td>
+                        <td colspan="2">{{ adjustment.name }}<br>{{ adjustment.description }}</td>
                         <td class="text-right">{{ adjustment.amount|commerceCurrency(cart.currency) }}</td>
                     </tr>
                 {% endfor %}
