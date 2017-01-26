@@ -1,3 +1,11 @@
+
+{# Define the site navigation #}
+{% set nav = {
+  juice:    { title: "Shop Juice" },
+  about:    { title: "About Us" },
+  faq:      { title: "FAQ" }
+} %}
+
 <header>
   <ul>
     <li id="search">
@@ -19,12 +27,12 @@
               <input type="text" placeholder="search">
             </form>
           </li>
-      {% if siteNav.navMenu | length %}
-        {% for row in siteNav.navMenu %}
-          <li><a href="{{ row.navUrl }}"> {{ row.navLabel }}</a></li>
-        {% endfor %}
+        {% for slug, item in nav %}
+              <li>
+                <a href="{{ url(slug) }}" {% if craft.request.firstSegment == slug %}class="active"{% endif %}>{{ item.title|raw }}</a>
+              </li>
+          {% endfor %}
         </ul>
-      {% endif %}
       </nav>
     </li>
     <li id="logo">
