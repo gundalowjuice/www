@@ -4,15 +4,15 @@
 {% set order = craft.commerce.orders.number(number).first() %}
 
 {% if not order %}
-    {% redirect 'shop/customer' %}
+    {% redirect 'customer' %}
 {% endif %}
 
-{% block main %}
+{% block content %}
 
     <div class="row">
         <div class="twelve columns">
 
-            {% if currentUser %}<p><a href="{{ url('shop/customer') }}">My Orders</a></p>{% endif %}
+            {% if currentUser %}<p><a href="{{ url('customer') }}">My Orders</a></p>{% endif %}
             <h1>Order #{{ order.id }}</h1>
 
 
@@ -38,7 +38,7 @@
                 <div class="four columns">
                     <h4>Billing Address</h4>
                     {% if order.billingAddress %}
-                    {% include 'shop/_includes/addresses/address' with { address: order.billingAddress } %}
+                    {% include '_includes/addresses/address' with { address: order.billingAddress } %}
                     {% endif %}
                 </div>
             </div>
