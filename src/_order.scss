@@ -1,0 +1,44 @@
+#order {
+  main {
+    .container {
+      width: 90%;
+      margin: auto;
+
+      @media (min-width: 44em) {
+        width: 60%;
+      }
+    }
+
+    .flex-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        align-self: center;
+        margin: 1em;
+      }
+
+      .order-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 0 0 2em 0;
+
+        @media (min-width: 44em) {
+          flex-direction: row;
+        }
+      }
+
+      table {
+        align-self: center;
+        margin: 2em 0;
+        width: 90%;
+        text-align: left;
+
+        .text-right {
+          text-align: right;
+        }
+      }
+    }
+  }
+}
