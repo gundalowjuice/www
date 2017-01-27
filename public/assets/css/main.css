@@ -1170,3 +1170,12 @@ footer {
     text-align: left; }
     #order main .flex-wrapper table .text-right {
       text-align: right; }
+
+#media-logos {
+  background-color: #999999;
+  text-align: center; }
+  #media-logos h2 {
+    margin: 1em;
+    color: #4D4D4D; }
+  #media-logos #img-wrapper {
+    margin-bottom: 2em; }

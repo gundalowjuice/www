@@ -34,21 +34,6 @@
 
     {% endfor %}
 
-    <h1>frequently asked questions</h1>
-
-    {% for block in entry.faq %}
-
-      {% if block.type == 'faq' %}
-
-        <h2>{{ block.heading }}</h2>
-
-        {{ block.textContent }}
-
-      {% endif %}
-
-    {% endfor %}
-
-
   </section>
 
 {% endblock %}
