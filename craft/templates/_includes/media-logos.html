@@ -1,0 +1,19 @@
+<div id="media-logos">
+  <h2>{{ mediaLogo.headline }}</h2>
+  <div id="img-wrapper">
+    <div class="carousel">
+
+    {% for block in mediaLogo.mediaLogo %}
+      <div class="carousel-cell">
+        {% if block.type == 'logo' %}
+        {% set image = block.image.first() %}
+          <a href="{{ block.hyperlink}}">
+            <img src="{{ image.getUrl() }}" >
+          </a>
+        {% endif%}
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
