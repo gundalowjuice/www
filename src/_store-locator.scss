@@ -1,0 +1,44 @@
+#store-locator{
+  #map-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 44em) {
+      flex-direction: row;
+      height: 71.5vh;
+      margin: 3em 0;
+    }
+
+    #location-list {
+      width: 100%;
+      order: 2;
+
+      @media (min-width: 44em) {
+        width: 35%;
+        order: 1;
+        overflow-y: scroll;
+      }
+
+      p {
+        margin: auto 1em;
+        padding: 1em;
+        border-bottom: 1px dotted $gj-grey;
+
+        #store-name {
+          font-weight: bold;
+        }
+      }
+    }
+
+    #map {
+      width: 100%;
+      order: 1;
+
+      @media (min-width: 44em) {
+        width: 65%;
+        order: 2;
+      }
+    }
+  }
+
+}
