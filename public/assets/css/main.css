@@ -1179,3 +1179,40 @@ footer {
     color: #4D4D4D; }
   #media-logos #img-wrapper {
     margin-bottom: 2em; }
+
+#store-locator #map-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  @media (min-width: 44em) {
+    #store-locator #map-wrapper {
+      -ms-flex-direction: row;
+      flex-direction: row;
+      height: 71.5vh;
+      margin: 3em 0; } }
+  #store-locator #map-wrapper #location-list {
+    width: 100%;
+    -ms-flex-order: 2;
+    order: 2; }
+    @media (min-width: 44em) {
+      #store-locator #map-wrapper #location-list {
+        width: 35%;
+        -ms-flex-order: 1;
+        order: 1;
+        overflow-y: scroll; } }
+    #store-locator #map-wrapper #location-list p {
+      margin: auto 1em;
+      padding: 1em;
+      border-bottom: 1px dotted #58595b; }
+      #store-locator #map-wrapper #location-list p #store-name {
+        font-weight: bold; }
+  #store-locator #map-wrapper #map {
+    width: 100%;
+    -ms-flex-order: 1;
+    order: 1; }
+    @media (min-width: 44em) {
+      #store-locator #map-wrapper #map {
+        width: 65%;
+        -ms-flex-order: 2;
+        order: 2; } }
