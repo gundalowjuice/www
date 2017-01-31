@@ -3,6 +3,10 @@
     width: 75%;
     margin: auto;
 
+    input {
+      font: 1em $body-font;
+    }
+
     form {
       display: flex;
       flex-direction: column;
@@ -24,6 +28,31 @@
           input {
             float: right;
           }
+
+          select {
+            float: right;
+          }
+        }
+
+        input[type='submit'] {
+          width: 100%;
+          padding: .7em .5em .5em .5em;
+          margin: .5em 0 0 0;
+          text-align: center;
+          background-color: #fff;
+          border: 1px solid black;
+          cursor: pointer;
+          font: 1em $body-font;
+          font-weight: bold;
+          border-radius: .2em;
+        }
+
+        #sameAddress {
+          margin: 2em 2em 2em 0;
+        }
+
+        .label-body {
+
         }
       }
     }

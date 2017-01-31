@@ -9,10 +9,11 @@
 
   <div id='shipping-address'>
     <h3>Shipping Method</h3>
+    <p>select shipping method</p>
+    
     <div class="row">
 
         <div class="two-thirds column">
-
         {#
         Choosing a shipping method.
         Now that we know the cart's address, we need to show all available shipping methods. Only those that match
@@ -47,7 +48,7 @@
             {% endfor %}
             <span class="flash">{{ cart.getErrors('shippingMethod')|join }}</span>
 
-            <p><input type="submit" class="button button-primary" value="Select Shipping Method"/></p>
+            <p><input type="submit" class="button button-primary" value="Save & Continue"/></p>
 
         </form>
         {% endif %}
