@@ -478,6 +478,8 @@ footer {
           display: none;
           bottom: 87%;
           right: 1.65em; } }
+  #basket-dropdown #empty-cart {
+    text-align: center; }
 
 #shop-juice main#content #product-image {
   margin: 6em 0; }
@@ -993,6 +995,9 @@ footer {
           margin: 1em; } }
       #cart #cart-subtotal #order #subtotal h3 {
         margin: .5em; }
+
+#cart #empty-cart {
+  text-align: center; }
 
 #checkout main .row {
   width: 90%;
