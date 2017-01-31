@@ -1,0 +1,29 @@
+#shipping {
+
+  #shipping-address {
+
+    h3 {
+      margin-bottom: 1em;
+    }
+
+    p {
+      margin-bottom: 1em;
+      text-transform: capitalize;
+    }
+
+    .button-primary {
+      margin: 2em 0;
+    }
+
+    input[type='submit'] {
+      padding: .7em .5em .5em .5em;
+      text-align: center;
+      background-color: #fff;
+      border: 1px solid black;
+      cursor: pointer;
+      font: 1em $body-font;
+      font-weight: bold;
+      border-radius: .2em;
+    }
+  }
+}

@@ -23,6 +23,9 @@
 				<p>No payment methods available.</p>
 			{% endif %}
 
+
+{#
+
 			{% if craft.commerce.paymentMethods|length %}
 				<form method="POST" id="paymentMethod" class="form-inline">
 
@@ -51,6 +54,8 @@
 					{% endif %}
 				</form>
 			{% endif %}
+
+#}
 
 			{% if cart.paymentMethodId %}
 				<form method="POST" class="form-horizontal">
@@ -214,8 +219,8 @@
 
 					{% for adjustment in cart.adjustments %}
 						<li>
-							<strong>{{ adjustment.name }}</strong> <span class="right">{{ adjustment.amount|commerceCurrency(cart.currency) }}
-							({{ adjustment.description }})</span>
+							<span>{{ adjustment.name }}</span> <span class="right">{{ adjustment.amount|commerceCurrency(cart.currency) }}
+						</span>
 						</li>
 					{% endfor %}
 
