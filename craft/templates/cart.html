@@ -96,5 +96,10 @@
   </div>
 </section>
 
+{% else %}
+<div id='empty-cart'>
+  <h2>{{ emptyCart.emptyCart }}</h2>
+</div>
+
 {% endif %}
 {% endblock %}

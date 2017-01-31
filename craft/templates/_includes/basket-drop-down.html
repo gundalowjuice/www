@@ -3,8 +3,8 @@
 
 <div id="basket-dropdown">
   {% if not cart.lineItems|length %}
-    <div>
-      <p>You haven't added any juice, this makes us sad.</p>
+    <div id='empty-cart'>
+      <p>{{ emptyCart.emptyCart }}</p>
     </div>
   {% endif %}
 
