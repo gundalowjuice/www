@@ -14,7 +14,8 @@
  <head>
  	<meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
- 	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+ 	<title>{% if title is defined %}{{ title }}{% else %}{{entry.title}} - {% endif %}{{ siteName }}</title>
+  <meta name="description" content="{% if description is defined %}{{ description }}{% endif %}">
  	<link rel="home" href="{{ siteUrl }}" />
 	<link rel="stylesheet" href="{{ siteUrl }}assets/css/main.css">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
