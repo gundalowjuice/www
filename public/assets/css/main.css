@@ -246,7 +246,7 @@ header {
           border-bottom: 10px solid #58595b; }
           @media (min-width: 44em) {
             header ul #nav nav:after {
-              left: .26em; } }
+              left: 1.45em; } }
         header ul #nav nav ul {
           display: -ms-flexbox;
           display: flex;
