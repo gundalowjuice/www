@@ -18,9 +18,16 @@
 
 {% extends "_layout" %}
 {% set title = "404" %}
+{% set bodyId = "error" %}
 
 {% block content %}
-	<h1>Page not found</h1>
 
-	<p>What’s worse, a hilarious 404 page can’t be found either.</p>
+<div id="wrapper">
+<img id="flag" src="{{ flag.flagImage.first().getUrl() }}" alt="">
+  <h3><span>Oh no! Shopper overboard!</span></h3>
+  <h3>The page you requested does not exist</h3>
+  <h3>
+    <a href="/juice">Click here to continue shopping</a>
+  </h3>
+</div>
 {% endblock %}
