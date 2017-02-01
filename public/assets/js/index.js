@@ -3,6 +3,11 @@ console.log('ready')
 $(document).ready(function () {
   checkDisplay()
 
+$(document).keydown(function(t) {
+  juiceChange()
+  contentDisplay()
+})
+
 // Initialize flickity
 
   $('.carousel').flickity({
