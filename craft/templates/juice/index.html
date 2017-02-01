@@ -11,7 +11,8 @@
  #}
 
 {% extends "_layout" %}
-
+{% set title = entry.seoTitle %}
+{% set description = entry.seoDesc %}
 {% set bodyId = "shop-juice" %}
 
 {% block content %}
@@ -197,5 +198,5 @@
   </div>
 
   {% include '_includes/media-logos'%}
-  
+
 {% endblock %}
