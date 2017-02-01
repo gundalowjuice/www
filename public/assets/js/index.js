@@ -29,6 +29,10 @@ $(document).keydown(function(t) {
 
 // Basket dropdown
 
+  $('#basket').ready(function () {
+    $('#basket-dropdown').slideToggle('slow').delay(3000).slideToggle('slow')
+  })
+
   $('#basket').click(function () {
     $('#basket-dropdown').slideToggle('slow')
   })

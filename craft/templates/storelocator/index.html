@@ -1,0 +1,54 @@
+{#
+ # Store Locator index template
+ # -------------------
+ #
+ # This template is loaded whenever http://example.com/store-locator is
+ # requested, because it is located at store-locator/index.html in your
+ # craft/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+
+{% set bodyId = "store-locator" %}
+
+{% block content%}
+
+{% set entry = craft.entries.slug('store-locator').first %}
+{% set locations = entry.locations %}
+
+{% set options = {
+  center: {'lat':39.2904, 'lng':-76.6122},
+  height: 500,
+  zoom: 10,
+  draggable: true,
+  markerInfo: '_includes/mapInfoBubble',
+  markerOptions: {
+      icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+  },
+  infoWindowOptions: {
+      maxWidth: 200
+  }
+} %}
+
+<div id="map-wrapper">
+<div id="location-list">
+  {% for block in locations %}
+  {% if block.type == 'stores' %}
+    <p>
+      <span id="store-name">{{ block.storeName }}</span><br>
+      <span>{{ block.address.street1 }}</span><br>
+      <span>{{ block.address.city }}, {{ block.address.state }}, {{ block.address.zip }}</span>
+    </p>
+  {% endif %}
+  {% endfor %}
+
+</div>
+
+<div id="map">
+  {{ craft.smartMap.map(locations, options) }}
+</div>
+</div>
+{% endblock%}
