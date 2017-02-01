@@ -52,7 +52,7 @@
     </tbody>
   </table>
 
-
+{#
   <section id='special'>
     {% set products = craft.commerce.products.type('gifts').find() %}
       {% for product in products %}
@@ -72,27 +72,21 @@
         {% endfor %}
       {% endfor %}
   </section>
+#}
+
+  <section id="order">
+    <div id='subtotal'>
+      <h3>Subtotal</h3>
+      <h3>{{ cart.itemTotal|commerceCurrency(cart.currency) }}</h3>
+      <a class="button button-primary" href="{{ url('checkout') }}">Checkout</a>
+    </div>
+  </section>
 </div>
 
 <section id='cart-subtotal'>
   <div id="sub-content">
     <h3>Return Policy</h3>
     <p>All sales are final and returns are not accepted.  If your order was processed and sent incorrectly, please let us know.</p>
-  </div>
-  <div id="order">
-    <table id='subtotal'>
-      <tbody>
-        <tr>
-          <td>
-            <h3>Subtotal</h3>
-          </td>
-          <td>
-            <h3>{{ cart.itemTotal|commerceCurrency(cart.currency) }}</h3>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <a class="button button-primary" href="{{ url('checkout') }}">Checkout</a>
   </div>
 </section>
 
