@@ -120,12 +120,34 @@
         }
       }
     }
+
+    #order {
+      text-align: right;
+      margin: 1em 3.5em;
+      #subtotal {
+
+        @media (min-width: 48em) {
+          margin: 1em;
+        }
+
+        h3 {
+          margin: 1em 0;
+        }
+      }
+
+      .button-primary {
+        color: #fff;
+        background-color: $gj-grey;
+        padding: 1em 4em;
+        border-radius: .2em;
+      }
+    }
   }
 
   #cart-subtotal {
-    display: flex;
+
     justify-content: center;
-    flex-direction: column;
+
     text-align: center;
     margin: 0 auto;
     padding: 1em;
@@ -138,33 +160,11 @@
     }
 
     #sub-content {
-      margin: 1em;
+      margin: 1em 0 1em 20.5em;
       max-width: 25em;
 
       h3 {
-        margin-bottom: .5em;
-      }
-    }
-
-    #order {
-      text-align: center;
-      #subtotal {
-        margin: auto;
-
-        @media (min-width: 48em) {
-          margin: 1em;
-        }
-
-        h3 {
-          margin: .5em;
-        }
-      }
-
-      .button-primary {
-        color: $gj-grey;
-        background-color: #fff;
-        padding: 1em 4em;
-        border-radius: .2em;
+        margin-bottom: 1em;
       }
     }
   }
