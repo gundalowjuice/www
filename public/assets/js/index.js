@@ -6,6 +6,9 @@ $(document).ready(function () {
 $(document).keydown(function(t) {
   juiceChange()
   contentDisplay()
+  iconDisplay()
+  ingredient()
+  ingredientColor()
 })
 
 // Initialize flickity

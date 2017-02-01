@@ -53,6 +53,11 @@
       </p>
       <div id="button">
 
+        <p>
+          <a id="cta" class="{{ product.slug }}" href="/juice">shop juice</a>
+        </p>
+
+{# Remove Buy CTA
         {% set variant = product.defaultVariant %}
         <button id='minus' class="{{ product.slug }}">-</button>
         <form class="{{ product.slug }}" method="POST">
@@ -63,6 +68,9 @@
             <input id="add-to-cart" type="submit" value="Add to cart">
         </form>
         <button id='plus' class="{{ product.slug }}">+</button>
+
+#}
+
       </div>
     </div>
   </div>
