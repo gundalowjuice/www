@@ -12,7 +12,7 @@
 
 {% include '_includes/meter' %}
 
-    <div class="row">
+    <div id="email-wrap">
         <div class='email'>
 
             <h3>Already Registered ?</h3>
@@ -63,7 +63,7 @@
 
                 <span class="flash">{{ cart.getErrors('email')|join }}</span><br>
 
-                <input type="submit" value="Continue as Guest" class="button button-primary"/>
+                <input type="submit" value="Continue as Guest" class="button button-primary guest"/>
 
             </form>
         </div>

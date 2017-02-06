@@ -25,5 +25,19 @@
       font-weight: bold;
       border-radius: .2em;
     }
+
+    .shipping-select {
+
+      #policy {
+        margin: 1em 0;
+        font-style: italic;
+        cursor: pointer;
+        transition: opacity 0.5s ease;
+
+        &:hover {
+          opacity: .6;
+        }
+      }
+    }
   }
 }

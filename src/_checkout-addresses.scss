@@ -10,7 +10,7 @@
     form {
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: center;
 
       @media (min-width: 44em) {
         flex-direction: row;

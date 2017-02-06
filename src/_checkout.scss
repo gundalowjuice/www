@@ -1,12 +1,33 @@
 #checkout {
   main{
-    .row {
+    #email-wrap {
       width: 90%;
       margin: 2em auto;
+
+      @media (min-width: 44em) {
+        display: flex;
+        width: 50%;
+        margin: auto;
+        justify-content: center;
+      }
     }
 
     .email {
       margin: 2em auto 4em;
+      width: 50%;
+
+      @media(min-width: 44em) {
+        margin: 2em 0 4em;
+        flex-direction: row;
+        width: 15em;
+      }
+
+      &:first-of-type {
+
+        @media (min-width: 44em) {
+          margin-right: 2em;
+        }
+      }
 
       h3 {
         margin-bottom: 1em;
@@ -15,16 +36,41 @@
       form {
         display: flex;
         flex-direction: column;
+
+        @media (min-width: 44em) {
+          min-height: 12em;
+        }
+
+        .flash {
+          position: relative;
+        }
+
+        .guest {
+          position: relative;
+
+          @media (min-width: 44.938em) {
+            top: 4.20em;
+          }
+
+          @media (min-width: 57.125em) {
+              top: 2.65em;
+          }
+        }
       }
 
-      @media (min-width: 30em) {
-        flex-direction: row;
-        width: 15em;
+      input.button.button-primary  {
+        width: 100%;
+      padding: .7em .5em .5em .5em;
+      margin: .5em 0 0 0;
+      text-align: center;
+      background-color: #fff;
+      border: 1px solid black;
+      cursor: pointer;
+      font: 1em "Josefin Sans", sans-serif;
+      font-weight: bold;
+      border-radius: .2em;
       }
-    }
 
-    input.button.button-primary {
-      width: 12em;
     }
   }
 }
