@@ -519,9 +519,9 @@ footer {
     #juice-content #juice-header.compass-case h2:nth-of-type(1) {
       color: #ee2425; }
     #juice-content #juice-header.crew-case h2:nth-of-type(1) {
-      color: #3e3b5e; }
-    #juice-content #juice-header.lighthouse-case h2:nth-of-type(1) {
       color: #666666; }
+    #juice-content #juice-header.lighthouse-case h2:nth-of-type(1) {
+      color: #3e3b5e; }
     @media (min-width: 44em) {
       #juice-content #juice-header {
         -ms-flex-direction: row;
@@ -557,9 +557,9 @@ footer {
   #button form.compass-case {
     background-color: #D50B0C; }
   #button form.crew-case {
-    background-color: #252245; }
-  #button form.lighthouse-case {
     background-color: #4D4D4D; }
+  #button form.lighthouse-case {
+    background-color: #252245; }
   #button input[type='submit'] {
     display: inline-block;
     height: 38px;
@@ -612,9 +612,9 @@ footer {
     #button #minus.compass-case {
       background-color: #ee2425; }
     #button #minus.crew-case {
-      background-color: #3e3b5e; }
-    #button #minus.lighthouse-case {
       background-color: #666666; }
+    #button #minus.lighthouse-case {
+      background-color: #3e3b5e; }
   #button #plus {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px; }
@@ -637,9 +637,9 @@ footer {
     #button #plus.compass-case {
       background-color: #ee2425; }
     #button #plus.crew-case {
-      background-color: #3e3b5e; }
-    #button #plus.lighthouse-case {
       background-color: #666666; }
+    #button #plus.lighthouse-case {
+      background-color: #3e3b5e; }
 
 #pack-info > p {
   max-width: 24em;
@@ -1030,12 +1030,17 @@ footer {
       justify-content: center; } }
 
 #checkout main .email {
-  margin: 2em auto 4em; }
+  margin: 2em auto 4em;
+  width: 50%; }
   @media (min-width: 44em) {
     #checkout main .email {
-      margin: 2em 0 4em; } }
-  #checkout main .email:first-of-type {
-    margin-right: 2em; }
+      margin: 2em 0 4em;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      width: 15em; } }
+  @media (min-width: 44em) {
+    #checkout main .email:first-of-type {
+      margin-right: 2em; } }
   #checkout main .email h3 {
     margin-bottom: 1em; }
   #checkout main .email form {
@@ -1043,14 +1048,30 @@ footer {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column; }
-  @media (min-width: 30em) {
-    #checkout main .email {
-      -ms-flex-direction: row;
-      flex-direction: row;
-      width: 15em; } }
-
-#checkout main input.button.button-primary {
-  width: 12em; }
+    @media (min-width: 44em) {
+      #checkout main .email form {
+        min-height: 12em; } }
+    #checkout main .email form .flash {
+      position: relative; }
+    #checkout main .email form .guest {
+      position: relative; }
+      @media (min-width: 44.938em) {
+        #checkout main .email form .guest {
+          top: 4.20em; } }
+      @media (min-width: 57.125em) {
+        #checkout main .email form .guest {
+          top: 2.65em; } }
+  #checkout main .email input.button.button-primary {
+    width: 100%;
+    padding: .7em .5em .5em .5em;
+    margin: .5em 0 0 0;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid black;
+    cursor: pointer;
+    font: 1em "Josefin Sans", sans-serif;
+    font-weight: bold;
+    border-radius: .2em; }
 
 #checkout-addresses .address {
   width: 75%;
@@ -1062,8 +1083,8 @@ footer {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    -ms-flex-pack: distribute;
-    justify-content: space-around; }
+    -ms-flex-pack: center;
+    justify-content: center; }
     @media (min-width: 44em) {
       #checkout-addresses .address form {
         -ms-flex-direction: row;
@@ -1110,6 +1131,14 @@ footer {
   font-weight: bold;
   border-radius: .2em; }
 
+#shipping #shipping-address .shipping-select #policy {
+  margin: 1em 0;
+  font-style: italic;
+  cursor: pointer;
+  transition: opacity 0.5s ease; }
+  #shipping #shipping-address .shipping-select #policy:hover {
+    opacity: .6; }
+
 #payment main {
   width: 90%;
   margin: 2em auto; }
@@ -1131,7 +1160,7 @@ footer {
       float: right; }
 
 .steps {
-  margin: 3em auto;
+  margin: 2em auto 1em;
   width: 90%; }
   @media (min-width: 44em) {
     .steps {
@@ -1167,10 +1196,11 @@ footer {
   opacity: 1; }
 
 .steps ul li.sel a {
-  color: #58595b; }
+  color: #58595b;
+  font-size: 1.25em; }
 
 .steps .meter {
-  height: 10px;
+  height: 20px;
   position: relative;
   border: 1px solid #58595b;
   border-radius: 10px;
@@ -1262,7 +1292,7 @@ footer {
   text-align: center; }
   #media-logos h2 {
     margin: 1em;
-    color: #4D4D4D; }
+    color: #252245; }
   #media-logos #img-wrapper {
     margin-bottom: 2em; }
 

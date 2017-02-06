@@ -10,7 +10,7 @@
   <div id='shipping-address'>
     <h3>Shipping Method</h3>
     <p>select shipping method</p>
-    
+
     <div class="row">
 
         <div class="two-thirds column">
@@ -22,9 +22,11 @@
         in a method that matches all addresses.
         #}
 
+{#
         {% if not craft.commerce.availableShippingMethods|length %}
             <p>No shipping methods available.<p><p> <a class="button button-primary" href="{{ url('shop/checkout/payment') }}">Continue to payment</a></p>
         {% endif %}
+#}
 
         {% if craft.commerce.availableShippingMethods|length %}
         <form method="POST">
@@ -44,6 +46,9 @@
                             {{ method.amount|commerceCurrency(cart.currency) }}
                         </span>
                     </label>
+                    <p id="policy">
+                      <a href="/customer-care">Read our shipping & delivery policy</a>
+                    </p>
                 </div>
             {% endfor %}
             <span class="flash">{{ cart.getErrors('shippingMethod')|join }}</span>
