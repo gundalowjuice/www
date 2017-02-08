@@ -1,0 +1,21 @@
+#error {
+
+  #wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 20em;
+      margin: 2em auto;
+    }
+
+    h3 {
+      margin-bottom: 1em;
+
+      span {
+        color: #C4161C
+      }
+    }
+  }
+}

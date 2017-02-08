@@ -1,5 +1,6 @@
 {% extends "_layout" %}
 
+{% set bodyId = 'customer'%}
 {% block content %}
     <div class="row">
         <div class="twelve columns">
@@ -27,6 +28,42 @@
                     {% endfor %}
                     </tbody>
                 </table>
+
+            {% else %}
+            <div class='email'>
+
+                <h3>Sign In</h3>
+
+                <form method="post" accept-charset="UTF-8">
+
+                    {{ getCsrfInput() }}
+
+                    <input type="hidden" name="action" value="users/login">
+                    <input type="hidden" name="redirect" value="checkout/addresses">
+
+                    <label for="loginName">Email</label>
+                    <input id="loginName" class="u-full-width" type="text" name="loginName" placeholder="email@site.com"
+                           value="{{ craft.session.rememberedUsername }}">
+
+                    <label for="password">Password</label>
+                    <input id="password" class="u-full-width" type="password" name="password">
+
+                    <label>
+                        <input type="checkbox" name="rememberMe" value="1">
+                        Remember me
+                    </label>
+
+                    <input type="submit" value="Login" class="button button-primary"/>
+
+                </form>
+
+                <p><a href="{{ url('forgotpassword') }}">Forget your password?</a></p>
+                <p><a href="/customer/register">Create Account</a></p>
+
+            </div>
+              <div>
+
+              </div>
 
             {% endif %}
         </div>

@@ -1,0 +1,41 @@
+#register {
+
+  #register-wrapper {
+    width: 90%;
+    margin: auto;
+
+    @media (min-width: 44em) {
+      width: 50%;
+    }
+
+    h3 {
+      margin: 1em auto .25em;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      margin: auto;
+      text-align: center;
+
+      @media (min-width: 44em) {
+        width: 25%;
+      }
+
+      input[type='submit'] {
+        width: 100%;
+        padding: .7em .5em .5em .5em;
+        margin: .5em 0 0 0;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid black;
+        cursor: pointer;
+        font: 1em $body-font;
+        font-weight: bold;
+        border-radius: .2em;
+      }
+    }
+  }
+}
