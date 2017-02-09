@@ -3,12 +3,16 @@
   text-align: center;
 
   h2 {
-    margin: 1em;
+    padding: 1em;
     color: $lighthouse-case-dark;
   }
 
-  #img-wrapper {
-    margin-bottom: 2em;
+  .carousel {
+    padding: 1em;
+  }
+
+  ol {
+    display: none;
   }
 
 }
