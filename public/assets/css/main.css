@@ -1298,10 +1298,12 @@ footer {
   background-color: #999999;
   text-align: center; }
   #media-logos h2 {
-    margin: 1em;
+    padding: 1em;
     color: #252245; }
-  #media-logos #img-wrapper {
-    margin-bottom: 2em; }
+  #media-logos .carousel {
+    padding: 1em; }
+  #media-logos ol {
+    display: none; }
 
 #store-locator #map-wrapper {
   display: -ms-flexbox;
