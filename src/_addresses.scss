@@ -1,0 +1,59 @@
+#addresses {
+
+  .address-wrapper {
+    width: 60%;
+    margin: 2em auto;
+    text-align: center;
+  }
+
+  .one-half {
+    width: 50%;
+    margin: 0 auto 1em;
+    text-align: center;
+  }
+
+  .address-row {
+    display: flex;
+    width: 60%;
+    margin: auto;
+    justify-content: center;
+
+    .address-card {
+      margin: 0 1em;
+
+      .update {
+        display: flex;
+
+          a {
+            margin: 1em .5em 1em 0;
+            padding: .7em .5em .5em .5em;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid black;
+            cursor: pointer;
+            font: 1em $body-font;
+            font-weight: bold;
+            border-radius: .2em;
+            text-transform: capitalize;
+          }
+
+          input[type='submit'] {
+            margin: 1em .5em 1em 0;
+            padding: .7em .5em .5em .5em;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid black;
+            cursor: pointer;
+            font: 1em $body-font;
+            font-weight: bold;
+            border-radius: .2em;
+            text-transform: capitalize;
+
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+    }
+  }
+}

@@ -1098,6 +1098,8 @@ footer {
         float: right; }
       #checkout-addresses .address form .address-container .address-fieldset select {
         float: right; }
+      #checkout-addresses .address form .address-container .address-fieldset .address-select {
+        margin-bottom: 1em; }
       #checkout-addresses .address form .address-container input[type='submit'] {
         width: 100%;
         padding: .7em .5em .5em .5em;
@@ -1139,6 +1141,10 @@ footer {
   transition: opacity 0.5s ease; }
   #shipping #shipping-address .shipping-select #policy:hover {
     opacity: .6; }
+
+#shipping #shipping-address .one-third.column {
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
 
 #payment main {
   width: 90%;
@@ -1415,3 +1421,57 @@ footer {
       font: 1em "Josefin Sans", sans-serif;
       font-weight: bold;
       border-radius: .2em; }
+
+#customer .wrapper {
+  width: 50%;
+  margin: 2em auto;
+  text-align: center; }
+  #customer .wrapper table {
+    margin: 2em auto; }
+
+#addresses .address-wrapper {
+  width: 60%;
+  margin: 2em auto;
+  text-align: center; }
+
+#addresses .one-half {
+  width: 50%;
+  margin: 0 auto 1em;
+  text-align: center; }
+
+#addresses .address-row {
+  display: -ms-flexbox;
+  display: flex;
+  width: 60%;
+  margin: auto;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  #addresses .address-row .address-card {
+    margin: 0 1em; }
+    #addresses .address-row .address-card .update {
+      display: -ms-flexbox;
+      display: flex; }
+      #addresses .address-row .address-card .update a {
+        margin: 1em .5em 1em 0;
+        padding: .7em .5em .5em .5em;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid black;
+        cursor: pointer;
+        font: 1em "Josefin Sans", sans-serif;
+        font-weight: bold;
+        border-radius: .2em;
+        text-transform: capitalize; }
+      #addresses .address-row .address-card .update input[type='submit'] {
+        margin: 1em .5em 1em 0;
+        padding: .7em .5em .5em .5em;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid black;
+        cursor: pointer;
+        font: 1em "Josefin Sans", sans-serif;
+        font-weight: bold;
+        border-radius: .2em;
+        text-transform: capitalize; }
+        #addresses .address-row .address-card .update input[type='submit']:focus {
+          outline: none; }

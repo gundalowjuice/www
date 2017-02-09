@@ -1,7 +1,7 @@
 {% set bodyId = "checkout" %}
 
 {% if currentUser %}
-    {% redirect 'addresses' %}
+    {% redirect 'checkout/addresses' %}
 {% endif %}
 
 {% extends '_layout' %}

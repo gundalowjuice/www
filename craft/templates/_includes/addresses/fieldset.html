@@ -5,14 +5,14 @@
             <div class="address-select" data-address-id="{{ address.id }}">
                 <div class="actions">
                     <ul>
-                        <li><a class="edit" href="{{ url('shop/customer/addresses/edit?addressId='~ address.id ~'&redirect='~craft.request.path)}}">Edit</a>
+                        <li><a class="edit" href="{{ url('customer/addresses/edit?addressId='~ address.id ~'&redirect='~craft.request.path)}}">Edit</a>
                         </li>
                     </ul>
                 </div>
                 <div class="radio">
                     <input type="radio" name="{{ name }}Id"
                         {% if attribute(cart,name~'Id') == address.id %}checked="checked"{% endif %} value="{{ address.id }}"/>
-                        {% include 'shop/_includes/addresses/address' %}
+                        {% include '_includes/addresses/address' %}
                 </div>
             </div>
         {% endfor %}

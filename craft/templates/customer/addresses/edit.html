@@ -1,5 +1,7 @@
 {% extends '_layout' %}
 
+{% set bodyId = 'edit-addresses' %}
+
 {% block content %}
 
     {% set addressId = craft.request.param('addressId') %}
@@ -15,21 +17,21 @@
         {% if redirect %}
             <input type="hidden" name="redirect" value="{{ redirect }}">
         {% else %}
-            <input type="hidden" name="redirect" value="shop/customer/addresses">
+            <input type="hidden" name="redirect" value="customer/addresses">
         {% endif %}
 
         {% if addressId %}
             <input type="hidden" name="address[id]" value="{{ addressId }}">
         {% endif %}
 
-        {% include 'shop/_includes/addresses/form' %}
+        {% include '_includes/addresses/form' %}
 
         <input type="submit" value="Save Address">
     </form>
     {% if redirect %}
         <a href="/{{ redirect }}">Cancel</a>
     {% else %}
-        <a href="{{ url('shop/customer/addresses') }}">Cancel</a>
+        <a href="{{ url('customer/addresses') }}">Cancel</a>
     {% endif %}
 
 {% endblock %}
