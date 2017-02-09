@@ -3,7 +3,7 @@
 {% set bodyId = 'customer'%}
 {% block content %}
     <div class="row">
-        <div class="twelve columns">
+        <div class="twelve columns wrapper">
             {% if currentUser %}
 
                 <h1>My Orders</h1>
@@ -28,6 +28,10 @@
                     {% endfor %}
                     </tbody>
                 </table>
+
+                <div id="address-wrapper">
+                  <h2><a href="/customer/addresses">Manage Addresses</a></h2>
+                </div>
 
             {% else %}
             <div class='email'>
