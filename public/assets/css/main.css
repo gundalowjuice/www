@@ -483,14 +483,18 @@ footer {
     text-align: center; }
 
 #shop-juice main#content #product-image {
-  margin: 6em 0; }
+  margin: 2em 0; }
+  #shop-juice main#content #product-image img {
+    height: 18.750em; }
+  #shop-juice main#content #product-image .flickity-viewport {
+    height: 20.625em; }
 
 #juice-content {
   margin: 3em 2em; }
   @media (min-width: 44em) {
     #juice-content {
       max-width: 32em;
-      margin: 5em auto; } }
+      margin: 0 auto; } }
   #juice-content #juice-header {
     display: -ms-flexbox;
     display: flex;
