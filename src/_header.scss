@@ -175,4 +175,18 @@ header{
     // }
   }
 
+
+  #cart-total {
+
+    p {
+      position: absolute;
+      top: 1.25em;
+      right: 2.25em;
+      color: #000;
+      background-color: #fff;
+      border-radius: 100%;
+      line-height: 100%;
+      padding: .3em .2em .2em .3em;
+    }
+  }
 }
