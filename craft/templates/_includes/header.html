@@ -8,6 +8,8 @@
   customer: { title: "Sign In"}
 } %}
 
+{% set cart = craft.commerce.getCart() %}
+
 <header>
   <ul>
     <li id="search">
@@ -55,4 +57,10 @@
       </svg>
     </li>
   </ul>
+
+  {% if cart.totalQty != 0 %}
+  <div id='cart-total'>
+    <p>{{ cart.totalQty }}</p>
+  </div>
+  {% endif %}
 </header>
