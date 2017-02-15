@@ -4,7 +4,7 @@
 
   h2 {
     padding: 1em;
-    color: $lighthouse-case-dark;
+    color: #fff;
   }
 
   .carousel {
@@ -13,6 +13,15 @@
 
   ol {
     display: none;
+  }
+
+  .flickity-slider {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    padding: 0 1em;
   }
 
 }

@@ -8,7 +8,7 @@
         {% if block.type == 'logo' %}
         {% set image = block.image.first() %}
           <a href="{{ block.hyperlink}}">
-            <img src="{{ image.getUrl() }}" >
+            <img src="{{ image.getUrl('mediaLogo')}}" width="{{ image.getWidth('mediaLogo')}}">
           </a>
         {% endif%}
       </div>
