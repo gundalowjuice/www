@@ -88,9 +88,6 @@ function juiceChange () {
   var price = document.createElement('h2')
   var description = document.createElement('p')
 
-  console.log(plusBtn)
-  console.log(minusBtn)
-
   for (var i = 0; i < carouselImage.length; i++) {
     // starboard-strawberry
     if (carouselImage[i].classList.contains('is-selected') && carouselImage[i].classList.contains('starboard-strawberry')) {
@@ -377,7 +374,6 @@ function ingredient () {
       target.classList.add('s-s-veggie')
       target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green')
     } else {
-      console.log('no juice selected')
     }
   }
 }
@@ -501,7 +497,6 @@ function contentDisplay () {
 
   for (var i = 0; i < ingredientIcons.length; i++) {
     if ( ingredientContent[i].classList.contains('hide') ) {
-      console.log('yup')
     } else {
       ingredientContent[i].classList.add('hide')
     }

@@ -42,10 +42,10 @@
 
       {% set variant = product.defaultVariant %}
       <button id='minus'>-</button>
-      <form class="" method="POST">
+      <form id="addCart" class="" method="POST">
           <input type="hidden" name="action" value="commerce/cart/updateCart">
           <!-- <input type="hidden" name="redirect" value="cart"> -->
-          <input type="hidden" name="qty" value="">
+          <input id="qtyBtn" type="hidden" name="qty" value="0">
           <input type="hidden" name="purchasableId" value="">
           {{ getCsrfInput() }}
            <input id='add-to-cart' type="submit" value="Add to cart">
@@ -199,5 +199,7 @@
   {% include '_includes/media-logos'%}
 
   {% includeJsFile "/assets/js/basketLoad.js" %}
+
+  {% includeJsFile '/assets/js/addButton.js' %}
 
 {% endblock %}

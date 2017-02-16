@@ -14,8 +14,6 @@ function addCart () {
 
   target.value = 'add ' + total + ' to cart'
   qty.value = total
-
-  console.log(total)
 }
 
 function minusCart () {
