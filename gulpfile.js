@@ -21,7 +21,7 @@ gulp.task('sass', function () {
 
 gulp.task('watch', ['browserSync', 'sass'], function () {
   gulp.watch('src/*.scss', ['sass'])
-  gulp.watch(['craft/templates/**/*.html', 'public/assets/js/index.js'], browserSync.reload)
+  gulp.watch(['craft/templates/**/*.html', 'public/assets/js/*.js'], browserSync.reload)
 })
 
 gulp.task('browserSync', function () {
