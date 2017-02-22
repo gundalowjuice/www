@@ -208,7 +208,7 @@
 		<div class="one-third column">
 
 			<div class="review-card">
-				<h5>Order Review</h5>
+				<h3>Order Review</h3>
 				<ul>
 					{% for item in cart.lineItems %}
 						<li>
@@ -218,7 +218,7 @@
 
 
 					{% for adjustment in cart.adjustments %}
-						<li>
+						<li id='order-shipping'>
 							<span>{{ adjustment.name }}</span> <span class="right">{{ adjustment.amount|commerceCurrency(cart.currency) }}
 						</span>
 						</li>
@@ -238,7 +238,7 @@
 						</li>
 					{% endif %}
 
-					<li>
+					<li id='order-total'>
 						<strong>Total {{ cart.currency }}:</strong> <span class="right">{{ cart.totalPrice|commerceCurrency(cart.currency) }}</span>
 					</li>
 					{% if cart.currency != cart.paymentCurrency %}

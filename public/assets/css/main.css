@@ -264,9 +264,6 @@ header {
               align-items: flex-end; } }
           header ul #nav nav ul li {
             padding: .25em .5em; }
-            @media (min-width: 44em) {
-              header ul #nav nav ul li:nth-of-type(-n+4) {
-                font-size: 1.5em; } }
             header ul #nav nav ul li form {
               display: -ms-flexbox;
               display: flex;
@@ -1141,55 +1138,60 @@ footer {
       #checkout-addresses .address form .address-container #sameAddress {
         margin: 2em 2em 2em 0; }
 
-#shipping #shipping-address h3 {
-  margin-bottom: 1em; }
-
-#shipping #shipping-address p {
-  margin-bottom: 1em;
-  text-transform: capitalize; }
-
-#shipping #shipping-address .button-primary {
-  margin: 2em 0; }
-
-#shipping #shipping-address input[type='submit'] {
-  padding: .7em .5em .5em .5em;
-  text-align: center;
-  background-color: #fff;
-  border: 1px solid black;
-  cursor: pointer;
-  font: 1em "Josefin Sans", sans-serif;
-  font-weight: bold;
-  border-radius: .2em; }
-
-#shipping #shipping-address .shipping-select #policy {
-  margin: 1em 0;
-  font-style: italic;
-  cursor: pointer;
-  transition: opacity 0.5s ease; }
-  #shipping #shipping-address .shipping-select #policy:hover {
-    opacity: .6; }
-
-#shipping #shipping-address .one-third.column {
-  -ms-flex-pack: distribute;
-  justify-content: space-around; }
+#shipping #shipping-address {
+  text-align: center; }
+  #shipping #shipping-address h3 {
+    margin-bottom: 1em; }
+  #shipping #shipping-address p {
+    margin-bottom: 1em;
+    text-transform: capitalize; }
+  #shipping #shipping-address .button-primary {
+    margin: 2em 0; }
+  #shipping #shipping-address input[type='submit'] {
+    padding: .7em .5em .5em .5em;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid black;
+    cursor: pointer;
+    font: 1em "Josefin Sans", sans-serif;
+    font-weight: bold;
+    border-radius: .2em; }
+  #shipping #shipping-address .shipping-select #policy {
+    margin: 1em 0;
+    font-style: italic;
+    cursor: pointer;
+    transition: opacity 0.5s ease; }
+    #shipping #shipping-address .shipping-select #policy:hover {
+      opacity: .6; }
+  #shipping #shipping-address .one-third.column {
+    -ms-flex-pack: distribute;
+    justify-content: space-around; }
 
 #payment main {
   width: 90%;
   margin: 2em auto; }
   @media (min-width: 44em) {
     #payment main {
-      width: 50%; } }
+      width: 100%; } }
   #payment main h3 {
-    margin-bottom: 1em; }
+    margin: 1em 0; }
+  #payment main .two-thirds {
+    width: 90%;
+    margin: 1em auto;
+    text-align: center; }
   #payment main .review-card {
     width: 60%;
     margin: auto; }
     @media (min-width: 44em) {
       #payment main .review-card {
         width: 12em;
-        margin: 0; } }
+        margin: 0 auto; } }
     #payment main .review-card li {
       margin-bottom: .5em; }
+    #payment main .review-card #order-total, #payment main .review-card #order-shipping {
+      border-top: 1px solid #000;
+      padding-top: .5em;
+      margin-bottom: 0; }
     #payment main .review-card .right {
       float: right; }
 
@@ -1443,9 +1445,6 @@ footer {
     width: 50%;
     text-align: center;
     margin: auto; }
-    @media (min-width: 44em) {
-      #customer .email form {
-        width: 25%; } }
     #customer .email form input[type='submit'] {
       width: 100%;
       padding: .7em .5em .5em .5em;
