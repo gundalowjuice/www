@@ -1,51 +1,19 @@
-var total = 0
-var addButton = document.getElementById('plus')
-var minusButton = document.getElementById('minus')
-var buttons = document.getElementsByTagName('span')
+$("input[type=button]").on("click", function() {
 
-addButton.addEventListener('click', addCart, false)
-minusButton.addEventListener('click', minusCart, false)
-carousel.addEventListener('click', zeroButton, false)
+  var $button = $(this);
+  var oldValue = $button.parent().find("input[name=qty]").val();
 
-$(document).click(function(event) {
-    console.log($(event.target).text());
-});
-
-function addCart () {
-  var target = document.getElementById('add-to-cart')
-  var qty = document.getElementById('')
-
-  total += 7
-
-  target.value = 'add ' + total + ' to cart'
-  qty.value = total
-
-  console.log(total)
-}
-
-function minusCart () {
-  var target = document.getElementById('add-to-cart')
-  var qty = document.querySelector('input[name=qty]')
-
-  if (total > 0) {
-    total -= 7
-    target.value = ('add ' + total + ' to cart')
-    qty.value = total
-  } else if (total === 0){
-    target.value = ('add to basket')
-    qty.value = total
+  if ($button.val() === "+") {
+	  var newVal = parseFloat(oldValue) + 1;
+	} else {
+   // Don't allow decrementing below zero
+    if (oldValue > 0) {
+      var newVal = parseFloat(oldValue) - 1;
+    } else {
+      newVal = 0;
+    }
   }
-  console.log(total)
-}
 
-function zeroButton () {
-  var target = document.getElementById('add-to-cart')
-  var qty = document.querySelector('input[name=qty]')
+  $button.parent().find("input[name=qty]").val(newVal);
 
-  total = 0
-
-  target.value = 'Add to Cart'
-  qty.value = total
-
-  console.log(total)
-}
+});
