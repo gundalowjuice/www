@@ -953,8 +953,22 @@ footer {
       background-color: #58595b;
       color: #fff;
       border: none; }
+      #cart #cart-items #items input:focus {
+        outline: 0; }
+      #cart #cart-items #items input.plus, #cart #cart-items #items input.minus {
+        cursor: pointer; }
     #cart #cart-items #items input[name='qty'] {
       width: 3em; }
+    #cart #cart-items #items input[type=number]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      margin: 0; }
+    #cart #cart-items #items input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      margin: 0; }
     #cart #cart-items #items input[type='submit'] {
       padding: .5em 0 0 0;
       margin: .5em 0 0 0;

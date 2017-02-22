@@ -68,11 +68,36 @@
           background-color: $gj-grey;
           color: #fff;
           border: none;
+
+          &:focus {
+            outline: 0;
+          }
+
+          &.plus,
+          &.minus {
+            cursor: pointer;
+          }
         }
 
         input[name='qty'] {
           width: 3em;
         }
+
+        input[type=number]::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          margin: 0;
+        }
+
+        input[type=number]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          margin: 0;
+        }
+
+
 
         input[type='submit'] {
           padding: .5em 0 0 0;

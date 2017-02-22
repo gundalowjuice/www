@@ -25,14 +25,15 @@
         </td>
         {% endfor %}
         <td class='quantity'>
-          <form method="POST">
+
+          <form id="{{ item.id }}"method="POST">
             <input type="hidden" name="action" value="commerce/cart/updateLineItem">
             <input type="hidden" name="redirect" value="cart">
             <input type="hidden" name="lineItemId" value="{{ item.id }}">
             <span {% if item.getError('qty') %}class="has-error"{% endif %}>
-              <button class='minus'>-</button>
-            <input  type="text" name="qty" min="1" value="{{ item.qty }}">
-              <button class='plus'>+</button>
+              <input type='button' value='-' class="minus">
+              <input type="number" name="qty" step="1" min="1" inputmode="numeric" value="{{ item.qty }}">
+              <input type="button" value="+" class='plus'>
             </span>
             {{ getCsrfInput() }}
             <input type="submit" class="button" value="Update"/>
@@ -96,4 +97,6 @@
 </div>
 
 {% endif %}
+
+{% includeJsFile '/assets/js/updateCart.js' %}
 {% endblock %}
