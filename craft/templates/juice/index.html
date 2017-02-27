@@ -22,7 +22,8 @@
       <div class="carousel">
         {% for juice in juices %}
         <div class="carousel-cell {{ juice.slug }}">
-          <img src="{{ juice.productImage.first().getUrl() }}" alt="" />
+          <img src="{{ juice.productImage.first().getUrl('productCarousel') }}" width="{{ juice.productImage.first().getWidth('productCarousel') }}"
+          height="{{ juice.productImage.first().getHeight('productCarousel') }}" alt="" />
         </div>
         {% endfor %}
       </div>
