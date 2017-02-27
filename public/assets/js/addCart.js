@@ -10,7 +10,7 @@ function addCart () {
   var target = document.getElementById('add-to-cart')
   var qty = document.querySelector('input[name=qty]')
 
-  total += 7
+  total ++
 
   target.value = 'add ' + total + ' to cart'
   qty.value = total
@@ -21,7 +21,7 @@ function minusCart () {
   var qty = document.querySelector('input[name=qty]')
 
   if (total > 0) {
-    total -= 7
+    total --
     target.value = ('add ' + total + ' to cart')
     qty.value = total
   } else if (total === 0){
