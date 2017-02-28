@@ -76,7 +76,7 @@
 	</div>
 
 	<div class="row">
-		<div class="six columns">
+		<!-- <div class="six columns">
 			<label for="{{ modelName }}-countryId">Country *</label>
 			<select class="address-country u-full-width" name="{{ modelName }}[countryId]">
 				{% for key, option in countries %}
@@ -87,11 +87,15 @@
 			{% if model and model.getErrors('countryId') %}
 				<span class="flash">{{ model.getErrors('countryId')|join }}</span>
 			{% endif %}
-		</div>
+		</div> -->
 
 		<div class="six columns">
 			<label for="{{ modelName }}-state">State</label>
+		  {#
 			{% set options = (model and states[model.countryId] is defined ? states[model.countryId] : []) %}
+			#}
+
+			{% set options = states[233] %}
 			<select id="{{ modelName }}-stateId" data-modelname="{{ modelName }}" class="address-stateId u-full-width {% if options|length == 0 or (model and model.stateName) %}hidden{% endif %}" name="{{ modelName }}[stateValue]">
 				{% for key, option in options %}
 					{% set optionValue = (model ? model.stateId : '') %}
