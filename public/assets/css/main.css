@@ -491,7 +491,8 @@ footer {
 #shop-juice main#content #product-image {
   margin: 2em 0; }
   #shop-juice main#content #product-image img {
-    height: 18.750em; }
+    height: 18.750em;
+    margin: 0 4em; }
   #shop-juice main#content #product-image .flickity-viewport {
     height: 20.625em; }
 
