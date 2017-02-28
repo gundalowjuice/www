@@ -20,6 +20,14 @@ $(document).keydown(function(t) {
     initialIndex: 0
   })
 
+var $carousel = $('.carousel').flickity()
+
+$carousel.on( 'staticClick.flickity', function( event, pointer, cellElement, cellIndex ) {
+  if ( typeof cellIndex == 'number' ) {
+    $carousel.flickity( 'selectCell', cellIndex );
+  }
+});
+
 // Nav drop down
 
   $('#nav svg').click(function () {
