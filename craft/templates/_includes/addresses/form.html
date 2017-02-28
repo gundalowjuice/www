@@ -9,14 +9,14 @@
 	<div class="row">
 		<div class="six columns">
 			<label for="{{ modelName }}-firstName">First Name *</label>
-			<input type="text" id="{{ modelName }}-firstName" class="u-full-width" name="{{ modelName }}[firstName]" value="{{ model ? model.firstName : '' }}">
+			<input required type="text" id="{{ modelName }}-firstName" class="u-full-width" name="{{ modelName }}[firstName]" value="{{ model ? model.firstName : '' }}">
 			{% if model and model.getErrors('firstName') %}
 				<span class="flash">{{ model.getErrors('firstName')|join }}</span>
 			{% endif %}
 		</div>
 		<div class="six columns">
 			<label for="{{ modelName }}-lastName">Last Name *</label>
-			<input type="text" id="{{ modelName }}-lastName" class="u-full-width" name="{{ modelName }}[lastName]" value="{{ model ? model.lastName : '' }}">
+			<input required type="text" id="{{ modelName }}-lastName" class="u-full-width" name="{{ modelName }}[lastName]" value="{{ model ? model.lastName : '' }}">
 			{% if model and model.getErrors('lastName') %}
 				<span class="flash">{{ model.getErrors('lastName')|join }}</span>
 			{% endif %}
@@ -25,8 +25,8 @@
 
 	<div class="row">
 		<div class="three columns">
-			<label for="{{ modelName }}-address1">Address 1</label>
-			<input type="text" id="{{ modelName }}-address1" class="u-full-width" name="{{ modelName }}[address1]" value="{{ model ? model.address1 : '' }}">
+			<label for="{{ modelName }}-address1">Address 1 *</label>
+			<input required type="text" id="{{ modelName }}-address1" class="u-full-width" name="{{ modelName }}[address1]" value="{{ model ? model.address1 : '' }}">
 			{% if model and model.getErrors('address1') %}
 				<span class="flash">{{ model.getErrors('address1')|join }}</span>
 			{% endif %}
@@ -42,7 +42,7 @@
 
 		<div class="three columns">
 			<label for="{{ modelName }}-city">City</label>
-			<input type="text" id="{{ modelName }}-city" class="u-full-width" name="{{ modelName }}[city]" value="{{ model ? model.city : '' }}">
+			<input required type="text" id="{{ modelName }}-city" class="u-full-width" name="{{ modelName }}[city]" value="{{ model ? model.city : '' }}">
 			{% if model and model.getErrors('city') %}
 				<span class="flash">{{ model.getErrors('city')|join }}</span>
 			{% endif %}
@@ -50,7 +50,7 @@
 
 		<div class="three columns">
 			<label for="{{ modelName }}-zipCode">Zip Code</label>
-			<input type="text" id="{{ modelName }}-zipCode" class="u-full-width" name="{{ modelName }}[zipCode]" value="{{ model ? model.zipCode : '' }}">
+			<input required type="text" pattern="[0-9]*" maxlength="5" minlength="5" id="{{ modelName }}-zipCode" class="u-full-width" name="{{ modelName }}[zipCode]" value="{{ model ? model.zipCode : '' }}">
 			{% if model and model.getErrors('zipCode') %}
 				<span class="flash">{{ model.getErrors('zipCode')|join }}</span>
 			{% endif %}
@@ -96,7 +96,7 @@
 			#}
 
 			{% set options = states[233] %}
-			<select id="{{ modelName }}-stateId" data-modelname="{{ modelName }}" class="address-stateId u-full-width {% if options|length == 0 or (model and model.stateName) %}hidden{% endif %}" name="{{ modelName }}[stateValue]">
+			<select id="{{ modelName }}-stateId" class="required" data-modelname="{{ modelName }}" class="address-stateId u-full-width {% if options|length == 0 or (model and model.stateName) %}hidden{% endif %}" name="{{ modelName }}[stateValue]">
 				{% for key, option in options %}
 					{% set optionValue = (model ? model.stateId : '') %}
 					<option value="{{ key }}" {% if key == optionValue %}selected{% endif %}>{{ option }}</option>

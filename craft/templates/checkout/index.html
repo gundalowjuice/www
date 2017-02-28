@@ -25,7 +25,7 @@
                 <input type="hidden" name="redirect" value="checkout/addresses">
 
                 <label for="loginName">Email</label>
-                <input id="loginName" class="u-full-width" type="text" name="loginName" placeholder="email@site.com"
+                <input id="loginName" class="u-full-width" type="email" name="loginName" placeholder="email@site.com"
                        value="{{ craft.session.rememberedUsername }}">
 
                 <label for="password">Password</label>
@@ -59,7 +59,7 @@
                 <input type="hidden" name="redirect" value="checkout/addresses">
                 {{ getCsrfInput() }}
                 <label for="">Email</label>
-                <input class="u-full-width" type="text" value="{{ cart.email }}" name="email"
+                <input class="u-full-width" type="email" value="{{ cart.email }}" name="email"
                        placeholder="email@site.com"/>
 
                 <span class="flash">{{ cart.getErrors('email')|join }}</span><br>
