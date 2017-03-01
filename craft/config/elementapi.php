@@ -34,7 +34,9 @@ return [
           'isCompleted' => $order->isCompleted,
           'addresses' => function (Address_Model $addresses) {
             return [
-              'state' => $addresses->stateText
+              'state' => $addresses->stateText,
+              'zipCode' => $addresses->zipCode,
+              'address1' => $addresses->address1
             ];
           }
         ];
