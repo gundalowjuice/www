@@ -252,6 +252,8 @@
 		</div>
 	</div>
 
+	{% includeJsFile '/assets/js/formValidation.js' %}
+
 	{% includejs %}
 	$('#paymentMethodId , #paymentCurrency').change(function(){
 		$('form#paymentMethod').submit();
