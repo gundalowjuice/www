@@ -32,7 +32,7 @@ return [
           'dateOrdered' => $order->dateOrdered,
           'totalPrice' => money_format('%i', $order->totalPrice),
           'isCompleted' => $order->isCompleted,
-          'shippingAddess' => $order->shippingAddress
+          'shippingAddress' => $order->shippingAddress
         ];
       }
     ]
