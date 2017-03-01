@@ -23,6 +23,55 @@
 
  {% block content %}
 
+ {# --------------- MC modal start  ---------------  #}
+
+{# check if user exist, we don't want to show the 10% discount when someone is logged in #}
+{% if currentUser == false  %}
+
+  {# our lightbox el to overlay the page content #}
+  <div class="lightbox active"></div>
+
+  <div class="modal user-signup-discount">
+    <button class="btn-modal-close">X</button>
+    <p class="p-md">Join our crew and receive</p>
+    <p class="p-xxl">10% oFF</p>
+    <p class="p-sm">your first order*, plus udpates on events & more!</p>
+    <hr>
+    <form class="newsletter-form" action="" method="POST">
+      <input type="hidden" name="action" value="mailchimpSubscribe/list/subscribe">
+      {# show messages #}
+      {% if mailchimpSubscribe is defined %}
+        {% if not mailchimpSubscribe.success %}
+          <p class="message error">{{ mailchimpSubscribe.message }} </p>
+        {% endif %}
+
+        {% if mailchimpSubscribe.success %}
+          <p class="message success">Thank you for signing up!</p>
+        {% endif %}
+      {% endif %}
+      {#
+        if mailchimp array is undefined, meaning nothing exist yet or
+        there's an error, show the form
+      #}
+      {% if mailchimpSubscribe is not defined or mailchimpSubscribe is null or mailchimpSubscribe.success == false %}
+        <div class="field-group">
+          <input placeholder="First Name" type="text" name="mcvars[FNAME]" value="{% if (mailchimpSubscribe is defined) and (not mailchimpSubscribe.success) %}{{ mailchimpSubscribe.values.vars.FNAME }}{% endif %}"/>
+        </div>
+        <div class="field-group">
+          <input placeholder="Email" type="text" name="email" value="{% if (mailchimpSubscribe is defined) and (not mailchimpSubscribe.success) %}{{ mailchimpSubscribe.values.email }}{% 	endif %}"/>
+        </div>
+
+        <input type="submit" name="" value="Sign Up"/>
+      {% endif %}
+    </form>
+    <p class="p-sm">*Shipping excluded from discount</p>
+  </div>
+{% endif %}
+
+{% includeJsFile "/src/js/modal.js" %}
+
+{#  ---------------  MC modal end  ---------------  #}
+
 <div id="bg-img-wrap">
   <div id="bg-img" style="background: url({{ entry.backgroundImage.first().getUrl() }})no-repeat center center; background-size: cover; height: 65vh">
   </div>
