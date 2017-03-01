@@ -21,6 +21,20 @@ return [
           'jsonUrl' => UrlHelper::getUrl("api/juice/{$prod->id}.json")
         ];
       }
+    ],
+    'api/orders.json' => [
+      'elementType' => 'Commerce_Order',
+      'criteria' => ['isCompleted' => '1'],
+      'transformer' => function (Commerce_OrderModel $order) {
+        return [
+          'id' => $order->id,
+          'number' => $order->number,
+          'dateOrdered' => $order->dateOrdered,
+          'totalPrice' => money_format('%i', $order->totalPrice),
+          'isCompleted' => $order->isCompleted,
+          'shippingAddess' => $order->shippingAddress
+        ];
+      }
     ]
   ]
 ]
