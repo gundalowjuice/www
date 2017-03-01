@@ -32,8 +32,11 @@ return [
           'dateOrdered' => $order->dateOrdered,
           'totalPrice' => money_format('%i', $order->totalPrice),
           'isCompleted' => $order->isCompleted,
-          'shippingAddress' => $order->shippingAddress,
-          'zipCode' => $order->zipCode
+          'addresses' => function (Address_Model $addresses) {
+            return [
+              'state' => $addresses->stateText
+            ]
+          }
         ];
       }
     ]
