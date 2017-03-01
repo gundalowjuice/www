@@ -35,7 +35,7 @@ return [
           'addresses' => function (Address_Model $addresses) {
             return [
               'state' => $addresses->stateText
-            ]
+            ];
           }
         ];
       }
