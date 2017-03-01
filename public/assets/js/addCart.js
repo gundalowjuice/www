@@ -1,4 +1,4 @@
-var total = 0
+var total = 1
 var addButton = document.getElementById('plus')
 var minusButton = document.getElementById('minus')
 
