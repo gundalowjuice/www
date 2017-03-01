@@ -58,9 +58,67 @@
             </form>
 
     </div>
-    <script src="{{ siteUrl }}/assets/js/formValidation.js" type="text/javascript"></script>
 
     {% includejs %}
+    // form validation
+
+    var shipFirstName = document.getElementById('shippingAddress-firstName')
+    var billFirstName = document.getElementById('billingAddress-firstName')
+
+    var shipLastName = document.getElementById('shippingAddress-lastName')
+    var billLastName = document.getElementById('billingAddress-lastName')
+
+    var shipAddress = document.getElementById('shippingAddress-address1')
+    var billAddress = document.getElementById('billingAddress-address1')
+
+    var shipCity = document.getElementById('shippingAddress-city')
+    var billCity = document.getElementById('billingAddress-city')
+
+    var shipZipcode = document.getElementById('shippingAddress-zipCode')
+    var billZipcode = document.getElementById('billingAddress-zipCode')
+
+    var shipCountry = document.querySelector('.shippingAddress .address-country')
+    var billCountry = document.querySelector('.billingAddress .address-country')
+
+    var shipState = document.getElementById('shippingAddress-stateId')
+    var billState = document.getElementById('billingAddress-stateId')
+
+    var sameAddress = document.getElementById('sameAddress')
+    var submitButton = document.querySelectorAll('input[type=submit]')
+
+    shipFirstName.addEventListener('change', billAddressFill, false)
+    shipLastName.addEventListener('change', billAddressFill, false)
+    shipAddress.addEventListener('change', billAddressFill, false)
+    shipCity.addEventListener('change', billAddressFill, false)
+    shipZipcode.addEventListener('change', billAddressFill, false)
+    shipCountry.addEventListener('change', billAddressFill, false)
+    shipState.addEventListener('change', billAddressFill, false)
+    sameAddress.addEventListener('change', billAddressFill, false)
+
+
+
+    function billAddressFill () {
+      if (sameAddress.checked === true) {
+        console.log('something')
+        billFirstName.value = shipFirstName.value
+        billLastName.value = shipLastName.value
+        billAddress.value = shipAddress.value
+        billCity.value = shipCity.value
+        billZipcode.value = shipZipcode.value
+        billCountry.value = shipCountry.value
+        billState.value = shipState.value
+      } else {
+        billFirstName.value = " "
+        billLastName.value = " "
+        billAddress.value = " "
+        billCity.value = " "
+        billZipcode.value = " "
+        billCountry.value = " "
+        billState.value = " "
+      }
+    }
+
+
     var $fieldsets = $('.address-fieldset');
 
     $fieldsets.each(function () {
