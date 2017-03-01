@@ -31,7 +31,7 @@
   {# our lightbox el to overlay the page content #}
   <div class="lightbox active"></div>
 
-  <div class="modal user-signup-discount">
+  <div class="modal user-signup-discount" style="background: url({{ entry.modalBgImage.first().getUrl() }})no-repeat center center; background-size: cover;">
     <button class="btn-modal-close">X</button>
     <p class="p-md">Join our crew and receive</p>
     <p class="p-xxl">10% oFF</p>
