@@ -23,7 +23,20 @@
     }
     &.s-s-veggie {
       color: $ss-veggie;
-  }
+    }
+    &.compass-case {
+      color:$compass-case;
+    }
+    &.crew-case {
+      color: $crew-case;
+    }
+    &.lighthouse-case {
+      color: $lighthouse-case;
+    }
+    &.anchor-case {
+      color: $anchor-case;
+    }
+
 
   svg.icon {
     width: 2.5em;
@@ -66,7 +79,19 @@
     }
     &.s-s-veggie {
       background-color: $ss-veggie;
-  }
+    }
+    &.compass-case {
+      background-color: $compass-case;
+    }
+    &.crew-case {
+      background-color: $crew-case;
+    }
+    &.lighthouse-case {
+      background-color: $lighthouse-case;
+    }
+    &.anchor-case {
+      background-color: $anchor-case;
+    }
 
     div {
       color: white;
