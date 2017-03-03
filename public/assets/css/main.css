@@ -676,6 +676,14 @@ footer {
     color: #0096aa; }
   #ingredients.s-s-veggie {
     color: #81bc41; }
+  #ingredients.compass-case {
+    color: #ee2425; }
+  #ingredients.crew-case {
+    color: #666666; }
+  #ingredients.lighthouse-case {
+    color: #3e3b5e; }
+  #ingredients.anchor-case {
+    color: #1e8f47; }
   #ingredients svg.icon {
     width: 2.5em;
     height: 2.5em;
@@ -701,6 +709,14 @@ footer {
     background-color: #0096aa; }
   #ingredients #ingredient-content.s-s-veggie {
     background-color: #81bc41; }
+  #ingredients #ingredient-content.compass-case {
+    background-color: #ee2425; }
+  #ingredients #ingredient-content.crew-case {
+    background-color: #666666; }
+  #ingredients #ingredient-content.lighthouse-case {
+    background-color: #3e3b5e; }
+  #ingredients #ingredient-content.anchor-case {
+    background-color: #1e8f47; }
   #ingredients #ingredient-content div {
     color: white; }
     #ingredients #ingredient-content div.hide {

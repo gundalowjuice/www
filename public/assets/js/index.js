@@ -363,25 +363,37 @@ function ingredient () {
   for (var i = 0; i < product.length; i++) {
     if (product[i].classList.contains('is-selected') && product[i].classList.contains('starboard-strawberry')) {
       target.classList.add('starboard-strawberry')
-      target.classList.remove('dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie')
+      target.classList.remove('dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('dockside-sunrise')) {
       target.classList.add('dockside-sunrise')
-      target.classList.remove('starboard-strawberry', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie')
+      target.classList.remove('starboard-strawberry', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('harbor-voyage')) {
       target.classList.add('harbor-voyage')
       target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('watermelon-waves')) {
       target.classList.add('watermelon-waves')
-      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'sailors-delight', 'mainstay-green', 's-s-veggie')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('sailors-delight')) {
       target.classList.add('sailors-delight')
-      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'mainstay-green', 's-s-veggie')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'mainstay-green', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('mainstay-green')) {
       target.classList.add('mainstay-green')
-      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 's-s-veggie')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('s-s-veggie')) {
       target.classList.add('s-s-veggie')
-      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case')
+    } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('crew-case')) {
+      target.classList.add('crew-case')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 's-s-veggie', 'mainstay-green', 'anchor-case', 'lighthouse-case', 'compass-case')
+    } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('anchor-case')) {
+      target.classList.add('anchor-case')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'crew-case', 'lighthouse-case', 'compass-case')
+    } else if (product[i].classList.contains('is-selected') && product.classList.contains('lighthouse-case')) {
+      target.classList.add('lighthouse-case')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'anchor-case', 'crew-case', 'compass-case')
+    } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('compass-case')) {
+      target.classList.add('compass-case')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'crew-case')
     } else {
     }
   }
