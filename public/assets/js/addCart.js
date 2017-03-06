@@ -35,7 +35,7 @@ function zeroButton () {
   var target = document.getElementById('add-to-cart')
   var qty = document.querySelector('input[name=qty]')
 
-  total = 0
+  total = 1
 
   target.value = 'Add to Cart'
   qty.value = total

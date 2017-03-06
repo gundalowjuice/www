@@ -41,7 +41,7 @@
     	</div>
 
 		<div class="three columns">
-			<label for="{{ modelName }}-city">City</label>
+			<label for="{{ modelName }}-city">City *</label>
 			<input required type="text" id="{{ modelName }}-city" class="u-full-width" name="{{ modelName }}[city]" value="{{ model ? model.city : '' }}">
 			{% if model and model.getErrors('city') %}
 				<span class="flash">{{ model.getErrors('city')|join }}</span>
@@ -49,7 +49,7 @@
     	</div>
 
 		<div class="three columns">
-			<label for="{{ modelName }}-zipCode">Zip Code</label>
+			<label for="{{ modelName }}-zipCode">Zip Code *</label>
 			<input required type="text" pattern="[0-9]*" maxlength="5" minlength="5" id="{{ modelName }}-zipCode" class="u-full-width" name="{{ modelName }}[zipCode]" value="{{ model ? model.zipCode : '' }}">
 			{% if model and model.getErrors('zipCode') %}
 				<span class="flash">{{ model.getErrors('zipCode')|join }}</span>
@@ -66,13 +66,13 @@
 			{% endif %}
 		</div>
 
-		<div class="six columns">
+		<!-- <div class="six columns">
 			<label for="{{ modelName }}-alternativePhone">Alternative Phone</label>
 			<input type="text" id="{{ modelName }}-alternativePhone" class="u-full-width" name="{{ modelName }}[alternativePhone]" value="{{ model ? model.alternativePhone : '' }}">
 			{% if model and model.getErrors('alternativePhone') %}
 				<span class="flash">{{ model.getErrors('alternativePhone')|join }}</span>
 			{% endif %}
-		</div>
+		</div> -->
 	</div>
 
 	<div class="row">
@@ -90,7 +90,7 @@
 		</div>
 
 		<div class="six columns">
-			<label for="{{ modelName }}-state">State</label>
+			<label for="{{ modelName }}-state">State *</label>
 		  {#
 			{% set options = (model and states[model.countryId] is defined ? states[model.countryId] : []) %}
 			#}
