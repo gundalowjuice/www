@@ -655,12 +655,12 @@ footer {
 
 #pack-info > p {
   max-width: 24em;
-  margin: 2em auto;
+  margin: 1em auto;
   text-align: center; }
 
 #ingredients {
   max-width: 32em;
-  margin: 4em auto;
+  margin: 2em auto 4em;
   text-align: center; }
   #ingredients.starboard-strawberry {
     color: #ae3863; }

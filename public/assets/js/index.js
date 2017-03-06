@@ -388,7 +388,7 @@ function ingredient () {
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('anchor-case')) {
       target.classList.add('anchor-case')
       target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'crew-case', 'lighthouse-case', 'compass-case')
-    } else if (product[i].classList.contains('is-selected') && product.classList.contains('lighthouse-case')) {
+    } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('lighthouse-case')) {
       target.classList.add('lighthouse-case')
       target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'anchor-case', 'crew-case', 'compass-case')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('compass-case')) {
