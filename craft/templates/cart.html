@@ -47,9 +47,18 @@
             <input type="submit" class="button link" value="Remove"/>
           </form>
         </td>
-        <td class='price'>{{ item.total|commerceCurrency(cart.currency) }}</td>
+        <td class='price'>{{ item.subtotal|commerceCurrency(cart.currency) }}</td>
       </tr>
       {% endfor %}
+        {% for adjustment in cart.adjustments %}
+          <tr>
+            <td>{{ adjustment.name }}</td>
+            {#<td>{{ adjustment.description }}</td>#}
+            <td></td>
+            <td class="price">{{ adjustment.amount | currency(cart.currency) }}</td>
+          </tr>
+        {% endfor %}
+
     </tbody>
   </table>
 
@@ -72,6 +81,14 @@
         {% endfor %}
       {% endfor %}
   </section>
+
+  <form id="coupon" method="post">
+    <input type="hidden" name="action" value="commerce/cart/updateCart">
+    <input type="hidden" name="redirect" value="cart">
+    <input type="submit" value="Apply Coupon">
+    <input type="text" name="couponCode" value="">
+
+  </form>
 
 
   <section id="order">

@@ -130,10 +130,9 @@
 
     #special {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       margin: 2em auto;
-      max-width: 15em;
-      text-align: center;
+      justify-content: center;
 
       #header-wrapper {
         display: flex;
@@ -141,8 +140,17 @@
         justify-content: space-between;
 
         h3 {
-         margin: .5em 0;
+         margin: .5em .5em .5em 0;
         }
+        }
+        #add-to-cart {
+          color: white;
+          background-color: $gj-grey;
+          width: 10em;
+          padding: 1em;
+          border-radius: .25em;
+          border: 1px solid $gj-grey;
+          font: 80%/100% $body-font;
       }
     }
 
@@ -166,6 +174,27 @@
         padding: 1em 4em;
         border-radius: .2em;
       }
+    }
+  }
+
+  #coupon {
+    display: flex;
+    justify-content: center;
+
+    input[type=text] {
+      font-size: 1em;
+      padding: 0;
+      margin-left: 1em;
+    }
+
+    input[type=submit] {
+      color: white;
+      background-color: $gj-grey;
+      width: 10em;
+      padding: 1em;
+      border-radius: .25em;
+      border: 1px solid $gj-grey;
+      font: 80%/100% $body-font;
     }
   }
 
