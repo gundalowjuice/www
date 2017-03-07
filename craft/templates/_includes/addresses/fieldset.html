@@ -1,5 +1,7 @@
 <div class="address-fieldset {{ class }}">
     <h3>{{ title }}</h3>
+
+    <p>* indicates required field</p>
     {% if addresses and currentUser%}
         {% for address in addresses %}
             <div class="address-select" data-address-id="{{ address.id }}">
