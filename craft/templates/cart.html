@@ -66,6 +66,7 @@
     {% set products = craft.commerce.products.type('gifts').find() %}
       {% for product in products %}
         {% for variant in product.variants %}
+        {% if variant.title == 'Insulated Bag' %}
         <div id="header-wrapper">
           <h3>{{ variant.title }}</h3>
           <h3>{{ variant.price|currency(cart.currency) }}</h3>
@@ -78,6 +79,7 @@
               <input type="hidden" name="purchasableId" value=" {{variant.purchasableId}}">
               <input id="add-to-cart" type="submit" value="Add to cart">
           </form>
+          {% endif %}
         {% endfor %}
       {% endfor %}
   </section>
