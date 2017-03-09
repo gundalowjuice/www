@@ -79,9 +79,9 @@
 
                 {% for adjustment in order.adjustments %}
                     <tr class="border">
-                        <td>{{ adjustment.type }}</td>
-                        <td colspan="2">{{ adjustment.name }}</td>
-                        <td class="text-right">{{ adjustment.amount|commerceCurrency(cart.currency) }}</td>
+                        <td class="border">{{ adjustment.type }}</td>
+                        <td class="border" colspan="2">{{ adjustment.name }}</td>
+                        <td class="text-right border">{{ adjustment.amount|commerceCurrency(cart.currency) }}</td>
                     </tr>
                 {% endfor %}
 
