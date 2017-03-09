@@ -1,4 +1,4 @@
-var total = 1
+var total = 0
 var addButton = document.getElementById('plus')
 var minusButton = document.getElementById('minus')
 
@@ -12,7 +12,7 @@ function addCart () {
 
   total ++
 
-  target.value = 'add ' + total + ' to cart'
+  target.value = 'add ' + total + ' to basket'
   qty.value = total
 }
 
@@ -22,7 +22,7 @@ function minusCart () {
 
   if (total > 0) {
     total --
-    target.value = ('add ' + total + ' to cart')
+    target.value = ('add ' + total + ' to basket')
     qty.value = total
   } else if (total === 0){
     target.value = ('add to basket')
@@ -35,9 +35,9 @@ function zeroButton () {
   var target = document.getElementById('add-to-cart')
   var qty = document.querySelector('input[name=qty]')
 
-  total = 1
+  total = 0
 
-  target.value = 'Add to Cart'
+  target.value = 'Add to Basket'
   qty.value = total
 
   console.log(total)
