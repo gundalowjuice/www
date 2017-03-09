@@ -1372,6 +1372,8 @@ footer {
       text-align: right; }
     #order main .flex-wrapper table th {
       border-bottom: 1px solid #000; }
+    #order main .flex-wrapper table .border {
+      border-top: 1px solid black; }
 
 #media-logos {
   background-color: #999999;
