@@ -102,6 +102,15 @@
         width: 80%;
       }
 
+      image {
+        width: 50%;
+        margin: auto;
+
+        @media (min-width: 44em) {
+          width: initial;
+        }
+      }
+
       h2 {
         margin: 1em 0;
         text-align: center;

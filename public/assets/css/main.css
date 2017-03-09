@@ -805,6 +805,12 @@ footer {
           -ms-flex-direction: row;
           flex-direction: row;
           width: 80%; } }
+      #index #content section#featured-prod #product-wrap image {
+        width: 50%;
+        margin: auto; }
+        @media (min-width: 44em) {
+          #index #content section#featured-prod #product-wrap image {
+            width: initial; } }
       #index #content section#featured-prod #product-wrap h2 {
         margin: 1em 0;
         text-align: center; }
