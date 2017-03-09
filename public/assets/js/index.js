@@ -82,6 +82,7 @@ var carousel = document.getElementById('product-image')
 
 carousel.addEventListener('click', juiceChange, false)
 carousel.addEventListener('touchend', juiceChange, false)
+carousel.addEventListener('touchmove', juiceChange, false)
 
 var carouselImage = document.getElementsByClassName('carousel-cell')
 
@@ -358,6 +359,7 @@ function juiceChange () {
 
 carousel.addEventListener('click', ingredient, false)
 carousel.addEventListener('touchend', ingredient, false)
+carousel.addEventListener('touchmove', ingredient, false)
 
 function ingredient () {
   var target = document.getElementById('ingredients')
