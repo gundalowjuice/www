@@ -529,7 +529,7 @@ footer {
     #juice-content #juice-header.anchor-case h2:nth-of-type(1) {
       color: #1e8f47; }
     #juice-content #juice-header.compass-case h2:nth-of-type(1) {
-      color: #ee2425; }
+      color: #E94640; }
     #juice-content #juice-header.crew-case h2:nth-of-type(1) {
       color: #666666; }
     #juice-content #juice-header.lighthouse-case h2:nth-of-type(1) {
@@ -567,7 +567,7 @@ footer {
   #button form.anchor-case {
     background-color: #05762E; }
   #button form.compass-case {
-    background-color: #D50B0C; }
+    background-color: #D02D27; }
   #button form.crew-case {
     background-color: #4D4D4D; }
   #button form.lighthouse-case {
@@ -622,7 +622,7 @@ footer {
     #button #minus.anchor-case {
       background-color: #1e8f47; }
     #button #minus.compass-case {
-      background-color: #ee2425; }
+      background-color: #E94640; }
     #button #minus.crew-case {
       background-color: #666666; }
     #button #minus.lighthouse-case {
@@ -647,7 +647,7 @@ footer {
     #button #plus.anchor-case {
       background-color: #1e8f47; }
     #button #plus.compass-case {
-      background-color: #ee2425; }
+      background-color: #E94640; }
     #button #plus.crew-case {
       background-color: #666666; }
     #button #plus.lighthouse-case {
@@ -677,7 +677,7 @@ footer {
   #ingredients.s-s-veggie {
     color: #81bc41; }
   #ingredients.compass-case {
-    color: #ee2425; }
+    color: #E94640; }
   #ingredients.crew-case {
     color: #666666; }
   #ingredients.lighthouse-case {
@@ -710,7 +710,7 @@ footer {
   #ingredients #ingredient-content.s-s-veggie {
     background-color: #81bc41; }
   #ingredients #ingredient-content.compass-case {
-    background-color: #ee2425; }
+    background-color: #E94640; }
   #ingredients #ingredient-content.crew-case {
     background-color: #666666; }
   #ingredients #ingredient-content.lighthouse-case {
@@ -857,6 +857,8 @@ footer {
         #index #content section#featured-prod #product-wrap #product-content #button {
           display: block;
           margin: 2em auto 0; }
+          #index #content section#featured-prod #product-wrap #product-content #button p {
+            text-align: center; }
           #index #content section#featured-prod #product-wrap #product-content #button #cta {
             padding: .5em 1em;
             border-radius: .2em;
