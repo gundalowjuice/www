@@ -197,10 +197,62 @@
     </div>
   </div>
 
+  <div id="reviews">
+    <div id="review-header">
+      <h2>reviews</h2>
+      <h2 id='review-button'>submit a review</h2>
+    </div>
+  </div>
+
+  <div id="review-modal" class="closed">
+    {% macro errorList(errors) %}
+    {% if errors %}
+        <ul class="errors">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}
+
+{% from _self import errorList %}
+
+    <form method="post" action="" accept-charset="UTF-8">
+        {{ getCsrfInput() }}
+        <input type="hidden" name="action" value="contactForm/sendMessage">
+        <input type="hidden" name="redirect" value="juice">
+
+        <h3><label for="fromName">Your Name</label></h3>
+        <input id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
+        {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+
+        <h3><label for="fromEmail">Your Email</label></h3>
+        <input id="fromEmail" type="email" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}">
+        {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+
+        <h3><label for="subject">Juice Reviewed</label></h3>
+        <input id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
+        {{ message is defined and message ? errorList(message.getErrors('subject')) }}
+
+        <h3><label for="message">Review</label></h3>
+        <textarea rows="10" cols="40" id="message" name="message">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
+        {{ message is defined and message ? errorList(message.getErrors('message')) }}
+
+        <input type="submit" value="Send">
+        <input type="input" name="pooh" id="pooh">
+    </form>
+    <p id='close-button'>close</p>
+  </div>
+  <div id="modal-overlay" class="closed">
+
+  </div>
+
   {% include '_includes/media-logos'%}
 
   {% includeJsFile "/assets/js/basketLoad.js" %}
 
   {% includeJsFile '/assets/js/addButton.js' %}
+
+  {% includeJsFile '/assets/js/review-modal.js' %}
 
 {% endblock %}

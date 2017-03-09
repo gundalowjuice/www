@@ -1676,7 +1676,7 @@ footer {
 #shop-gifts #gift-wrapper {
   display: -ms-flexbox;
   display: flex;
-  width: 75%;
+  width: 65%;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -ms-flex-pack: justify;
@@ -1699,3 +1699,56 @@ footer {
       background-color: grey;
       padding: .5em 1em;
       font: 100%/100% "Josefin Sans", sans-serif; }
+
+#shop-juice #reviews #review-header {
+  width: 60%;
+  margin: 2em auto;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  display: none; }
+  #shop-juice #reviews #review-header #review-button {
+    cursor: pointer; }
+
+#shop-juice #review-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: grey;
+  max-width: 90%;
+  z-index: 9; }
+  #shop-juice #review-modal.closed {
+    display: none; }
+  #shop-juice #review-modal form {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 2em; }
+    #shop-juice #review-modal form input {
+      margin-bottom: .5em; }
+    #shop-juice #review-modal form textarea {
+      margin-bottom: .5em; }
+    #shop-juice #review-modal form input[type=submit] {
+      width: 6em;
+      font: 100%/150% "Josefin Sans", sans-serif;
+      margin: auto; }
+  #shop-juice #review-modal #pooh {
+    display: none; }
+  #shop-juice #review-modal #close-button {
+    display: inline;
+    position: relative;
+    top: -23em;
+    right: -88%;
+    cursor: pointer; }
+
+#shop-juice #modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  background: rgba(153, 153, 153, 0.5); }
+  #shop-juice #modal-overlay.closed {
+    display: none; }
