@@ -80,7 +80,7 @@
                 {% for adjustment in order.adjustments %}
                     <tr>
                         <td>{{ adjustment.type }}</td>
-                        <td colspan="2">{{ adjustment.name }}<br>{{ adjustment.description }}</td>
+                        <td colspan="2">{{ adjustment.name }}</td>
                         <td class="text-right">{{ adjustment.amount|commerceCurrency(cart.currency) }}</td>
                     </tr>
                 {% endfor %}
