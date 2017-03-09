@@ -78,7 +78,7 @@
                 {% endfor %}
 
                 {% for adjustment in order.adjustments %}
-                  {% if adjustment.type == discount %}
+                  {% if adjustment.type == 'Discount' %}
                     <tr class="border">
                         <td class="border">{{ adjustment.type }}</td>
                         <td class="border" colspan="2">{{ adjustment.name }}</td>
