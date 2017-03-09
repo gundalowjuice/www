@@ -81,6 +81,7 @@ function checkDisplay () {
 var carousel = document.getElementById('product-image')
 
 carousel.addEventListener('click', juiceChange, false)
+carousel.addEventListener('touchend', juiceChange, false)
 
 var carouselImage = document.getElementsByClassName('carousel-cell')
 
@@ -356,6 +357,7 @@ function juiceChange () {
 }
 
 carousel.addEventListener('click', ingredient, false)
+carousel.addEventListener('touchend', ingredient, false)
 
 function ingredient () {
   var target = document.getElementById('ingredients')
@@ -400,7 +402,7 @@ function ingredient () {
 }
 
 carousel.addEventListener('click', iconDisplay, false)
-window.addEventListener('load', iconDisplay)
+window.addEventListener('load', iconDisplay, false)
 
 // Display ingredient icons based on juice displayed
 
