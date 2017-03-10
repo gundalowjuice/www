@@ -3,6 +3,7 @@ console.log('ready')
 $(document).ready(function () {
   checkDisplay()
 
+
 $(document).keydown(function(t) {
   juiceChange()
   contentDisplay()
@@ -41,6 +42,7 @@ $carousel.on( 'staticClick.flickity', function( event, pointer, cellElement, cel
   $('#basket').click(function () {
     $('#basket-dropdown').slideToggle('slow')
   })
+
 })
 
 function checkDisplay () {
