@@ -1,24 +1,24 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta content="telephone=no" name="format-detection">
     <title>Order Confirmation</title>
     <style type="text/css">
-      /* Based on The MailChimp Reset INLINE: Yes. */  
+      /* Based on The MailChimp Reset INLINE: Yes. */
       /* Client-specific Styles */
       #outlook a {padding:0;} /* Force Outlook to provide a "view in browser" menu link. */
-      body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;} 
-      /* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/ 
-      .ExternalClass {width:100%;} /* Force Hotmail to display emails at full width */  
+      body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;}
+      /* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/
+      .ExternalClass {width:100%;} /* Force Hotmail to display emails at full width */
       .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
-      /* Forces Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */ 
+      /* Forces Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */
       #backgroundTable {margin:0; padding:0; width:100% !important; line-height: 100% !important;}
       /* End reset */
       /* Some sensible defaults for images
       Bring inline: Yes. */
-      img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;} 
-      a img {border:none;} 
+      img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;}
+      a img {border:none;}
       .image_fix {display:block;}
       /* Yahoo paragraph fix
       Bring inline: Yes. */
@@ -50,10 +50,10 @@
 
   <!-- BEGIN: Container Table -->
   <table align="center" cellspacing="0" width="640" cellpadding="0" border="0" style="margin:0 auto; padding:0; background-color:#FFFFFF;">
-    
+
     <!-- BEGIN: Header -->
     <tr>
-      <td width="600" style="background:#FFFFFF;"> 
+      <td width="600" style="background:#FFFFFF;">
         <table width="600" border="0" cellpadding="0" cellspacing="0">
           <tr>
             <td width="216" style="background:#030000;"></td>
@@ -64,11 +64,11 @@
             </td>
             <td width="216" style="background:#030000;"></td>
           </tr>
-        </table>        
+        </table>
       </td>
     </tr>
     <tr>
-      <td width="600" style="background:#FFFFFF;"> 
+      <td width="600" style="background:#FFFFFF;">
         <table width="600" border="0" cellpadding="0" cellspacing="0">
           <tr>
             <td>
@@ -77,15 +77,15 @@
               </a>
             </td>
           </tr>
-        </table>        
+        </table>
       </td>
     </tr>
     <!-- END: Header -->
 
     <!-- BEGIN: Body -->
     <tr>
-      
-      <td width="600" style="background:#FFFFFF;padding: 20px 0;"> 
+
+      <td width="600" style="background:#FFFFFF;padding: 20px 0;">
 
         <table width="600" cellpadding="0" cellspacing="0" border="0" style="margin:0;">
           <tr>
@@ -112,10 +112,10 @@
                 Description: {{ item.description }}<br>
                 SKU: {{ item.sku }}<br>
                 Qty: {{ item.qty }}<br>
-                Item Total: {{ order.itemTotal }}<br>
+                Item Total: {{ order.itemTotal|commerceCurrency(cart.currency) }}<br>
               {% endfor %}
 
-              Order Price ${{ order.totalPrice }}<br>
+              Order Price ${{ order.totalPrice|commerceCurrency(cart.currency) }}<br>
 
             </td>
           </tr>
@@ -179,4 +179,3 @@
 
   </body>
 </html>
-
