@@ -775,7 +775,7 @@ footer {
     max-width: 28em;
     padding: 1em;
     position: relative;
-    top: -200px; }
+    top: 18.750em; }
     @media (min-width: 44em) {
       #index #content #hero {
         z-index: -1; } }
