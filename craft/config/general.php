@@ -11,7 +11,6 @@
 return array(
   '*' => array(
     'omitScriptNameInUrls' => true,
-    'enableCsrfProtection' => true
   ),
 
   // dev
