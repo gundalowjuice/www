@@ -1424,8 +1424,6 @@ footer {
     @media (min-width: 44em) {
       #store-locator #map-wrapper #location-list {
         width: 35%;
-        -ms-flex-order: 1;
-        order: 1;
         overflow-y: scroll; } }
     #store-locator #map-wrapper #location-list p {
       margin: auto 1em;
@@ -1439,9 +1437,7 @@ footer {
     order: 1; }
     @media (min-width: 44em) {
       #store-locator #map-wrapper #map {
-        width: 65%;
-        -ms-flex-order: 2;
-        order: 2; } }
+        width: 65%; } }
 
 #error #wrapper {
   display: -ms-flexbox;
