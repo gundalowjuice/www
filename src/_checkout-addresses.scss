@@ -39,6 +39,25 @@
 
           .address-select {
             margin-bottom: 1em;
+
+            .columns {
+
+              @media (max-width: 26em) {
+
+              }
+            }
+
+            .columns {
+              margin-bottom: .5em;
+              text-align: center;
+              display: flex;
+              flex-direction: column;
+
+              @media (min-width: 26em) {
+                display: block;
+                text-align: left;
+              }
+            }
           }
         }
 
