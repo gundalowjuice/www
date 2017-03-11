@@ -1179,6 +1179,17 @@ footer {
         float: right; }
       #checkout-addresses .address form .address-container .address-fieldset .address-select {
         margin-bottom: 1em; }
+        #checkout-addresses .address form .address-container .address-fieldset .address-select .columns {
+          margin-bottom: .5em;
+          text-align: center;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-direction: column;
+          flex-direction: column; }
+          @media (min-width: 26em) {
+            #checkout-addresses .address form .address-container .address-fieldset .address-select .columns {
+              display: block;
+              text-align: left; } }
       #checkout-addresses .address form .address-container input[type='submit'] {
         width: 100%;
         padding: .7em .5em .5em .5em;
