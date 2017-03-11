@@ -102,15 +102,10 @@
               See below for your order confirmation details.<br><br>
 
               Order #{{ order.id }}<br>
-              Order Reference #{{ order.number }}<br>
-              Order Unique #{{ order.shortNumber }}<br>
-              Order Qty {{ order.totalQty }}<br>
               Date Ordered {{ order.dateOrdered }}<br>
-              Customer ID {{ order.customerId }}<br><br><br>
 
               {% for item in order.lineItems %}
                 Description: {{ item.description }}<br>
-                SKU: {{ item.sku }}<br>
                 Qty: {{ item.qty }}<br>
                 Item Total: {{ order.itemTotal|commerceCurrency(cart.currency) }}<br>
               {% endfor %}
