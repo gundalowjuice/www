@@ -50,17 +50,8 @@
         <td class='price'>{{ item.subtotal|commerceCurrency(cart.currency) }}</td>
       </tr>
       {% endfor %}
-      
-        {% for adjustment in cart.adjustments %}
-          <tr>
-            <td>{{ adjustment.name }}</td>
-            {#<td>{{ adjustment.description }}</td>#}
-            <td></td>
-            <td class="price">{{ adjustment.amount | currency(cart.currency) }}</td>
-          </tr>
-        {% endfor %}
 
-
+    
     </tbody>
   </table>
 

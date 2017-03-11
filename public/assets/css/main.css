@@ -1053,24 +1053,6 @@ footer {
       padding: 1em 4em;
       border-radius: .2em; }
 
-#cart #coupon {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-  justify-content: center; }
-  #cart #coupon input[type=text] {
-    font-size: 1em;
-    padding: 0;
-    margin-left: 1em; }
-  #cart #coupon input[type=submit] {
-    color: white;
-    background-color: #58595b;
-    width: 10em;
-    padding: 1em;
-    border-radius: .25em;
-    border: 1px solid #58595b;
-    font: 80%/100% "Josefin Sans", sans-serif; }
-
 #cart #cart-subtotal {
   -ms-flex-pack: center;
   justify-content: center;
@@ -1248,6 +1230,23 @@ footer {
     width: 90%;
     margin: 1em auto;
     text-align: center; }
+  #payment main #coupon {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    #payment main #coupon input[type=text] {
+      font-size: 1em;
+      padding: 0;
+      margin-left: 1em; }
+    #payment main #coupon input[type=submit] {
+      color: white;
+      background-color: #58595b;
+      width: 10em;
+      padding: 1em;
+      border-radius: .25em;
+      border: 1px solid #58595b;
+      font: 80%/100% "Josefin Sans", sans-serif; }
   #payment main .review-card {
     width: 60%;
     margin: auto; }
