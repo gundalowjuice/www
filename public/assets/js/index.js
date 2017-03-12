@@ -83,13 +83,17 @@
 var carousel = document.getElementById('product-image')
 
 carousel.addEventListener('click', juiceChange, false)
-carousel.addEventListener('touchend', juiceChange, false)
+carousel.addEventListener('touchend', function () {
+  setTimeout(function () {
+    juiceChange()
+  }, 500)
+}, false)
 carousel.addEventListener('touchmove', function () {
   setTimeout(function () {
     juiceChange()
     console.log('delay')
   }, 500)
-})
+}, false)
 
 var carouselImage = document.getElementsByClassName('carousel-cell')
 
