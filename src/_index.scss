@@ -23,11 +23,11 @@
         display: block;
         z-index: -100;
         position: relative;
-        top: 5.25em;
+        // top: 3.25em;
         left: 0;
         right: 0;
         bottom: 0;
-        height: 35vh;
+        height: 75vh;
       }
 
     video#bgvid {
@@ -64,11 +64,11 @@
       max-width: 28em;
       padding: 1em;
       position: relative;
-      top: -18.750em;
+      top: -20.750em;
 
-      @media (min-width: 44em) {
-        z-index: -1;
-      }
+      // @media (min-width: 44em) {
+      //   z-index: -1;
+      // }
 
       @media (min-width: 44em) {
         margin: 4em 0 2em 3em;

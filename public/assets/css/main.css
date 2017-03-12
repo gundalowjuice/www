@@ -737,11 +737,10 @@ footer {
         display: block;
         z-index: -100;
         position: relative;
-        top: 5.25em;
         left: 0;
         right: 0;
         bottom: 0;
-        height: 35vh; } }
+        height: 75vh; } }
     #index #content #bg-vid-wrapper video#bgvid {
       background: transparent;
       height: 100%;
@@ -775,10 +774,7 @@ footer {
     max-width: 28em;
     padding: 1em;
     position: relative;
-    top: -18.750em; }
-    @media (min-width: 44em) {
-      #index #content #hero {
-        z-index: -1; } }
+    top: -20.750em; }
     @media (min-width: 44em) {
       #index #content #hero {
         margin: 4em 0 2em 3em; } }
