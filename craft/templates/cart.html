@@ -51,10 +51,10 @@
       </tr>
       {% endfor %}
 
-    
+
     </tbody>
   </table>
-
+{#
   <section id='special'>
     {% set products = craft.commerce.products.type('gifts').find() %}
       {% for product in products %}
@@ -76,15 +76,13 @@
         {% endfor %}
       {% endfor %}
   </section>
-{#
-  <!-- remove this once moved and tested on the payment page -->
-  <form id="coupon" method="post">
-    <input type="hidden" name="action" value="commerce/cart/updateCart">
-    <input type="hidden" name="redirect" value="cart">
-    <input type="submit" value="Apply Coupon">
-    <input type="text" name="couponCode" value="">
-  </form>
 #}
+
+<section id="shopping">
+  <h3>
+    <a href="/juice">continue shopping</a>
+  </h3>
+</section>
 
   <section id="order">
     <div id='subtotal'>

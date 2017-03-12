@@ -186,7 +186,7 @@
   //     padding: 0;
   //     margin-left: 1em;
   //   }
-  // 
+  //
   //   input[type=submit] {
   //     color: white;
   //     background-color: $gj-grey;
@@ -197,6 +197,20 @@
   //     font: 80%/100% $body-font;
   //   }
   // }
+
+  #shopping {
+    margin: 2em auto;
+
+    h3 {
+      max-width: 15em;
+      margin: auto;
+      text-align: center;
+    }
+
+    a {
+      padding: 1em;
+    }
+  }
 
   #cart-subtotal {
 

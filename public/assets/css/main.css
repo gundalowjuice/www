@@ -305,7 +305,7 @@ header {
     background-color: #fff;
     border-radius: 100%;
     line-height: 100%;
-    padding: .3em .2em .2em .3em; }
+    padding: .3em .5em .2em .5em; }
 
 footer {
   color: #999999;
@@ -1052,6 +1052,15 @@ footer {
       background-color: #58595b;
       padding: 1em 4em;
       border-radius: .2em; }
+
+#cart #shopping {
+  margin: 2em auto; }
+  #cart #shopping h3 {
+    max-width: 15em;
+    margin: auto;
+    text-align: center; }
+  #cart #shopping a {
+    padding: 1em; }
 
 #cart #cart-subtotal {
   -ms-flex-pack: center;
