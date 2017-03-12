@@ -5,7 +5,6 @@
   storelocator: {title: "Store Locator"},
   about:    { title: "About Us" },
   faq:      { title: "FAQ" },
-  customer: { title: "Sign In"}
 } %}
 
 {% set cart = craft.commerce.getCart() %}
@@ -36,6 +35,15 @@
                 <a href="{{ url(slug) }}" {% if craft.request.firstSegment == slug %}class="active"{% endif %}>{{ item.title|raw }}</a>
               </li>
           {% endfor %}
+          {% if currentUser %}
+            <li>
+              <a href="{{ logoutUrl }}">Log Out</a>
+            </li>
+          {% else %}
+            <li>
+              <a href="/customer">Sign In</a>
+            </li>
+          {% endif %}
         </ul>
       </nav>
     </li>
