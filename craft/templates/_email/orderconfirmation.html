@@ -108,10 +108,10 @@
               {% for item in order.lineItems %}
                 Description: {{ item.description }}<br>
                 Qty: {{ item.qty }}<br>
-                Item Total: {{ order.itemTotal }}<br>
+                Item Total: {{ order.itemTotal | commerceCurrency(order.currency) }}<br>
               {% endfor %}
 
-              Order Price ${{ order.totalPrice | commerceCurrency(order.currency) }}<br>
+              Order Price {{ order.totalPrice | commerceCurrency(order.currency) }}<br>
 
             </td>
           </tr>
