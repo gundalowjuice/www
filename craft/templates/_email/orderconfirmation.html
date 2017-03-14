@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -102,15 +102,20 @@
               See below for your order confirmation details.<br><br>
 
               Order #{{ order.id }}<br>
+              Order Reference #{{ order.number }}<br>
+              Order Unique #{{ order.shortNumber }}<br>
+              Order Qty {{ order.totalQty }}<br>
               Date Ordered {{ order.dateOrdered }}<br>
+              Customer ID {{ order.customerId }}<br><br><br>
 
               {% for item in order.lineItems %}
                 Description: {{ item.description }}<br>
+                SKU: {{ item.sku }}<br>
                 Qty: {{ item.qty }}<br>
-                Item Total: {{ order.itemTotal|commerceCurrency(cart.currency) }}<br>
+                Item Total: {{ order.itemTotal }}<br>
               {% endfor %}
 
-              Order Price ${{ order.totalPrice|commerceCurrency(cart.currency) }}<br>
+              Order Price ${{ order.totalPrice }}<br>
 
             </td>
           </tr>
