@@ -84,19 +84,30 @@
 						</div>
 					</div>
 
+        {% if not cart.shippingMethod %}
+
 					{% if cart.paymentMethod.class == 'Stripe' %}
-						<script
-								src="//checkout.stripe.com/checkout.js"
-								class="stripe-button"
-								data-key="{{ cart.paymentMethod.settings.publishableKey ?? '' }}"
-								data-name="Craft Commerce"
-								data-description="Purchase" {# This is not used for order description in stripe - see Craft Commerce general settings #}
-								data-email="{{ cart.email }}"
-								data-currency="{{ cart.paymentCurrency }}"
-								data-amount="{{ cart.totalPrice|commerceCurrency(cart.paymentCurrency,convert=true,format=false) * 100 }}"
-								data-locale="auto">
-						</script>
+            
 					{% endif %}
+
+
+        {% else %}
+
+        {% if cart.paymentMethod.class == 'Stripe' %}
+          <script
+              src="//checkout.stripe.com/checkout.js"
+              class="stripe-button"
+              data-key="{{ cart.paymentMethod.settings.publishableKey ?? '' }}"
+              data-name="Craft Commerce"
+              data-description="Purchase" {# This is not used for order description in stripe - see Craft Commerce general settings #}
+              data-email="{{ cart.email }}"
+              data-currency="{{ cart.paymentCurrency }}"
+              data-amount="{{ cart.totalPrice|commerceCurrency(cart.paymentCurrency,convert=true,format=false) * 100 }}"
+              data-locale="auto">
+          </script>
+        {% endif %}
+
+        {% endif %}
 
 
 					{% if cart.paymentMethod.class != 'Stripe' %}
@@ -236,12 +247,12 @@
 
 						{#
 						If the order requires a shipping method be selected, you could redirect back to the shipping page until one is applied to the order.
-						{% redirect "shop/checkout/shipping" %}
+						{% redirect "checkout/shipping" %}
 						You might also want to add a php plugin hook to require
 						#}
 
 						<li>
-							<strong>Shipping</strong> None selected. <a href="{{ url('shop/checkout/shipping') }}">Choose a shipping method.</a>
+							<strong>Shipping</strong> None selected. <a href="{{ url('checkout/shipping') }}">Choose a shipping method.</a>
 						</li>
 					{% endif %}
 
