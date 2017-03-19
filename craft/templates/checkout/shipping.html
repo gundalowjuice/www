@@ -24,7 +24,10 @@
 
 
         {% if not craft.commerce.availableShippingMethods|length %}
-            <p>No shipping methods available.<p><p> <a class="button button-primary" href="{{ url('shop/checkout/payment') }}">Continue to payment</a></p>
+            <p>No shipping methods available.</p>
+            <!-- <p>
+              <a class="button button-primary" href="{{ url('shop/checkout/payment') }}">Continue to payment</a>
+            </p> -->
         {% endif %}
 
 
