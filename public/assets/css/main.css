@@ -1502,6 +1502,19 @@ footer {
       font-weight: bold;
       border-radius: .2em; }
 
+#register-success main {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 50vh; }
+  #register-success main #success-container {
+    width: 60%;
+    margin: 2em auto;
+    text-align: center; }
+    #register-success main #success-container h3 {
+      margin: 1em; }
+
 #customer .email {
   display: -ms-flexbox;
   display: flex;

@@ -8,7 +8,7 @@
     <form method="post" accept-charset="UTF-8">
         {{ getCsrfInput() }}
         <input type="hidden" name="action" value="users/saveUser">
-        <input type="hidden" name="redirect" value="">
+        <input type="hidden" name="redirect" value="/customer/register-success">
 
         {% macro errorList(errors) %}
             {% if errors %}
