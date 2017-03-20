@@ -1,0 +1,18 @@
+#register-success {
+
+    main {
+      display: flex;
+      flex-direction: column;
+      height: 50vh;
+
+      #success-container {
+        width: 60%;
+        margin: 2em auto;
+        text-align: center;
+
+        h3 {
+          margin: 1em;
+        }
+    }
+  }
+}
