@@ -1,0 +1,66 @@
+#stars {
+  width: 50%;
+  margin: 2em auto 0;
+  text-align: center;
+
+  .s-s-veggie {
+    color: $ss-veggie;
+  }
+
+  .mainstay-green {
+    color: $mainstay-green;
+  }
+
+  .dockside-sunrise {
+    color: $dockside-sunrise;
+  }
+
+  .starboard-strawberry {
+    color: $starboard-strawberry;
+  }
+
+  .sailors-delight {
+    color: $sailors-delight;
+  }
+
+  .harbor-voyage {
+    color: $harbor-voyage;
+  }
+
+  .watermelon-waves {
+    color: $watermelon-waves;
+  }
+
+  .anchor-case {
+    color: $anchor-case;
+  }
+
+  .crew-case {
+    color: $crew-case;
+  }
+
+  .lighthouse-case {
+    color: $lighthouse-case;
+  }
+
+  .compass-case {
+    color: $compass-case;
+  }
+
+
+  .sr-user-rating,
+  .sr-avg-rating {
+    color: inherit;
+  }
+
+  .stars {
+
+    &.hide {
+      display: none;
+    }
+
+    .fa {
+      font-size: 2em;
+    }
+  }
+}

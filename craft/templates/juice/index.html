@@ -18,25 +18,25 @@
 {% block content %}
   {% set juices = craft.commerce.products.type('juice').find() %}
 
-    <div id="product-image">
-      <div class="carousel">
-        {% for juice in juices %}
-        <div class="carousel-cell {{ juice.slug }}">
-          <img src="{{ juice.productImage.first().getUrl('productCarousel') }}" width="{{ juice.productImage.first().getWidth('productCarousel') }}"
-          height="{{ juice.productImage.first().getHeight('productCarousel') }}" alt="" />
-        </div>
-        {% endfor %}
+  <div id="product-image">
+    <div class="carousel">
+      {% for juice in juices %}
+      <div class="carousel-cell {{ juice.slug }}">
+        <img src="{{ juice.productImage.first().getUrl('productCarousel') }}" width="{{ juice.productImage.first().getWidth('productCarousel') }}"
+        height="{{ juice.productImage.first().getHeight('productCarousel') }}" alt="" />
       </div>
+      {% endfor %}
     </div>
+  </div>
 
     <div id="juice-content">
       <div id="juice-header">
       </div>
     </div>
 
-    <div id="pack-info">
-      <p>Gundalow Juice is sold online in packs of seven</p>
-    </div>
+<div id="pack-info">
+  <p>Gundalow Juice is sold online in packs of seven</p>
+</div>
 
 <div id="button">
   {% for product in craft.commerce.products.limit(1).find() %}
@@ -53,6 +53,14 @@
       </form>
       <button id='plus'>+</button>
 
+  {% endfor %}
+</div>
+
+<div id="stars">
+  {% for juice in juices %}
+    <div class="stars {{ juice.slug }} hide">
+      {{ craft.starRatings.stars(juice.id) }}
+    </div>
   {% endfor %}
 </div>
 
@@ -258,5 +266,7 @@
   {% includeJsFile '/assets/js/index.js' %}
 
   {% includeJsFile '/assets/js/addCart.js' %}
+
+  {% includeJsFile '/assets/js/stars.js' %}
 
 {% endblock %}

@@ -1825,3 +1825,37 @@ footer {
   background: rgba(153, 153, 153, 0.5); }
   #shop-juice #modal-overlay.closed {
     display: none; }
+
+#stars {
+  width: 50%;
+  margin: 2em auto 0;
+  text-align: center; }
+  #stars .s-s-veggie {
+    color: #81bc41; }
+  #stars .mainstay-green {
+    color: #0096aa; }
+  #stars .dockside-sunrise {
+    color: #f06177; }
+  #stars .starboard-strawberry {
+    color: #ae3863; }
+  #stars .sailors-delight {
+    color: #ee7522; }
+  #stars .harbor-voyage {
+    color: #457bbe; }
+  #stars .watermelon-waves {
+    color: #9cd8d8; }
+  #stars .anchor-case {
+    color: #1e8f47; }
+  #stars .crew-case {
+    color: #666666; }
+  #stars .lighthouse-case {
+    color: #3e3b5e; }
+  #stars .compass-case {
+    color: #E94640; }
+  #stars .sr-user-rating,
+  #stars .sr-avg-rating {
+    color: inherit; }
+  #stars .stars.hide {
+    display: none; }
+  #stars .stars .fa {
+    font-size: 2em; }
