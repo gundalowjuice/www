@@ -7,7 +7,7 @@
       <div class="carousel-cell">
         {% if block.type == 'logo' %}
         {% set image = block.image.first() %}
-          <a href="{{ block.hyperlink}}">
+          <a href="{{ block.hyperlink}}" target="_blank">
             <img src="{{ image.getUrl('mediaLogo')}}" width="{{ image.getWidth('mediaLogo')}}">
           </a>
         {% endif%}
