@@ -21,7 +21,7 @@ $(document).ready(function () {
     initialIndex: 0
   })
 
-var $carousel = $('.carousel').flickity()
+var $carousel = $('#product-image .carousel').flickity()
 
 $carousel.on( 'staticClick.flickity', function( event, pointer, cellElement, cellIndex ) {
   if ( typeof cellIndex == 'number' ) {
