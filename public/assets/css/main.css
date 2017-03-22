@@ -1137,6 +1137,40 @@ footer {
     font: 1em "Josefin Sans", sans-serif;
     font-weight: bold;
     border-radius: .2em; }
+  #checkout main .email #mailchimp {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center; }
+    @media (min-width: 46em) {
+      #checkout main .email #mailchimp {
+        -ms-flex-align: end;
+        align-items: flex-end; } }
+    #checkout main .email #mailchimp input {
+      border: 1px solid #000;
+      width: 12em;
+      margin: 0 0 1em 0;
+      font-size: 1em;
+      border-radius: 3px;
+      text-align: center;
+      padding: .25em;
+      font-family: "Josefin Sans", sans-serif; }
+      @media (min-width: 44em) {
+        #checkout main .email #mailchimp input {
+          text-align: right; } }
+    #checkout main .email #mailchimp button {
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #000;
+      width: 5em;
+      padding: .5em 0 .25em .1em;
+      font-family: "Josefin Sans", sans-serif;
+      font-size: .75em;
+      border-radius: 3px;
+      text-transform: uppercase;
+      margin-bottom: .5em; }
 
 #checkout-addresses .address {
   width: 75%;
