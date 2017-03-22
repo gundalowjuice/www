@@ -3,6 +3,7 @@ console.log('reviews')
 var carousel = document.getElementById('product-image')
 
 carousel.addEventListener('click', colorChange, false)
+window.addEventListener('load', colorChange, false)
 
 function colorChange () {
   var reviewHeader = document.querySelector('#review-header h2')
