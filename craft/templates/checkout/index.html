@@ -59,15 +59,43 @@
                 <input type="hidden" name="redirect" value="checkout/addresses">
                 {{ getCsrfInput() }}
                 <label for="">Email</label>
-                <input class="u-full-width" type="email" value="{{ cart.email }}" name="email"
+
+                {% macro errorList(errors) %}
+                    {% if errors %}
+                        <ul class="errors">
+                            {% for error in errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endmacro %}
+
+                {% from _self import errorList %}
+                <input id="guest-email" class="u-full-width" type="email" value="{{ cart.email }}" name="email"
                        placeholder="email@site.com"/>
+
+
 
                 <span class="flash">{{ cart.getErrors('email')|join }}</span><br>
 
                 <input type="submit" value="Continue as Guest" class="button button-primary guest"/>
 
             </form>
+
+            <!-- <div id="check">
+              <input type="checkbox" id="cbox1" value="first_checkbox">
+              <label for="cbox1">Check here to receive our newsletter</label>
+            </div>
+            <form id="mailchimp" action="https://GundalowJuice.us12.list-manage.com/subscribe/post" method="POST" target="_blank">
+              <input type="hidden" name="u" value="ac63454382e76ef5f6d27022f">
+              <input type="hidden" name="id" value="ca21e752bc">
+              <label for="email"></label>
+              <input id="mailchimp-email" type="hidden" placeholder="email" name="MERGE0" value="">
+              <button type="submit">submit</button>
+            </form> -->
         </div>
     </div>
+
+    {% includeJsFile "assets/js/email-opt-in.js" %}
 
 {% endblock %}

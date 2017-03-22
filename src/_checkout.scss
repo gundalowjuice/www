@@ -71,6 +71,44 @@
       border-radius: .2em;
       }
 
+      #mailchimp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: 46em){
+          align-items: flex-end
+        }
+
+        input {
+          border: 1px solid #000;
+          width: 12em;
+          margin: 0 0 1em 0;
+          font-size: 1em;
+          border-radius: 3px;
+          text-align: center;
+          padding: .25em;
+          font-family: $header-font;
+
+          @media (min-width: 44em){
+            text-align: right;
+          }
+        }
+
+        button {
+          background-color: #fff;
+          color: #000;
+          border: 1px solid #000;
+          width: 5em;
+          padding: .5em 0 .25em .1em;
+          font-family: $header-font;
+          font-size: .75em;
+          border-radius: 3px;
+          text-transform: uppercase;
+          margin-bottom: .5em;
+        }
+      }
+
     }
   }
 }
