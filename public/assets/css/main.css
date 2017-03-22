@@ -1773,15 +1773,6 @@ footer {
       padding: .5em 1em;
       font: 100%/100% "Josefin Sans", sans-serif; }
 
-#shop-juice #reviews #review-header {
-  width: 60%;
-  margin: 2em auto;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  display: none; }
-  #shop-juice #reviews #review-header #review-button {
-    cursor: pointer; }
-
 #shop-juice #review-modal {
   position: fixed;
   top: 50%;
@@ -1824,6 +1815,97 @@ footer {
   z-index: 8;
   background: rgba(153, 153, 153, 0.5); }
   #shop-juice #modal-overlay.closed {
+    display: none; }
+
+#shop-juice #reviews {
+  width: 80%;
+  margin: auto; }
+  @media (min-width: 1024px) {
+    #shop-juice #reviews {
+      width: 50%; } }
+  #shop-juice #reviews #review-header {
+    width: 100%;
+    margin: 5em auto 2em;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    #shop-juice #reviews #review-header h2.mainstay-green {
+      color: #0096aa; }
+    #shop-juice #reviews #review-header h2.s-s-veggie {
+      color: #81bc41; }
+    #shop-juice #reviews #review-header h2.starboard-strawberry {
+      color: #ae3863; }
+    #shop-juice #reviews #review-header h2.dockside-sunrise {
+      color: #f06177; }
+    #shop-juice #reviews #review-header h2.sailors-delight {
+      color: #ee7522; }
+    #shop-juice #reviews #review-header h2.harbor-voyage {
+      color: #457bbe; }
+    #shop-juice #reviews #review-header h2.watermelon-waves {
+      color: #9cd8d8; }
+    #shop-juice #reviews #review-header h2.anchor-case {
+      color: #1e8f47; }
+    #shop-juice #reviews #review-header h2.compass-case {
+      color: #E94640; }
+    #shop-juice #reviews #review-header h2.crew-case {
+      color: #666666; }
+    #shop-juice #reviews #review-header h2.lighthouse-case {
+      color: #3e3b5e; }
+    #shop-juice #reviews #review-header #review-button {
+      cursor: pointer; }
+      #shop-juice #reviews #review-header #review-button:hover {
+        color: #58595b; }
+  #shop-juice #reviews .review-wrapper h3 {
+    margin-bottom: 1em; }
+    #shop-juice #reviews .review-wrapper h3.mainstay-green {
+      color: #0096aa; }
+    #shop-juice #reviews .review-wrapper h3.s-s-veggie {
+      color: #81bc41; }
+    #shop-juice #reviews .review-wrapper h3.starboard-strawberry {
+      color: #ae3863; }
+    #shop-juice #reviews .review-wrapper h3.dockside-sunrise {
+      color: #f06177; }
+    #shop-juice #reviews .review-wrapper h3.sailors-delight {
+      color: #ee7522; }
+    #shop-juice #reviews .review-wrapper h3.harbor-voyage {
+      color: #457bbe; }
+    #shop-juice #reviews .review-wrapper h3.watermelon-waves {
+      color: #9cd8d8; }
+    #shop-juice #reviews .review-wrapper h3.anchor-case {
+      color: #1e8f47; }
+    #shop-juice #reviews .review-wrapper h3.compass-case {
+      color: #E94640; }
+    #shop-juice #reviews .review-wrapper h3.crew-case {
+      color: #666666; }
+    #shop-juice #reviews .review-wrapper h3.lighthouse-case {
+      color: #3e3b5e; }
+  #shop-juice #reviews .review-wrapper p {
+    margin-bottom: 1em;
+    padding: 0 0 1em 0; }
+    #shop-juice #reviews .review-wrapper p.mainstay-green {
+      border-bottom: 1px solid #0096aa; }
+    #shop-juice #reviews .review-wrapper p.s-s-veggie {
+      border-bottom: 1px solid #81bc41; }
+    #shop-juice #reviews .review-wrapper p.starboard-strawberry {
+      border-bottom: 1px solid #ae3863; }
+    #shop-juice #reviews .review-wrapper p.dockside-sunrise {
+      border-bottom: 1px solid #f06177; }
+    #shop-juice #reviews .review-wrapper p.sailors-delight {
+      border-bottom: 1px solid #ee7522; }
+    #shop-juice #reviews .review-wrapper p.harbor-voyage {
+      border-bottom: 1px solid #457bbe; }
+    #shop-juice #reviews .review-wrapper p.watermelon-waves {
+      border-bottom: 1px solid #9cd8d8; }
+    #shop-juice #reviews .review-wrapper p.anchor-case {
+      border-bottom: 1px solid #1e8f47; }
+    #shop-juice #reviews .review-wrapper p.compass-case {
+      border-bottom: 1px solid #E94640; }
+    #shop-juice #reviews .review-wrapper p.crew-case {
+      border-bottom: 1px solid #666666; }
+    #shop-juice #reviews .review-wrapper p.lighthouse-case {
+      border-bottom: 1px solid #3e3b5e; }
+  #shop-juice #reviews .review-wrapper.hide {
     display: none; }
 
 #stars {

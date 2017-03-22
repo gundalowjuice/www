@@ -210,6 +210,24 @@
       <h2>reviews</h2>
       <h2 id='review-button'>submit a review</h2>
     </div>
+
+
+  {% for juice in juices %}
+  <div class="review-wrapper {{ juice.slug }}">
+  {% if juice.reviews | length %}
+
+
+        {% for row in juice.reviews %}
+            <h3 class="{{ juice.slug }}">{{ row.reviewName }}</h3>
+            <p class="{{ juice.slug }}">{{ row.reviewContent }}</p>
+        {% endfor %}
+
+
+
+  {% endif %}
+  </div>
+  {% endfor %}
+
   </div>
 
   <div id="review-modal" class="closed">
@@ -262,6 +280,8 @@
   {% includeJsFile '/assets/js/addButton.js' %}
 
   {% includeJsFile '/assets/js/review-modal.js' %}
+
+  {% includeJsFile '/assets/js/reviews.js' %}
 
   {% includeJsFile '/assets/js/index.js' %}
 

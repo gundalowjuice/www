@@ -1,0 +1,177 @@
+#shop-juice {
+
+  #reviews {
+    width: 80%;
+    margin: auto;
+
+    @media (min-width: 1024px) {
+      width: 50%;
+    }
+
+    #review-header {
+      width: 100%;
+      margin: 5em auto 2em;
+      display: flex;
+      justify-content: space-between;
+
+      h2 {
+
+        &.mainstay-green {
+          color: $mainstay-green;
+        }
+
+        &.s-s-veggie {
+          color: $ss-veggie;
+        }
+
+        &.starboard-strawberry {
+          color: $starboard-strawberry;
+        }
+
+        &.dockside-sunrise {
+          color: $dockside-sunrise;
+        }
+
+        &.sailors-delight {
+          color: $sailors-delight;
+        }
+
+        &.harbor-voyage {
+          color: $harbor-voyage;
+        }
+
+        &.watermelon-waves {
+          color: $watermelon-waves;
+        }
+
+        &.anchor-case {
+          color: $anchor-case;
+        }
+
+        &.compass-case {
+          color: $compass-case;
+        }
+
+        &.crew-case {
+          color: $crew-case;
+        }
+
+        &.lighthouse-case {
+          color: $lighthouse-case;
+        }
+      }
+
+      #review-button {
+        cursor: pointer;
+
+        &:hover {
+          color: $gj-grey;
+        }
+      }
+    }
+
+    .review-wrapper {
+
+      h3 {
+        margin-bottom: 1em;
+
+        &.mainstay-green {
+          color: $mainstay-green;
+        }
+
+        &.s-s-veggie {
+          color: $ss-veggie;
+        }
+
+        &.starboard-strawberry {
+          color: $starboard-strawberry;
+        }
+
+        &.dockside-sunrise {
+          color: $dockside-sunrise;
+        }
+
+        &.sailors-delight {
+          color: $sailors-delight;
+        }
+
+        &.harbor-voyage {
+          color: $harbor-voyage;
+        }
+
+        &.watermelon-waves {
+          color: $watermelon-waves;
+        }
+
+        &.anchor-case {
+          color: $anchor-case;
+        }
+
+        &.compass-case {
+          color: $compass-case;
+        }
+
+        &.crew-case {
+          color: $crew-case;
+        }
+
+        &.lighthouse-case {
+          color: $lighthouse-case;
+        }
+      }
+
+      p {
+        margin-bottom: 1em;
+        padding: 0 0 1em 0;
+
+        &.mainstay-green {
+          border-bottom: 1px solid $mainstay-green;
+        }
+
+        &.s-s-veggie {
+          border-bottom: 1px solid $ss-veggie;
+        }
+
+        &.starboard-strawberry {
+          border-bottom: 1px solid $starboard-strawberry;
+        }
+
+        &.dockside-sunrise {
+          border-bottom: 1px solid $dockside-sunrise;
+        }
+
+        &.sailors-delight {
+          border-bottom: 1px solid $sailors-delight;
+        }
+
+        &.harbor-voyage {
+          border-bottom: 1px solid $harbor-voyage;
+        }
+
+        &.watermelon-waves {
+          border-bottom: 1px solid $watermelon-waves;
+        }
+
+        &.anchor-case {
+          border-bottom: 1px solid $anchor-case;
+        }
+
+        &.compass-case {
+          border-bottom: 1px solid $compass-case;
+        }
+
+        &.crew-case {
+          border-bottom: 1px solid $crew-case;
+        }
+
+        &.lighthouse-case {
+          border-bottom: 1px solid $lighthouse-case;
+        }
+      }
+
+      &.hide {
+        display: none;
+      }
+    }
+  }
+}
