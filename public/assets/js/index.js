@@ -487,6 +487,38 @@ function iconDisplay () {
           icons[j].classList.add('hide') // add hide class
         }
       }
+    } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('crew-case')) {
+      for (var j = 0; j < icons.length; j++) {
+        if (icons[j].classList.contains('crew-case')) {
+          icons[j].classList.remove('hide')
+        } else {
+          icons[j].classList.add('hide') // add hide class
+        }
+      }
+    } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('anchor-case')) {
+      for (var j = 0; j < icons.length; j++) {
+        if (icons[j].classList.contains('anchor-case')) {
+          icons[j].classList.remove('hide')
+        } else {
+          icons[j].classList.add('hide') // add hide class
+        }
+      }
+    } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('compass-case')) {
+      for (var j = 0; j < icons.length; j++) {
+        if (icons[j].classList.contains('compass-case')) {
+          icons[j].classList.remove('hide')
+        } else {
+          icons[j].classList.add('hide') // add hide class
+        }
+      }
+    } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('lighthouse-case')) {
+      for (var j = 0; j < icons.length; j++) {
+        if (icons[j].classList.contains('lighthouse-case')) {
+          icons[j].classList.remove('hide')
+        } else {
+          icons[j].classList.add('hide') // add hide class
+        }
+      }
     }
   }
 }
