@@ -29,43 +29,49 @@
     </div>
   </div>
 
+<!-- start juice content -->
+<!-- one wrapper for content and button -->
+<div id="content-wrapper">
+  <!-- one column -->
+  <div class="column-one-half">
     <div id="juice-content">
       <div id="juice-header">
       </div>
     </div>
 
-<div id="pack-info">
-  <p>Gundalow Juice is sold online in packs of seven</p>
-</div>
+  <!-- end column -->
+  </div>
 
-<div id="button">
-  {% for product in craft.commerce.products.limit(1).find() %}
+  <!-- one column -->
+  <div class="column-one-half">
 
-      {% set variant = product.defaultVariant %}
-      <button id='minus'>-</button>
-      <form id="addCart" class="" method="POST">
-          <input type="hidden" name="action" value="commerce/cart/updateCart">
-          <!-- <input type="hidden" name="redirect" value="cart"> -->
-          <input id="qtyBtn" type="hidden" name="qty" value="0">
-          <input type="hidden" name="purchasableId" value="">
-          {{ getCsrfInput() }}
-           <input id='add-to-cart' type="submit" value="Add to Basket">
-      </form>
-      <button id='plus'>+</button>
+    <div id="button">
+      {% for product in craft.commerce.products.limit(1).find() %}
 
-  {% endfor %}
-</div>
+          {% set variant = product.defaultVariant %}
+          <button id='minus'>-</button>
+          <form id="addCart" class="" method="POST">
+              <input type="hidden" name="action" value="commerce/cart/updateCart">
+              <!-- <input type="hidden" name="redirect" value="cart"> -->
+              <input id="qtyBtn" type="hidden" name="qty" value="0">
+              <input type="hidden" name="purchasableId" value="">
+              {{ getCsrfInput() }}
+               <input id='add-to-cart' type="submit" value="Add to Basket">
+          </form>
+          <button id='plus'>+</button>
+      {% endfor %}
 
-<div id="stars">
-  {% for juice in juices %}
-    <div class="stars {{ juice.slug }} hide">
-      {{ craft.starRatings.stars(juice.id) }}
     </div>
-  {% endfor %}
-</div>
+
+    <div id="pack-info">
+      <p>Gundalow Juice is sold online in packs of seven</p>
+    </div>
 
    <div id="ingredients">
-     <h2>Ingredients</h2>
+     <div class="header">
+      <h2>Ingredients</h2>
+      <h2>nutrition</h2>
+    </div>
     <div id="icons">
       <svg class="icon apple-icon hide sd ss-veg mg">
         <use xlink:href='#apple-icon'></use>
@@ -204,6 +210,20 @@
       </div>
     </div>
   </div>
+
+  <div id="stars">
+    {% for juice in juices %}
+      <div class="stars {{ juice.slug }} hide">
+        {{ craft.starRatings.stars(juice.id) }}
+      </div>
+    {% endfor %}
+    <p>see reviews</p>
+  </div>
+  <!-- end column -->
+  </div>
+
+  <!-- end content wrapper -->
+</div>
 
   <div id="reviews">
     <div id="review-header">
