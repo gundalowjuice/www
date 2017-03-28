@@ -1,107 +1,154 @@
-#juice-content {
-  margin: 3em 2em;
+#content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  justify-content: space-between;
 
-  @media (min-width: 44em){
-    max-width: 32em;
-    margin: 0 auto;
+  @media (min-width: 47.5em) {
+    flex-direction: row;
+    width: 90%;
   }
 
-  #juice-header {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+  @media (min-width: 67.5em) {
+    width: 65%;
+    flex-direction: row;
+  }
 
-    h2:nth-of-type(2) {
-      text-transform: lowercase;
-      font-weight: normal;
+  @media (min-width: 78.5em) {
+    width: 55%;
+  }
+
+  .column-one-half {
+    flex: 0 1 45%;
+
+    #button {
+      margin-top: 1em;
     }
 
-    &.starboard-strawberry{
+    #juice-content {
+      margin: 3em 2em;
 
-      h2:nth-of-type(1) {
-        color: $starboard-strawberry;
+      @media (min-width: 44em){
+        max-width: 32em;
+        margin: 0 auto;
       }
-    }
 
-    &.sailors-delight{
+      #juice-header {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
 
-      h2:nth-of-type(1) {
-        color: $sailors-delight;
-      }
-    }
+        @media (min-width: 47.5em) {
+          flex-direction: column;
+        }
 
-    &.watermelon-waves{
+        // @media (min-width: 78.5em) {
+        //   flex-direction: column;
+        // }
 
-      h2:nth-of-type(1) {
-        color: $watermelon-waves;
-      }
-    }
+        h2:nth-of-type(2) {
+          text-transform: lowercase;
+          font-weight: normal;
+        }
 
-    &.harbor-voyage{
+        &.starboard-strawberry{
 
-      h2:nth-of-type(1) {
-        color: $harbor-voyage;
-      }
-    }
+          h2:nth-of-type(1) {
+            color: $starboard-strawberry;
+          }
+        }
 
-    &.dockside-sunrise{
+        &.sailors-delight{
 
-      h2:nth-of-type(1) {
-        color: $dockside-sunrise;
-      }
-    }
+          h2:nth-of-type(1) {
+            color: $sailors-delight;
+          }
+        }
 
-    &.s-s-veggie{
+        &.watermelon-waves{
 
-      h2:nth-of-type(1) {
-        color: $ss-veggie;
-      }
-    }
+          h2:nth-of-type(1) {
+            color: $watermelon-waves;
+          }
+        }
 
-    &.mainstay-green{
+        &.harbor-voyage{
 
-      h2:nth-of-type(1) {
-        color: $mainstay-green;
-      }
-    }
+          h2:nth-of-type(1) {
+            color: $harbor-voyage;
+          }
+        }
 
-    &.anchor-case {
+        &.dockside-sunrise{
 
-      h2:nth-of-type(1) {
-        color: $anchor-case;
-      }
-    }
+          h2:nth-of-type(1) {
+            color: $dockside-sunrise;
+          }
+        }
 
-    &.compass-case{
+        &.s-s-veggie{
 
-      h2:nth-of-type(1) {
-        color: $compass-case;
-      }
-    }
+          h2:nth-of-type(1) {
+            color: $ss-veggie;
+          }
+        }
 
-    &.crew-case{
+        &.mainstay-green{
 
-      h2:nth-of-type(1) {
-        color: $crew-case;
-      }
-    }
+          h2:nth-of-type(1) {
+            color: $mainstay-green;
+          }
+        }
 
-    &.lighthouse-case{
+        &.anchor-case {
 
-      h2:nth-of-type(1) {
-        color: $lighthouse-case;
-      }
-    }
+          h2:nth-of-type(1) {
+            color: $anchor-case;
+          }
+        }
 
-    @media (min-width: 44em) {
-      flex-direction: row;
-    }
+        &.compass-case{
 
-    h2 {
-      margin: 0 .5em .5em 0 ;
+          h2:nth-of-type(1) {
+            color: $compass-case;
+          }
+        }
 
-      @media (min-width: 44em) {
-      margin: 1em 0;
+        &.crew-case{
+
+          h2:nth-of-type(1) {
+            color: $crew-case;
+          }
+        }
+
+        &.lighthouse-case{
+
+          h2:nth-of-type(1) {
+            color: $lighthouse-case;
+          }
+        }
+
+        h2 {
+          text-align: center;
+
+          @media (min-width: 47.5em) {
+          margin: 1em 0 0;
+          text-align: left;
+          }
+
+          @media (min-width: 67.5em) {
+            text-align: left;
+          }
+        }
+
+        h2:nth-of-type(2) {
+          margin: .5em 0;
+
+          @media (min-width: 78.5em) {
+            margin: .5em 0;
+          }
+        }
       }
     }
   }
