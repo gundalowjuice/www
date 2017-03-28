@@ -261,9 +261,9 @@ function juiceChange () {
       header.classList.add('harbor-voyage')
       addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
       addCart.classList.add('harbor-voyage')
-      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'watermelon-waves')
       plusBtn.classList.add('harbor-voyage')
-      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'mainstay-green-dark', 'sailors-delight-dark', 's-s-veggie-dark', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'mainstay-green-dark', 'sailors-delight-dark', 's-s-veggie-dark', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'watermelon-waves-dark')
       minusBtn.classList.add('harbor-voyage-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
