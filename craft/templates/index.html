@@ -18,7 +18,8 @@
  #}
 
  {% extends "_layout" %}
-
+ {% set title = entry.seoTitle %}
+ {% set description = entry.seoDesc %}
  {% set bodyId = "index" %}
 
  {% block content %}
