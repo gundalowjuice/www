@@ -811,3 +811,163 @@ function ingredientColor () {
 //
 //   console.log(total)
 // }
+
+
+// add active class for ingredients/nutrition header
+
+// display correct nutrition label on click and hide all ingredients
+
+var ingredientTab = document.getElementById('ingredient-tab')
+var nutritionTab = document.getElementById('nutrition-tab')
+var ingredientH2 = document.querySelectorAll('.header h2')
+var parent = document.querySelector('.header')
+
+parent.addEventListener('click', handler, false)
+
+function handler (e) {
+  if (e.target !== e.currentTarget) {
+    for (var i = 0; i < ingredientH2.length; i++) {
+      ingredientH2[i].classList.remove('active')
+    }
+    e.target.classList.add('active')
+  }
+  e.stopPropagation()
+}
+
+parent.addEventListener('click', iconLabelDisplay, false)
+
+function iconLabelDisplay () {
+  var icons = document.getElementById('icons')
+  var labels = document.getElementById('nutrition-labels')
+  if (nutritionTab.classList.contains('active')) {
+    icons.classList.add('hide')
+    labels.classList.remove('hide')
+  } else if (ingredientTab.classList.contains('active')) {
+    icons.classList.remove('hide')
+    labels.classList.add('hide')
+  }
+}
+
+carousel.addEventListener('click', labelDisplay, false)
+window.addEventListener('load', labelDisplay, false)
+
+function labelDisplay () {
+  var carouselImage = document.querySelectorAll('#product-image .carousel-cell')
+  var labels = document.getElementsByClassName('labels')
+
+  console.log('labels')
+
+  for (var i = 0; i < carouselImage.length; i++) {
+    if (carouselImage[i].classList.contains('is-selected') && carouselImage[i].classList.contains('s-s-veggie')) {
+      for (var j = 0; j < labels.length; j++) {
+        if (labels[j].classList.contains('s-s-veggie')) {
+          labels[j].classList.remove('hide')
+        } else {
+          labels[j].classList.add('hide')
+        }
+      }
+    } else if (carouselImage[i].classList.contains('is-selected') && carouselImage[i].classList.contains('mainstay-green')) {
+      for (var j = 0; j < labels.length; j++) {
+        if (labels[j].classList.contains('mainstay-green')) {
+          labels[j].classList.remove('hide')
+        } else {
+          labels[j].classList.add('hide')
+        }
+      }
+    } else if (carouselImage[i].classList.contains('is-selected') && carouselImage[i].classList.contains('dockside-sunrise')) {
+      for (var j = 0; j < labels.length; j++) {
+        if (labels[j].classList.contains('dockside-sunrise')) {
+          labels[j].classList.remove('hide')
+        } else {
+          labels[j].classList.add('hide')
+        }
+      }
+    } else if (carouselImage[i].classList.contains('is-selected') && carouselImage[i].classList.contains('starboard-strawberry')) {
+      for (var j = 0; j < labels.length; j++) {
+        if (labels[j].classList.contains('starboard-strawberry')) {
+          labels[j].classList.remove('hide')
+        } else {
+          labels[j].classList.add('hide')
+        }
+      }
+    } else if (carouselImage[i].classList.contains('is-selected') && carouselImage[i].classList.contains('harbor-voyage')) {
+      for (var j = 0; j < labels.length; j++) {
+        if (labels[j].classList.contains('harbor-voyage')) {
+          labels[j].classList.remove('hide')
+        } else {
+          labels[j].classList.add('hide')
+        }
+      }
+    } else if (carouselImage[i].classList.contains('is-selected') && carouselImage[i].classList.contains('watermelon-waves')) {
+      for (var j = 0; j < labels.length; j++) {
+        if (labels[j].classList.contains('watermelon-waves')) {
+          labels[j].classList.remove('hide')
+        } else {
+          labels[j].classList.add('hide')
+        }
+      }
+    } else if (carouselImage[i].classList.contains('is-selected') && carouselImage[i].classList.contains('sailors-delight')) {
+      for (var j = 0; j < labels.length; j++) {
+        if (labels[j].classList.contains('sailors-delight')) {
+          labels[j].classList.remove('hide')
+        } else {
+          labels[j].classList.add('hide')
+        }
+      }
+    } else if (carouselImage[i].classList.contains('is-selected') && carouselImage[i].classList.contains('anchor-case')) {
+      for (var j = 0; j < labels.length; j++) {
+        if (labels[j].classList.contains('anchor-case')) {
+          labels[j].classList.remove('hide')
+        } else {
+          labels[j].classList.add('hide')
+        }
+      }
+    } else if (carouselImage[i].classList.contains('is-selected') && carouselImage[i].classList.contains('compass-case')) {
+      for (var j = 0; j < labels.length; j++) {
+        if (labels[j].classList.contains('compass-case')) {
+          labels[j].classList.remove('hide')
+        } else {
+          labels[j].classList.add('hide')
+        }
+      }
+    } else if (carouselImage[i].classList.contains('is-selected') && carouselImage[i].classList.contains('crew-case')) {
+      for (var j = 0; j < labels.length; j++) {
+        if (labels[j].classList.contains('crew-case')) {
+          labels[j].classList.remove('hide')
+        } else {
+          labels[j].classList.add('hide')
+        }
+      }
+    } else if (carouselImage[i].classList.contains('is-selected') && carouselImage[i].classList.contains('lighthouse-case')) {
+      for (var j = 0; j < labels.length; j++) {
+        if (labels[j].classList.contains('lighthouse-case')) {
+          labels[j].classList.remove('hide')
+        } else {
+          labels[j].classList.add('hide')
+        }
+      }
+    }
+  }
+}
+
+carousel.addEventListener('click', hideCaseHeader, false)
+window.addEventListener('load', hideCaseHeader, false)
+
+function hideCaseHeader () {
+  console.log('hide header')
+
+  var ingredientsParent = document.getElementById('ingredients')
+  var ingredientHeader = document.querySelector('#ingredients .header')
+
+  if (ingredientsParent.classList.contains('crew-case')) {
+    ingredientHeader.classList.add('hide')
+  } else if (ingredientsParent.classList.contains('compass-case')) {
+    ingredientHeader.classList.add('hide')
+  } else if (ingredientsParent.classList.contains('lighthouse-case')) {
+    ingredientHeader.classList.contains('hide')
+  } else if (ingredientsParent.classList.contains('anchor-case')) {
+    ingredientHeader.classList.add('hide')
+  } else {
+    ingredientHeader.classList.remove('hide')
+  }
+}

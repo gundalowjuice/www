@@ -3,6 +3,33 @@
   margin: 2em auto 1em;
   text-align: center;
 
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 10em;
+    margin: auto;
+    cursor: pointer;
+
+    @media (min-width: 44em) {
+      flex-direction: row;
+      width: 20em;
+    }
+
+    &.hide {
+      display: none;
+    }
+
+    h2 {
+
+      margin-bottom: 1em;
+
+      &.active {
+        border-bottom: 1px solid currentcolor;
+      }
+    }
+  }
+
     &.starboard-strawberry {
       color: $starboard-strawberry;
     }
@@ -38,6 +65,8 @@
     }
 
 
+
+
   svg.icon {
     width: 2.5em;
     height: 2.5em;
@@ -46,6 +75,28 @@
 
     &.hide {
       display: none;
+    }
+  }
+
+  #icons {
+
+    &.hide {
+      display: none;
+    }
+  }
+
+  #nutrition-labels {
+
+    &.hide {
+      display: none;
+    }
+
+    .labels {
+      margin: 1em auto;
+
+      &.hide {
+        display: none;
+      }
     }
   }
 

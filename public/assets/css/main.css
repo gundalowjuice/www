@@ -698,6 +698,27 @@ footer {
   max-width: 32em;
   margin: 2em auto 1em;
   text-align: center; }
+  #ingredients .header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 10em;
+    margin: auto;
+    cursor: pointer; }
+    @media (min-width: 44em) {
+      #ingredients .header {
+        -ms-flex-direction: row;
+        flex-direction: row;
+        width: 20em; } }
+    #ingredients .header.hide {
+      display: none; }
+    #ingredients .header h2 {
+      margin-bottom: 1em; }
+      #ingredients .header h2.active {
+        border-bottom: 1px solid currentcolor; }
   #ingredients.starboard-strawberry {
     color: #ae3863; }
   #ingredients.dockside-sunrise {
@@ -726,6 +747,14 @@ footer {
     margin: .5em;
     cursor: pointer; }
     #ingredients svg.icon.hide {
+      display: none; }
+  #ingredients #icons.hide {
+    display: none; }
+  #ingredients #nutrition-labels.hide {
+    display: none; }
+  #ingredients #nutrition-labels .labels {
+    margin: 1em auto; }
+    #ingredients #nutrition-labels .labels.hide {
       display: none; }
   #ingredients #ingredient-content h2 {
     padding: .5em 0 .5em 0; }
@@ -1864,8 +1893,14 @@ footer {
     margin: 5em auto 2em;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -ms-flex-pack: justify;
     justify-content: space-between; }
+    @media (min-width: 47em) {
+      #shop-juice #reviews #review-header {
+        -ms-flex-direction: row;
+        flex-direction: row; } }
     #shop-juice #reviews #review-header h2.mainstay-green {
       color: #0096aa; }
     #shop-juice #reviews #review-header h2.s-s-veggie {

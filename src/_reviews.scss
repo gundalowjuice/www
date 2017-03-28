@@ -12,7 +12,12 @@
       width: 100%;
       margin: 5em auto 2em;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
+
+      @media (min-width: 47em) {
+        flex-direction: row;
+      }
 
       h2 {
 

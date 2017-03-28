@@ -69,9 +69,21 @@
 
    <div id="ingredients">
      <div class="header">
-      <h2>Ingredients</h2>
-      <h2>nutrition</h2>
+      <h2 id="ingredient-tab" class="active">Ingredients</h2>
+      <h2 id ="nutrition-tab">nutrition</h2>
     </div>
+
+    <div id="nutrition-labels" class="hide">
+      {% for juice in juices %}
+      {% set label = juice.productLabel.first() %}
+      {% if label %}
+      <div class="labels {{ juice.slug }} hide">
+        <img src="{{ label.getUrl('label') }}" width="{{ label.getWidth('label') }}" height="{{ label.getHeight('label') }}"  alt="" />
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+
     <div id="icons">
       <svg class="icon apple-icon hide sd ss-veg mg">
         <use xlink:href='#apple-icon'></use>
