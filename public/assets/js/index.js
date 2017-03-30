@@ -421,6 +421,13 @@ function ingredient () {
 
 carousel.addEventListener('click', iconDisplay, false)
 window.addEventListener('load', iconDisplay, false)
+carousel.addEventListener('touchend', iconDisplay, false)
+carousel.addEventListener('touchmove', function () {
+  setTimeout(function () {
+    iconDisplay()
+    console.log('delay')
+  }, 500)
+})
 
 // Display ingredient icons based on juice displayed
 
@@ -527,6 +534,13 @@ var iconList = document.querySelector('#icons')
 var ingredientIcons = document.querySelectorAll('#icons svg')
 
 document.addEventListener('click', activeIcon, false)
+carousel.addEventListener('touchend', activeIcon, false)
+carousel.addEventListener('touchmove', function () {
+  setTimeout(function () {
+    activeIcon()
+    console.log('delay')
+  }, 500)
+})
 
 function activeIcon (e) {
   if (e.target !== e.currentTarget) {
@@ -541,23 +555,30 @@ function activeIcon (e) {
 var ingredientContent = document.querySelectorAll('#ingredient-content div') // get all ingredient-content p tags
 
 document.addEventListener('click', contentDisplay, false)
+carousel.addEventListener('touchend', contentDisplay, false)
+carousel.addEventListener('touchmove', function () {
+  setTimeout(function () {
+    contentDisplay()
+    console.log('delay')
+  }, 500)
+})
 
-function contentDisplay () {
-var iconList = document.querySelector('#icons')
-var ingredientIcons = document.querySelectorAll('#icons svg')
-
-// hide ingredient content on juice change
-
-  for (var i = 0; i < ingredientIcons.length; i++) {
-    if ( ingredientContent[i].classList.contains('hide') ) {
-      console.log('yup')
-    } else {
-      ingredientContent[i].classList.add('hide')
-    }
-  }
-
-    e.target.classList.add('active')
-  }
+// function contentDisplay () {
+// var iconList = document.querySelector('#icons')
+// var ingredientIcons = document.querySelectorAll('#icons svg')
+//
+// // hide ingredient content on juice change
+//
+//   for (var i = 0; i < ingredientIcons.length; i++) {
+//     if ( ingredientContent[i].classList.contains('hide') ) {
+//       console.log('yup')
+//     } else {
+//       ingredientContent[i].classList.add('hide')
+//     }
+//   }
+//
+//     e.target.classList.add('active')
+//   }
 //   e.stopPropagation()
 // }
 
@@ -733,6 +754,13 @@ function contentDisplay () {
 }
 
 carousel.addEventListener('click', ingredientColor, false)
+carousel.addEventListener('touchend', ingredientColor, false)
+carousel.addEventListener('touchmove', function () {
+  setTimeout(function () {
+    ingredientColor()
+    console.log('delay')
+  }, 500)
+})
 
 function ingredientColor () {
   var target = document.getElementById('ingredient-content')
@@ -823,6 +851,13 @@ var ingredientH2 = document.querySelectorAll('.header h2')
 var parent = document.querySelector('.header')
 
 parent.addEventListener('click', handler, false)
+carousel.addEventListener('touchend', handler, false)
+carousel.addEventListener('touchmove', function () {
+  setTimeout(function () {
+    handler()
+    console.log('delay')
+  }, 500)
+})
 
 function handler (e) {
   if (e.target !== e.currentTarget) {
@@ -835,6 +870,13 @@ function handler (e) {
 }
 
 parent.addEventListener('click', iconLabelDisplay, false)
+carousel.addEventListener('touchend', iconLabelDisplay, false)
+carousel.addEventListener('touchmove', function () {
+  setTimeout(function () {
+    iconLabelDisplay()
+    console.log('delay')
+  }, 500)
+})
 
 function iconLabelDisplay () {
   var icons = document.getElementById('icons')
@@ -952,6 +994,13 @@ function labelDisplay () {
 
 carousel.addEventListener('click', hideCaseHeader, false)
 window.addEventListener('load', hideCaseHeader, false)
+carousel.addEventListener('touchend', hideCaseHeader, false)
+carousel.addEventListener('touchmove', function () {
+  setTimeout(function () {
+    hideCaseHeader()
+    console.log('delay')
+  }, 500)
+})
 
 function hideCaseHeader () {
   console.log('hide header')
