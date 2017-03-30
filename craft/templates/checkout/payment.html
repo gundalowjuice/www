@@ -4,7 +4,11 @@
 
 {% set cart = craft.commerce.cart %}
 
+
+
 {% block content %}
+
+
 
 {% include '_includes/meter' %}
 
@@ -106,10 +110,9 @@
 
       							// Global amazon variables
       							var SELLER_ID                = document.querySelector('#seller-id').value
-                    // $('#seller-id').val();
+
       							// the client ID from the Login with Amazon section seller central
       							var CLIENT_ID                = document.querySelector('#client-id').value
-                    // $('#client-id').val();
 
       							// logout redirect url
       							var LOGOUT_REDIRECT          = '/checkout/payment';
