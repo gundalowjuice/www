@@ -1334,6 +1334,10 @@ footer {
     width: 90%;
     margin: 1em auto;
     text-align: center; }
+    #payment main .two-thirds #logout {
+      margin: 1em auto; }
+    #payment main .two-thirds button.stripe-button-el {
+      margin-bottom: 1em; }
   #payment main #coupon {
     display: -ms-flexbox;
     display: flex;

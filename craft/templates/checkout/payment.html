@@ -13,18 +13,250 @@
 		<div class="two-thirds column">
 			<h3>Payment</h3>
 
+      {# ------------------------------------  PAYMENT GATEWAYS START HERE ------------------------------------   #}
+
+      			{% if cart.paymentMethodId %}
+      				<form method="POST" class="form-horizontal">
+      					<input type="hidden" name="action" value="commerce/payments/pay"/>
+      					<input type="hidden" name="redirect" value="/customer/order?number={number}"/>
+      					<input type="hidden" name="cancelUrl" value="/checkout/payment"/>
+      					{{ getCsrfInput() }}
+
+      					<div class="row">
+      						<div class="twelve columns">
+      							<noscript>
+      								<div class="bs-callout bs-callout-danger">
+      									<h4>JavaScript is not enabled!</h4>
+
+      									<p>This payment form requires your browser to have
+      										JavaScript enabled. Please activate
+      										JavaScript and reload this page. Check <a
+      												href="http://enable-javascript.com"
+      												target="_blank">enable-javascript.com</a>
+      										for
+      										more informations.</p>
+      								</div>
+      							</noscript>
+
+      							<span class="payment-success"></span>
+      						</div>
+      					</div>
+
+                {% if not cart.shippingMethod %}
+                    {% if cart.paymentMethod.class == 'Stripe' %}
+                    {% endif %}
+                {% else %}
+
+      					{% if cart.paymentMethod.class == 'Stripe' %}
+      						{#
+      							Stripe Payment Method
+      						#}
+      						<script
+      								src="//checkout.stripe.com/checkout.js"
+      								class="stripe-button"
+      								data-key="{{ cart.paymentMethod.settings.publishableKey ?? '' }}"
+      								data-name="Craft Commerce"
+      								data-description="Purchase" {# This is not used for order description in stripe - see Craft Commerce general settings #}
+      								data-email="{{ cart.email }}"
+      								data-amount="{{ cart.totalPrice|commerceCurrency(cart.paymentCurrency,convert=true,format=false) * 100 }}"
+      								data-locale="auto">
+      						</script>
+      					{% endif %}
+
+
+      					{% if cart.paymentMethod.class == 'AmazonPayments' %}
+      						{#
+      							Amazon Payment Method
+      							The following divs must be added to the structure of this page
+      							Different buttons display based on url params.
+      							1) User first logins, page reloads after user signs into Amazon
+      							2) Login btn is hidden, Credit card and pay now elements will be displayed
+      							3) Payment details auto sent to Amazon
+      							4) User selects credit card, clicks pay now, payment authorized & captured
+      						#}
+
+      						<input id="order-total-price" type="hidden" value="{{ cart.totalPrice }}">
+      						<input id="order-id" type="hidden" value="{{ cart.number }}">
+      						<input id="order-email" type="hidden" value="{{ cart.email }}">
+      						<input id="client-id" type="hidden" value="{{ cart.paymentMethod.settings.client_id }}">
+      						<input id="seller-id" type="hidden" value="{{ cart.paymentMethod.settings.seller_id }}">
+
+      						{# creates a btn that sends an api request to amazon #}
+      						<div id="amazon-pay-button"></div>
+      						{# logout of account #}
+      						<div id="logout" class="btn">Logout of Amazon</div>
+      						{# payment elements #}
+      						<div id="amazon-pay-container">
+      							{# displays the credit cards options that exist in the user's account #}
+      							<div id="wallet-widget"></div>
+      							{# capture and authorize payment request #}
+      						  	<button id="paynow" class="btn btn-lg btn-success" >Place Order</button>
+      						</div>
+
+      						<style>
+
+      							#amazon-pay-container { display:  none; }
+      							#wallet-widget { width: 400px; height: 240px; display: block; }
+      							.btn { margin: 30px 0;  padding: 5px 20px; border: 1px solid; border-radius: 4px;  display: table; cursor: pointer; }
+      							#paynow { display:  none; }
+
+      						</style>
+
+      						<script>
+
+      							// Global amazon variables
+      							var SELLER_ID                = $('#seller-id').val();
+      							// the client ID from the Login with Amazon section seller central
+      							var CLIENT_ID                = $('#client-id').val();
+      							// logout redirect url
+      							var LOGOUT_REDIRECT          = '/checkout/payment';
+      							// Amazon login redirect
+      							var AMAZON_LOGIN_REDIRECT    = '/checkout/payment';
+
+      							// Amazon php scritps for authorizing and confirming payments
+      							// send the details from the order to Amazon
+      							var AMAZON_GET_DETAILS       = '/actions/amazonPayments/details/getDetails';
+
+      						</script>
+
+      						<script type='text/javascript'>
+
+      						   // request by Amazon
+      							window.onAmazonLoginReady = function () {
+
+      						       amazon.Login.setClientId( CLIENT_ID );
+      						       amazon.Login.setUseCookie(true);
+      						   };
+
+      						   // log out user from Amazon and redirect
+      						   $('#logout').on('click', function() {
+
+      						       amazon.Login.logout();
+      						       document.cookie = "amazon_Login_accessToken=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+      						       window.location = LOGOUT_REDIRECT;
+      						   });
+
+      						</script>
+
+      						{# check if we should load the prod or sandbox js #}
+      						{% if cart.paymentMethod.settings.testMode == 'true' %}
+      							<script type='text/javascript' src='https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js'></script>
+      						{% else %}
+      							<script type='text/javascript' src='https://static-na.payments-amazon.com/OffAmazonPayments/us/js/Widgets.js'></script>
+      						{% endif %}
+
+      						<script type='text/javascript'>
+
+      							// get url param so we know what Amazon elements to load
+      							function getParameterByName(name, url) {
+
+      							    if (!url) {
+      							      url = window.location.href;
+      							    }
+      							    name = name.replace(/[\[\]]/g, "\\$&");
+      							    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      							        results = regex.exec(url);
+      							    if (!results) return null;
+      							    if (!results[2]) return '';
+      							    return decodeURIComponent(results[2].replace(/\+/g, " "));
+      							}
+
+      							// if there's NOT an access_token than we know the user has not logged in through Amazon yet
+      							if( getParameterByName('access_token') == undefined ) {
+
+      								// display the pay with Amazon button that will prompt the user to log in
+      								var authRequest;
+
+      								OffAmazonPayments.Button('amazon-pay-button', SELLER_ID, {
+      									 // different styles : https://payments.amazon.com/developer/documentation/lpwa/201953980
+      									type: "LwA",
+      								   authorization: function () {
+
+      								    	// request profile and payment wdiget from user
+      								    	loginOptions = {scope: "profile payments:widget", popup: true};
+      								    	// successful login, redirect to select credit card
+      								      authRequest = amazon.Login.authorize(loginOptions, AMAZON_LOGIN_REDIRECT);
+      								   },
+      								   onError: function (error) {
+
+      								   }
+      								});
+
+      							// access_token exist in url param, which means they have logged in through Amazon
+      							}else{
+
+      								// make container that holds the credit card info and paynow btn visible
+      								$('#amazon-pay-container').show();
+
+      								var orderReferenceId = null;
+
+      								// get user's credit cards from Amazon
+      								new OffAmazonPayments.Widgets.Wallet({
+      								    sellerId: SELLER_ID,
+      								    onOrderReferenceCreate: function (orderReference) {
+
+      								       /* make a call to the back-end that will set order reference details
+      								        * and get order reference details. This will set the order total
+      								        * from the cart and return order reference details.
+      								        *
+      								        * Get the AddressConsentToken to be sent to the API call
+      								        */
+      								       var access_token = '';
+
+      								       $.post(AMAZON_GET_DETAILS, {
+      								           orderReferenceId:    orderReference.getAmazonOrderReferenceId(),
+      								           addressConsentToken: access_token,
+      								           amount:              $('#order-total-price').val(),
+      								           orderId:             $('#order-id').val(),
+      								           orderUserEmail:      $('#order-email').val()
+      								       }).success(function (data) {
+
+      								          console.log('------------- start: Amazon Order Reference -------------');
+      								          console.log(data);
+      								          console.log('------------- end: Amazon Order Reference -------------');
+      								       });
+      								    },
+      								    onPaymentSelect: function (orderReference) {
+
+      								    	// make the paynow button visible once a credit card has been selected
+      								    	$('#paynow').show();
+      								    },
+      								    // set the design of the widget
+      								    // https://payments.amazon.com/developer/documentation/lpwa/201954000
+      								    design: {
+      								        designMode: 'responsive'
+      								    },
+      								    onError: function (error) {
+
+      								    	console.log('!!!!!!!!!!!!!! start: Amazon Widget Error !!!!!!!!!!!!!!');
+      								    	console.log(error.getErrorCode())
+      								    	console.log(error.getErrorMessage())
+      								    	console.log('!!!!!!!!!!!!!! end: Amazon Widget Error !!!!!!!!!!!!!!');
+      								    }
+
+      								}).bind('wallet-widget');
+      							}
+
+      						</script>
+
+      					{% endif %}
+
+      				</form>
+      			{% endif %}
+      {# ------------------------------------  PAYMENT GATEWAYS ENDS HERE ------------------------------------   #}
+
 			{#
 			Using the update cart action you could allow the user to select the payment method here.
 			We recommend using ajax to set this, so no page refresh is needed. This would also allow you to dynamically show or hide the credit card form
 			on method change.
 			#}
-
+{#
 			{% if not craft.commerce.paymentMethods|length %}
 				<p>No payment methods available.</p>
 			{% endif %}
+#}
 
 
-{#
 
 			{% if craft.commerce.paymentMethods|length %}
 				<form method="POST" id="paymentMethod" class="form-inline">
@@ -55,166 +287,9 @@
 				</form>
 			{% endif %}
 
-#}
-
-			{% if cart.paymentMethodId %}
-				<form method="POST" class="form-horizontal">
-					<input type="hidden" name="action" value="commerce/payments/pay"/>
-					<input type="hidden" name="redirect" value="customer/order?number={number}"/>
-					<input type="hidden" name="cancelUrl" value="checkout/payment"/>
-					{{ getCsrfInput() }}
-
-					<div class="row">
-						<div class="twelve columns">
-							<noscript>
-								<div class="bs-callout bs-callout-danger">
-									<h4>JavaScript is not enabled!</h4>
-
-									<p>This payment form requires your browser to have
-										JavaScript enabled. Please activate
-										JavaScript and reload this page. Check <a
-												href="http://enable-javascript.com"
-												target="_blank">enable-javascript.com</a>
-										for
-										more informations.</p>
-								</div>
-							</noscript>
-
-							<span class="payment-success"></span>
-						</div>
-					</div>
-
-        {% if not cart.shippingMethod %}
-
-					{% if cart.paymentMethod.class == 'Stripe' %}
-            
-					{% endif %}
 
 
-        {% else %}
 
-        {% if cart.paymentMethod.class == 'Stripe' %}
-          <script
-              src="//checkout.stripe.com/checkout.js"
-              class="stripe-button"
-              data-key="{{ cart.paymentMethod.settings.publishableKey ?? '' }}"
-              data-name="Craft Commerce"
-              data-description="Purchase" {# This is not used for order description in stripe - see Craft Commerce general settings #}
-              data-email="{{ cart.email }}"
-              data-currency="{{ cart.paymentCurrency }}"
-              data-amount="{{ cart.totalPrice|commerceCurrency(cart.paymentCurrency,convert=true,format=false) * 100 }}"
-              data-locale="auto">
-          </script>
-        {% endif %}
-
-        {% endif %}
-
-
-					{% if cart.paymentMethod.class != 'Stripe' %}
-						<fieldset>
-							{% if cart.paymentMethod.requiresCard() %}
-								{% set currentYear = date()|date_modify("+1 year").format('Y') %}
-								{% set formValues = {
-								firstName: paymentForm is defined ? paymentForm.firstName : (cart.billingAddress ? cart.billingAddress.firstName : ''),
-								lastName: paymentForm is defined ? paymentForm.lastName : (cart.billingAddress ? cart.billingAddress.lastName : ''),
-								number: paymentForm is defined ? paymentForm.number : '',
-								cvv: paymentForm is defined ? paymentForm.cvv : '',
-								month: paymentForm is defined ? paymentForm.month : 1,
-								year: paymentForm is defined ? paymentForm.year : currentYear,
-								} %}
-
-								<!-- Card Holder Name -->
-								<div class="form-group {% if paymentForm is defined and (paymentForm.hasErrors('firstName') or paymentForm.hasErrors('firstName')) %}has-error{% endif %}">
-									<label>Card Holder</label>
-
-									<div class="row">
-										<div class="six columns">
-
-											<input type="text" name="firstName"
-												   maxlength="70"
-												   placeholder="First Name"
-												   class="card-holder-first-name u-full-width"
-												   value="{{ formValues.firstName }}">
-
-										</div>
-
-										<div class="six columns">
-											<input type="text" name="lastName"
-												   maxlength="70"
-												   placeholder="Last Name"
-												   class="card-holder-last-name u-full-width"
-												   value="{{ formValues.lastName }}">
-
-										</div>
-									</div>
-
-
-									<span class="help-block">{% if paymentForm is defined %}{{ paymentForm.getError('firstName') }}{% endif %}</span>
-
-									<span class="help-block">{% if paymentForm is defined %}{{ paymentForm.getError('lastName') }}{% endif %}</span>
-								</div>
-
-								<!-- Card Number -->
-								<div class="form-group {% if paymentForm is defined and paymentForm.hasErrors('number') %}has-error{% endif %}">
-									<label>Card Number</label>
-
-									<input type="text" name="number"
-										   maxlength="19"
-										   placeholder="Card Number"
-										   class="card-number u-full-width"
-										   value="{{ formValues.number }}">
-
-									<span class="help-block">{% if paymentForm is defined %}{{ paymentForm.getError('number') }}{% endif %}</span>
-								</div>
-
-								<!-- Expiry-->
-								<div class="form-group {% if paymentForm is defined and (paymentForm.hasErrors('month') or paymentForm.hasErrors('year')) %}has-error{% endif %}">
-									<label>Card Expiry Date</label>
-
-									<select class="form-control" name="month">
-										{% for month in 1..12 %}
-											<option value="{{ month }}"
-													{% if formValues.month == month %}selected{% endif %}>{{ month }}</option>
-										{% endfor %}
-									</select>
-									<span> / </span>
-									<select class="required form-control"
-											name="year">
-										{% for year in currentYear-1..(currentYear + 12) %}
-											<option value="{{ year }}"
-													{% if formValues.year == year %}selected{% endif %}>{{ year }}</option>
-										{% endfor %}
-									</select>
-
-									<span class="help-block">{% if paymentForm is defined %}{{ paymentForm.getError('month') }}{% endif %}</span>
-
-									<span class="help-block">{% if paymentForm is defined %}{{ paymentForm.getError('year') }}{% endif %}</span>
-
-								</div>
-
-								<!-- CVV -->
-								<div class="form-group {% if paymentForm is defined and paymentForm.hasErrors('cvv') %}has-error{% endif %}">
-
-									<label>CVV/CVV2</label>
-									<input type="text" name="cvv"
-										   placeholder="CVV" maxlength="4"
-										   class="card-cvc"
-										   value="{{ formValues.cvv }}">
-
-									<span class="help-block">{% if paymentForm is defined %}{{ paymentForm.getError('cvv') }}{% endif %}</span>
-
-								</div>
-
-							{% endif %}
-
-							<!-- Submit -->
-							<button class="button button-primary" type="submit">Pay {{ cart.totalPrice|commerceCurrency(cart.paymentCurrency,convert=true) }}
-								Now
-							</button>
-						</fieldset>
-					{% endif %}
-				</form>
-			{% endif %}
 		</div>
 		<div class="one-third column">
 
@@ -269,7 +344,7 @@
 
 		</div>
 	</div>
-
+{% endif %}
 	{% includejs %}
 	$('#paymentMethodId , #paymentCurrency').change(function(){
 		$('form#paymentMethod').submit();
