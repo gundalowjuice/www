@@ -105,9 +105,14 @@
       						<script>
 
       							// Global amazon variables
-      							var SELLER_ID                = $('#seller-id').val();
+      							var SELLER_ID                = document.querySelector('#seller-id').value
+                    // $('#seller-id').val();
       							// the client ID from the Login with Amazon section seller central
-      							var CLIENT_ID                = $('#client-id').val();
+      							var CLIENT_ID                = document.querySelector('#client-id').value
+                    // $('#client-id').val();
+
+                    alert(CLIENT_ID);
+
       							// logout redirect url
       							var LOGOUT_REDIRECT          = '/checkout/payment';
       							// Amazon login redirect
@@ -129,12 +134,16 @@
       						   };
 
       						   // log out user from Amazon and redirect
-      						   $('#logout').on('click', function() {
+                      var logoutBtn = document.getElementById('logout')
+
+                      logoutBtn.addEventListener('click', amazonLogout, false)
+
+      						    function amazonLogout () {
 
       						       amazon.Login.logout();
       						       document.cookie = "amazon_Login_accessToken=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
       						       window.location = LOGOUT_REDIRECT;
-      						   });
+      						   }
 
       						</script>
 
