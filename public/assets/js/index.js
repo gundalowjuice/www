@@ -894,6 +894,12 @@ function iconLabelDisplay () {
 
 carousel.addEventListener('click', labelDisplay, false)
 window.addEventListener('load', labelDisplay, false)
+carousel.addEventListener('touchend', function () {
+  setTimeout( function () {
+    labelDisplay()
+    console.log('labelDisplay')
+  }, 500)
+})
 
 function labelDisplay () {
   var carouselImage = document.querySelectorAll('#product-image .carousel-cell')
