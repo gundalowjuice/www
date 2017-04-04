@@ -9,6 +9,12 @@ var carousel = document.getElementById('product-image')
 
 carousel.addEventListener('click', ratingDisplay, false)
 window.addEventListener('load', ratingDisplay, false)
+carousel.addEventListener('touchend', function () {
+  setTimeout( function () {
+    ratingDisplay()
+    console.log('ratingDisplay')
+  }, 500)
+})
 
 function ratingDisplay () {
   var selected = document.getElementsByClassName('is-selected')
