@@ -12,7 +12,7 @@ carousel.addEventListener('touchend', function () {
 })
 
 function colorChange () {
-  var reviewHeader = document.querySelector('#review-header h2')
+  var reviewHeader = document.querySelector('#review-header h3')
   var selected = document.getElementsByClassName('is-selected')
 
   for (var i = 0; i < selected.length; i++) {
