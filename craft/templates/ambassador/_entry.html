@@ -1,0 +1,59 @@
+{#
+ # Ambassador entry template
+ # -------------------
+ #
+ # This template gets loaded whenever a News entry’s URL is
+ # requested. That’s because the News section’s Template setting is
+ # set to ambassador/_entry”, the path to this template.
+ #
+ # When this template is loaded, it will already have an ‘entry’
+ # variable, set to the requested Ambassador entry.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+{% set bodyId = 'ambassador-entry' %}
+
+{% block content %}
+	<section id="ambassador">
+	  <img src="{{ entry.headshot.first().getUrl('ambassadorEntry') }}" width="{{ entry.headshot.first().getWidth('ambassadorEntry') }}" height="{{ entry.headshot.first().getHeight('ambassadorEntry') }}" alt="">
+
+    <div id="content">
+      <h2>{{ entry.title }}</h2>
+
+    <ul id="social">
+      {% for block in entry.socialAccounts %}
+
+        {% if block.type == 'facebook'%}
+          <li>
+            <a href="{{ block.facebookUrl}}">
+              <svg viewBox="0 0 20 20" class="icon icon-facebook">
+                <use xlink:href="#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+
+        {% elseif block.type == 'twitter'%}
+          <li>
+            <a href="https://twitter.com/GundalowJuice">
+              <svg viewBox="0 0 20 20" class="icon icon-twitter">
+                <use xlink:href="#icon-twitter"></use>
+              </svg>
+            </a>
+          </li>
+        {% endif %}
+
+      {% endfor %}
+      </ul>
+      <h3>favorite juice: {{ entry.favJuice }}</h3>
+      <p>{{ entry.bio }}</p>
+    </div>
+	</section>
+
+  <section id="about">
+    <h2>about the program</h2>
+    <p>{{ ambassador.ambassadorAbout }}</p>
+  </section>
+{% endblock %}

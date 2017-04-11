@@ -1,0 +1,47 @@
+#ambassador {
+
+  #hero {
+    width: 80%;
+    margin: 2em auto;
+    text-align: center;
+
+    @media (min-width: 44em) {
+      max-width: 44em;
+    }
+
+    h2 {
+      margin-bottom: 1em;
+    }
+  }
+
+  #ambassador-carousel{
+    margin-bottom: 4em;
+
+    img {
+      padding: .5em;
+      margin: 1em;
+    }
+  }
+
+  #about {
+    width: 100%;
+    margin: 2em auto;
+    text-align: center;
+    background-color: #E6E7E8;
+
+    p {
+      width: 80%;
+      margin: auto;
+      padding-bottom: 1em;
+
+      @media (min-width: 44em) {
+        max-width: 44em;
+      }
+    }
+
+    h2 {
+      margin: 1em auto;
+      padding-top: 1em;
+    }
+  }
+}
