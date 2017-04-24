@@ -9,6 +9,11 @@ var carousel = document.getElementById('product-image')
 
 carousel.addEventListener('click', ratingDisplay, false)
 window.addEventListener('load', ratingDisplay, false)
+window.addEventListener('load', function () {
+  setTimeout(function () {
+    ratingDisplay()
+  }, 500)
+})
 carousel.addEventListener('touchend', function () {
   setTimeout( function () {
     ratingDisplay()
