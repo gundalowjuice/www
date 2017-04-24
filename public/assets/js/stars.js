@@ -1,14 +1,6 @@
-console.log('stars')
-
-
-function test () {
-  console.log(stars)
-}
-
 var carousel = document.getElementById('product-image')
 
 carousel.addEventListener('click', ratingDisplay, false)
-window.addEventListener('load', ratingDisplay, false)
 window.addEventListener('load', function () {
   setTimeout(function () {
     ratingDisplay()
