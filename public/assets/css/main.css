@@ -2119,3 +2119,7 @@ footer {
   #ambassador-entry #about h2 {
     margin: 1em auto;
     padding-top: 1em; }
+
+#password-reset form {
+  text-align: center;
+  margin: 1em; }
