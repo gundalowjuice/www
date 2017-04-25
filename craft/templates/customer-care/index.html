@@ -26,9 +26,15 @@
     {% for block in entry.policies %}
 
       {% if block.type == 'policies' %}
+      {% if block.heading == 'Shipping & Delivery' %}
 
-        <h2>{{ block.heading}}</h2>
+        <h2 id="shipping">{{ block.heading}}</h2>
 
+	{% else %}
+
+	<h2>{{ block.heading }}</h2>
+
+	{% endif %}
         {{ block.textContent }}
 
       {% endif %}
