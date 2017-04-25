@@ -27,7 +27,17 @@
         </tr>
       {% endfor %}
 
+      {% for adjustment in cart.adjustments %}
+      {% if adjustment.type == 'Shipping' %}
       <tr id="footer">
+        <td></td>
+        <td></td>
+	<td class="right total">{{ adjustment.name }} </td>
+	<td class="right total">{{ adjustment.amount|currency(cart.currency) }}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      <tr>
         <td></td>
         <td></td>
         <td></td>
