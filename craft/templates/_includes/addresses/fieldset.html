@@ -4,7 +4,7 @@
     <p>* indicates required field</p>
     {% if addresses and currentUser%}
         {% for address in addresses %}
-            <div class="address-select" data-address-id="{{ address.id }}">
+            <div class="address-select stored-address" data-address-id="{{ address.id }}">
                 <div class="actions">
                     <ul>
                         <li><a class="edit" href="{{ url('customer/addresses/edit?addressId='~ address.id ~'&redirect='~craft.request.path)}}">Edit</a>

@@ -58,7 +58,6 @@
             </form>
 
     </div>
-
     {% includejs %}
     // form validation
 
@@ -134,7 +133,7 @@
             this.$radio.change($.proxy(function () {
                 $('.body', $addressFieldset).addClass('hidden');
                 this.$body.removeClass('hidden');
-            }, this));
+	            }, this));
 
             if (this.$radio.is(':checked')) {
             this.$body.removeClass('hidden');

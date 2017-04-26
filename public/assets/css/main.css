@@ -1276,6 +1276,8 @@ footer {
             #checkout-addresses .address form .address-container .address-fieldset .address-select .columns {
               display: block;
               text-align: left; } }
+        #checkout-addresses .address form .address-container .address-fieldset .address-select .body.hidden {
+          display: none; }
       #checkout-addresses .address form .address-container input[type='submit'] {
         width: 100%;
         padding: .7em .5em .5em .5em;
