@@ -532,9 +532,12 @@ function iconDisplay () {
   }
 }
 
-var iconList = document.querySelector('#icons')
-var ingredientIcons = document.querySelectorAll('#icons svg')
+var iconParent = document.getElementById('icons')
+var iconChild = document.getElementsByClassName('icon')
+var svgIcon = document.querySelectorAll('svg use')
 
+iconParent.addEventListener('click', activeIcon, false) 
+iconParent.addEventListener('click', activeSvg, false)
 document.addEventListener('click', activeIcon, false)
 // carousel.addEventListener('touchend', activeIcon, false)
 // carousel.addEventListener('touchstart', function () {
@@ -544,17 +547,29 @@ document.addEventListener('click', activeIcon, false)
 //   }, 500)
 // })
 
+function activeSvg (e) {
+	if (e.target !== e.currentTarget) {
+		for (let i = 0; i < svgIcon.length; i++) {
+			svgIcon[i].classList.remove('active')
+		}
+		e.target.classList.add('active')
+	}
+	e.stopPropagation()
+}
+
 function activeIcon (e) {
+	console.log('active icon')
   if (e.target !== e.currentTarget) {
-    for (var i = 0; i < ingredientIcons.length; i++) {
-      ingredientIcons[i].classList.remove('active')
+    for (var i = 0; i < iconChild.length; i++) {
+      iconChild[i].classList.remove('active')
     }
     e.target.classList.add('active')
   }
   e.stopPropagation()
 }
 
-var ingredientContent = document.querySelectorAll('#ingredient-content div') // get all ingredient-content p tags
+//var ingredientContent = document.querySelectorAll('#ingredient-content div') // get all ingredient-content p tags
+
 
 document.addEventListener('click', contentDisplay, false)
 // carousel.addEventListener('touchend', contentDisplay, false)
@@ -586,20 +601,181 @@ carousel.addEventListener('touchend', function () {
 
 var ingredientContent = document.querySelectorAll('#ingredient-content div') // get all ingredient-content p tags
 
+iconParent.addEventListener('click', contentDisplay, false)
+iconParent.addEventListener('click', contentDisplaySvg, false)
+carousel.addEventListener('click', contentDisplay, false)
 document.addEventListener('click', contentDisplay, false)
+
+function contentDisplaySvg () {
+	for (let i = 0; i < svgIcon.length; i++) {
+		if (svgIcon[i].classList.contains('blackberry-icon') && svgIcon[i].classList.contains('active')) { 
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('blackberry')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}	
+			}
+		} else if (svgIcon[i].classList.contains('tangerine-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('tangerine')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		} else if (svgIcon[i].classList.contains('rasberry-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('raspberry')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		} else if (svgIcon[i].classList.contains('watermelon-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('watermelon')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		} else if (svgIcon[i].classList.contains('strawberry-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('strawberry')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		} else if (svgIcon[i].classList.contains('spinach-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('spinach')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		} else if (svgIcon[i].classList.contains('romaine-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('romaine')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		} else if (svgIcon[i].classList.contains('pineapple-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('pineapple')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		} else if (svgIcon[i].classList.contains('mint-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('mint')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		} else if (svgIcon[i].classList.contains('lime-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('lime')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		} else if (svgIcon[i].classList.contains('lemon-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('lemon')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		} else if (svgIcon[i].classList.contains('kale-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('kale')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		} else if (svgIcon[i].classList.contains('jalapeno-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('jalapeno')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		} else if (svgIcon[i].classList.contains('honeydew-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('honeydew')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		} else if (svgIcon[i].classList.contains('ginger-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('ginger')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		} else if (svgIcon[i].classList.contains('cucumber-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('cucumber')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		} else if (svgIcon[i].classList.contains('celery-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('celery')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		} else if (svgIcon[i].classList.contains('basil-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('basil')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		} else if (svgIcon[i].classList.contains('apple-icon') && svgIcon[i].classList.contains('active')) {
+			for (let j = 0; j < ingredientContent.length; j++) {
+				if (ingredientContent[j].classList.contains('apple')) {
+					ingredientContent[j].classList.remove('hide')
+				} else {
+					ingredientContent[j].classList.add('hide')
+				}
+			}
+		}
+	}
+}
 
 function contentDisplay () {
 // hide ingredient content on juice change
 
-  for (var i = 0; i < ingredientIcons.length; i++) {
+  for (var i = 0; i < ingredientContent.length; i++) {
     if ( ingredientContent[i].classList.contains('hide') ) {
     } else {
       ingredientContent[i].classList.add('hide')
     }
   }
 
-  for (var i = 0; i < ingredientIcons.length; i++) {
-    if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('apple-icon')) {
+  for (var i = 0; i < iconChild.length; i++) {
+    if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('apple-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('apple')) {
           ingredientContent[j].classList.remove('hide')
@@ -607,7 +783,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('basil-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('basil-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('basil')) {
           ingredientContent[j].classList.remove('hide')
@@ -615,7 +791,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('blackberry-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('blackberry-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('blackberry')) {
           ingredientContent[j].classList.remove('hide')
@@ -623,7 +799,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('celery-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('celery-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('celery')) {
           ingredientContent[j].classList.remove('hide')
@@ -631,7 +807,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('cucumber-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('cucumber-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('cucumber')) {
           ingredientContent[j].classList.remove('hide')
@@ -639,7 +815,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('ginger-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('ginger-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('ginger')) {
           ingredientContent[j].classList.remove('hide')
@@ -647,7 +823,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('honeydew-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('honeydew-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('honeydew')) {
           ingredientContent[j].classList.remove('hide')
@@ -655,7 +831,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('jalapeno-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('jalapeno-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('jalapeno')) {
           ingredientContent[j].classList.remove('hide')
@@ -663,7 +839,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('kale-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('kale-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('kale')) {
           ingredientContent[j].classList.remove('hide')
@@ -671,7 +847,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('lemon-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('lemon-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('lemon')) {
           ingredientContent[j].classList.remove('hide')
@@ -679,7 +855,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('lime-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('lime-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('lime')) {
           ingredientContent[j].classList.remove('hide')
@@ -687,7 +863,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('mint-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('mint-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('mint')) {
           ingredientContent[j].classList.remove('hide')
@@ -695,7 +871,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('pineapple-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('pineapple-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('pineapple')) {
           ingredientContent[j].classList.remove('hide')
@@ -703,7 +879,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('raspberry-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('raspberry-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('raspberry')) {
           ingredientContent[j].classList.remove('hide')
@@ -711,7 +887,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('romaine-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('romaine-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('romaine')) {
           ingredientContent[j].classList.remove('hide')
@@ -719,7 +895,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('spinach-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('spinach-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('spinach')) {
           ingredientContent[j].classList.remove('hide')
@@ -727,7 +903,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('strawberry-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('strawberry-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('strawberry')) {
           ingredientContent[j].classList.remove('hide')
@@ -735,7 +911,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('tangerine-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('tangerine-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('tangerine')) {
           ingredientContent[j].classList.remove('hide')
@@ -743,7 +919,7 @@ function contentDisplay () {
           ingredientContent[j].classList.add('hide')
         }
       }
-    } else if (ingredientIcons[i].classList.contains('active') && ingredientIcons[i].classList.contains('watermelon-icon')) {
+    } else if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('watermelon-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('watermelon')) {
           ingredientContent[j].classList.remove('hide')
