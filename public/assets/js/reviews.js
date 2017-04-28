@@ -4,9 +4,15 @@ var carousel = document.getElementById('product-image')
 
 carousel.addEventListener('click', colorChange, false)
 window.addEventListener('load', colorChange, false)
+carousel.addEventListener('touchend', function () {
+  setTimeout( function () {
+    colorChange()
+    console.log('colorChange')
+  }, 500)
+})
 
 function colorChange () {
-  var reviewHeader = document.querySelector('#review-header h2')
+  var reviewHeader = document.querySelector('#review-header h3')
   var selected = document.getElementsByClassName('is-selected')
 
   for (var i = 0; i < selected.length; i++) {
@@ -49,6 +55,12 @@ function colorChange () {
 
 carousel.addEventListener('click', reviewDisplay, false)
 window.addEventListener('load', reviewDisplay, false)
+carousel.addEventListener('touchend', function () {
+  setTimeout( function () {
+    reviewDisplay()
+    console.log('reviewDisplay')
+  })
+})
 
 function reviewDisplay () {
   var reviewWrapper = document.getElementsByClassName('review-wrapper')

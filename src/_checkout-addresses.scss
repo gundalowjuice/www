@@ -58,6 +58,13 @@
                 text-align: left;
               }
             }
+
+	    .body {
+	    
+	    	&.hidden {
+			display: none;
+		}
+	    }
           }
         }
 

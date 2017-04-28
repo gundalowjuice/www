@@ -509,7 +509,7 @@ footer {
     #content-wrapper {
       -ms-flex-direction: row;
       flex-direction: row;
-      width: 90%; } }
+      width: 70%; } }
   @media (min-width: 67.5em) {
     #content-wrapper {
       width: 65%;
@@ -1276,6 +1276,8 @@ footer {
             #checkout-addresses .address form .address-container .address-fieldset .address-select .columns {
               display: block;
               text-align: left; } }
+        #checkout-addresses .address form .address-container .address-fieldset .address-select .body.hidden {
+          display: none; }
       #checkout-addresses .address form .address-container input[type='submit'] {
         width: 100%;
         padding: .7em .5em .5em .5em;
@@ -1900,33 +1902,36 @@ footer {
     -ms-flex-direction: column;
     flex-direction: column;
     -ms-flex-pack: justify;
-    justify-content: space-between; }
+    justify-content: space-between;
+    text-align: center; }
     @media (min-width: 47em) {
       #shop-juice #reviews #review-header {
         -ms-flex-direction: row;
         flex-direction: row; } }
-    #shop-juice #reviews #review-header h2.mainstay-green {
-      color: #0096aa; }
-    #shop-juice #reviews #review-header h2.s-s-veggie {
-      color: #81bc41; }
-    #shop-juice #reviews #review-header h2.starboard-strawberry {
-      color: #ae3863; }
-    #shop-juice #reviews #review-header h2.dockside-sunrise {
-      color: #f06177; }
-    #shop-juice #reviews #review-header h2.sailors-delight {
-      color: #ee7522; }
-    #shop-juice #reviews #review-header h2.harbor-voyage {
-      color: #457bbe; }
-    #shop-juice #reviews #review-header h2.watermelon-waves {
-      color: #9cd8d8; }
-    #shop-juice #reviews #review-header h2.anchor-case {
-      color: #1e8f47; }
-    #shop-juice #reviews #review-header h2.compass-case {
-      color: #E94640; }
-    #shop-juice #reviews #review-header h2.crew-case {
-      color: #666666; }
-    #shop-juice #reviews #review-header h2.lighthouse-case {
-      color: #3e3b5e; }
+    #shop-juice #reviews #review-header h3 {
+      margin: .5em auto; }
+      #shop-juice #reviews #review-header h3.mainstay-green {
+        color: #0096aa; }
+      #shop-juice #reviews #review-header h3.s-s-veggie {
+        color: #81bc41; }
+      #shop-juice #reviews #review-header h3.starboard-strawberry {
+        color: #ae3863; }
+      #shop-juice #reviews #review-header h3.dockside-sunrise {
+        color: #f06177; }
+      #shop-juice #reviews #review-header h3.sailors-delight {
+        color: #ee7522; }
+      #shop-juice #reviews #review-header h3.harbor-voyage {
+        color: #457bbe; }
+      #shop-juice #reviews #review-header h3.watermelon-waves {
+        color: #9cd8d8; }
+      #shop-juice #reviews #review-header h3.anchor-case {
+        color: #1e8f47; }
+      #shop-juice #reviews #review-header h3.compass-case {
+        color: #E94640; }
+      #shop-juice #reviews #review-header h3.crew-case {
+        color: #666666; }
+      #shop-juice #reviews #review-header h3.lighthouse-case {
+        color: #3e3b5e; }
     #shop-juice #reviews #review-header #review-button {
       cursor: pointer; }
       #shop-juice #reviews #review-header #review-button:hover {
@@ -2017,3 +2022,106 @@ footer {
     display: none; }
   #stars .stars .fa {
     font-size: 2em; }
+
+#ambassador #hero {
+  width: 80%;
+  margin: 2em auto;
+  text-align: center; }
+  @media (min-width: 44em) {
+    #ambassador #hero {
+      max-width: 44em; } }
+  #ambassador #hero h2 {
+    margin-bottom: 1em; }
+
+#ambassador #ambassador-carousel {
+  margin-bottom: 4em; }
+  #ambassador #ambassador-carousel img {
+    padding: .5em;
+    margin: 1em; }
+
+#ambassador #about {
+  width: 100%;
+  margin: 2em auto;
+  text-align: center;
+  background-color: #E6E7E8; }
+  #ambassador #about p {
+    width: 80%;
+    margin: auto;
+    padding-bottom: 1em; }
+    @media (min-width: 44em) {
+      #ambassador #about p {
+        max-width: 44em; } }
+  #ambassador #about h2 {
+    margin: 1em auto;
+    padding-top: 1em; }
+
+#ambassador-entry #ambassador {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  @media (min-width: 44em) {
+    #ambassador-entry #ambassador {
+      -ms-flex-direction: row;
+      flex-direction: row;
+      width: 75%;
+      margin: auto; } }
+  #ambassador-entry #ambassador img {
+    margin: 2em auto; }
+  #ambassador-entry #ambassador #content {
+    text-align: center; }
+    @media (min-width: 44em) {
+      #ambassador-entry #ambassador #content {
+        margin-top: 2em;
+        text-align: left; } }
+    #ambassador-entry #ambassador #content h2 {
+      margin-bottom: 1rem; }
+      @media (min-width: 44em) {
+        #ambassador-entry #ambassador #content h2 {
+          width: 80%;
+          margin: 0 auto 1rem; } }
+    #ambassador-entry #ambassador #content h3 {
+      max-width: 90%;
+      margin: auto; }
+      @media (min-width: 44em) {
+        #ambassador-entry #ambassador #content h3 {
+          width: 80%;
+          margin: auto; } }
+    #ambassador-entry #ambassador #content #social {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin: 0 auto 1em; }
+      @media (min-width: 44em) {
+        #ambassador-entry #ambassador #content #social {
+          -ms-flex-pack: start;
+          justify-content: flex-start;
+          margin: 0 1em 1em 2.5em;
+          width: 80%; } }
+      #ambassador-entry #ambassador #content #social li {
+        margin: 0 1em;
+        color: #58595b; }
+    #ambassador-entry #ambassador #content p {
+      width: 80%;
+      margin: 1em auto; }
+
+#ambassador-entry #about {
+  width: 100%;
+  margin: 2em auto;
+  text-align: center;
+  background-color: #E6E7E8; }
+  #ambassador-entry #about p {
+    width: 80%;
+    margin: auto;
+    padding-bottom: 1em; }
+    @media (min-width: 44em) {
+      #ambassador-entry #about p {
+        max-width: 44em; } }
+  #ambassador-entry #about h2 {
+    margin: 1em auto;
+    padding-top: 1em; }
+
+#password-reset form {
+  text-align: center;
+  margin: 1em; }

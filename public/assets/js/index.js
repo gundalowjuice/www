@@ -83,17 +83,19 @@
 var carousel = document.getElementById('product-image')
 
 carousel.addEventListener('click', juiceChange, false)
+// carousel.addEventListener('pointerup', juiceChange, false)
 carousel.addEventListener('touchend', function () {
   setTimeout(function () {
     juiceChange()
+    console.log('juiceChange')
   }, 500)
 }, false)
-carousel.addEventListener('touchmove', function () {
-  setTimeout(function () {
-    juiceChange()
-    console.log('delay')
-  }, 500)
-}, false)
+// carousel.addEventListener('touchmove', function () {
+//   setTimeout(function () {
+//     juiceChange()
+//     console.log('delay')
+//   }, 500)
+// }, false)
 
 var carouselImage = document.getElementsByClassName('carousel-cell')
 
@@ -369,11 +371,11 @@ function juiceChange () {
 }
 
 carousel.addEventListener('click', ingredient, false)
-carousel.addEventListener('touchend', ingredient, false)
-carousel.addEventListener('touchmove', function () {
+// carousel.addEventListener('touchend', ingredient, false)
+carousel.addEventListener('touchend', function () {
   setTimeout(function () {
     ingredient()
-    console.log('delay')
+    console.log('ingredient')
   }, 500)
 })
 
@@ -421,11 +423,11 @@ function ingredient () {
 
 carousel.addEventListener('click', iconDisplay, false)
 window.addEventListener('load', iconDisplay, false)
-carousel.addEventListener('touchend', iconDisplay, false)
-carousel.addEventListener('touchmove', function () {
+// carousel.addEventListener('touchend', iconDisplay, false)
+carousel.addEventListener('touchend', function () {
   setTimeout(function () {
     iconDisplay()
-    console.log('delay')
+    console.log('iconDisplay')
   }, 500)
 })
 
@@ -537,13 +539,13 @@ var svgIcon = document.querySelectorAll('svg use')
 iconParent.addEventListener('click', activeIcon, false) 
 iconParent.addEventListener('click', activeSvg, false)
 document.addEventListener('click', activeIcon, false)
-carousel.addEventListener('touchend', activeIcon, false)
-carousel.addEventListener('touchmove', function () {
-  setTimeout(function () {
-    activeIcon()
-    console.log('delay')
-  }, 500)
-})
+// carousel.addEventListener('touchend', activeIcon, false)
+// carousel.addEventListener('touchstart', function () {
+//   setTimeout(function () {
+//     activeIcon()
+//     console.log('delay')
+//   }, 500)
+// })
 
 function activeSvg (e) {
 	if (e.target !== e.currentTarget) {
@@ -568,14 +570,15 @@ function activeIcon (e) {
 
 //var ingredientContent = document.querySelectorAll('#ingredient-content div') // get all ingredient-content p tags
 
-//iconParent.addEventListener('click', contentDisplay, false)
-//carousel.addEventListener('touchend', contentDisplay, false)
-//carousel.addEventListener('touchmove', function () {
- // setTimeout(function () {
-  //  contentDisplay()
-   // console.log('delay')
-//  }, 500)
-//})
+
+document.addEventListener('click', contentDisplay, false)
+// carousel.addEventListener('touchend', contentDisplay, false)
+carousel.addEventListener('touchend', function () {
+  setTimeout(function () {
+    contentDisplay()
+    console.log('contentDisplay')
+  }, 500)
+})
 
 // function contentDisplay () {
 // var iconList = document.querySelector('#icons')
@@ -929,11 +932,11 @@ function contentDisplay () {
 }
 
 carousel.addEventListener('click', ingredientColor, false)
-carousel.addEventListener('touchend', ingredientColor, false)
-carousel.addEventListener('touchmove', function () {
+// carousel.addEventListener('touchend', ingredientColor, false)
+carousel.addEventListener('touchend', function () {
   setTimeout(function () {
     ingredientColor()
-    console.log('delay')
+    console.log('ingredientColor')
   }, 500)
 })
 
@@ -1026,13 +1029,13 @@ var ingredientH2 = document.querySelectorAll('.header h2')
 var parent = document.querySelector('.header')
 
 parent.addEventListener('click', handler, false)
-carousel.addEventListener('touchend', handler, false)
-carousel.addEventListener('touchmove', function () {
-  setTimeout(function () {
-    handler()
-    console.log('delay')
-  }, 500)
-})
+// carousel.addEventListener('touchend', handler, false)
+// carousel.addEventListener('touchend', function () {
+//   setTimeout(function () {
+//     handler()
+//     console.log('handler')
+//   }, 500)
+// })
 
 function handler (e) {
   if (e.target !== e.currentTarget) {
@@ -1045,11 +1048,11 @@ function handler (e) {
 }
 
 parent.addEventListener('click', iconLabelDisplay, false)
-carousel.addEventListener('touchend', iconLabelDisplay, false)
-carousel.addEventListener('touchmove', function () {
+// carousel.addEventListener('touchend', iconLabelDisplay, false)
+carousel.addEventListener('touchend', function () {
   setTimeout(function () {
     iconLabelDisplay()
-    console.log('delay')
+    console.log('iconLabelDisplay')
   }, 500)
 })
 
@@ -1067,6 +1070,12 @@ function iconLabelDisplay () {
 
 carousel.addEventListener('click', labelDisplay, false)
 window.addEventListener('load', labelDisplay, false)
+carousel.addEventListener('touchend', function () {
+  setTimeout( function () {
+    labelDisplay()
+    console.log('labelDisplay')
+  }, 500)
+})
 
 function labelDisplay () {
   var carouselImage = document.querySelectorAll('#product-image .carousel-cell')
@@ -1169,11 +1178,11 @@ function labelDisplay () {
 
 carousel.addEventListener('click', hideCaseHeader, false)
 window.addEventListener('load', hideCaseHeader, false)
-carousel.addEventListener('touchend', hideCaseHeader, false)
-carousel.addEventListener('touchmove', function () {
+// carousel.addEventListener('touchend', hideCaseHeader, false)
+carousel.addEventListener('touchend', function () {
   setTimeout(function () {
     hideCaseHeader()
-    console.log('delay')
+    console.log('hideCaseHeader')
   }, 500)
 })
 

@@ -14,12 +14,15 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      text-align: center;
 
       @media (min-width: 47em) {
         flex-direction: row;
+
       }
 
-      h2 {
+      h3 {
+        margin: .5em auto;
 
         &.mainstay-green {
           color: $mainstay-green;
