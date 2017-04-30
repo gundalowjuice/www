@@ -2023,7 +2023,7 @@ footer {
   #stars .stars .fa {
     font-size: 2em; }
   #stars #review-button {
-    margin: 0;
+    margin: auto;
     font-weight: normal;
     cursor: pointer; }
     #stars #review-button:hover {
