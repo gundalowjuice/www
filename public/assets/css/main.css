@@ -2022,6 +2022,12 @@ footer {
     display: none; }
   #stars .stars .fa {
     font-size: 2em; }
+  #stars #review-button {
+    margin: 0;
+    font-weight: normal;
+    cursor: pointer; }
+    #stars #review-button:hover {
+      color: #58595b; }
 
 #ambassador #hero {
   width: 80%;
