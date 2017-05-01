@@ -91,9 +91,12 @@ carousel.addEventListener('touchend', function () {
 carousel.addEventListener('touchmove', function () {
   setTimeout(function () {
     juiceChange()
-    console.log('delay')
+    console.log('juice change')
   }, 500)
 }, false)
+flkty.on('dragEnd', function () {
+  juiceChange()
+} )
 
 var carouselImage = document.getElementsByClassName('carousel-cell')
 
@@ -537,13 +540,21 @@ var svgIcon = document.querySelectorAll('svg use')
 iconParent.addEventListener('click', activeIcon, false) 
 iconParent.addEventListener('click', activeSvg, false)
 document.addEventListener('click', activeIcon, false)
+document.addEventListener('click', activeSvg, false)
 carousel.addEventListener('touchend', activeIcon, false)
-carousel.addEventListener('touchmove', function () {
-  setTimeout(function () {
-    activeIcon()
-    console.log('delay')
-  }, 500)
-})
+//carousel.addEventListener('touchend', activeSvg, false)
+//carousel.addEventListener('touchmove', function () {
+ // setTimeout(function () {
+  //  activeSvg()
+   // console.log('svg delay')
+//  }, 500)
+//})
+//carousel.addEventListener('touchmove', function () {
+  //setTimeout(function () {
+    //activeIcon()
+    //console.log('delay')
+  //}, 500)
+//})
 
 function activeSvg (e) {
 	if (e.target !== e.currentTarget) {
@@ -569,13 +580,13 @@ function activeIcon (e) {
 //var ingredientContent = document.querySelectorAll('#ingredient-content div') // get all ingredient-content p tags
 
 //iconParent.addEventListener('click', contentDisplay, false)
-//carousel.addEventListener('touchend', contentDisplay, false)
-//carousel.addEventListener('touchmove', function () {
- // setTimeout(function () {
-  //  contentDisplay()
-   // console.log('delay')
-//  }, 500)
-//})
+carousel.addEventListener('touchend', contentDisplay, false)
+carousel.addEventListener('touchmove', function () {
+  setTimeout(function () {
+    contentDisplay()
+    console.log('delay')
+  }, 500)
+})
 
 // function contentDisplay () {
 // var iconList = document.querySelector('#icons')
@@ -775,7 +786,7 @@ function contentDisplay () {
     if (iconChild[i].classList.contains('active') && iconChild[i].classList.contains('apple-icon')) {
       for (var j = 0; j < ingredientContent.length; j++) {
         if (ingredientContent[j].classList.contains('apple')) {
-          ingredientContent[j].classList.remove('hide')
+         ingredientContent[j].classList.remove('hide')
         } else {
           ingredientContent[j].classList.add('hide')
         }
