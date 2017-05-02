@@ -16,6 +16,35 @@
 
 		<div class="two-thirds column">
 			<h3>Payment</h3>
+			{% if craft.commerce.paymentMethods|length %}
+				<form method="POST" id="paymentMethod" class="form-inline">
+
+					<input type="hidden" name="action" value="commerce/cart/updateCart">
+					<input type="hidden" name="redirect"
+						   value="checkout/payment">
+					{{ getCsrfInput() }}
+
+					<label for="paymentMethodId">Select a payment method:</label>
+					<select id="paymentMethodId" name="paymentMethodId"
+							class="form-control">
+						{% for id,name in craft.commerce.paymentMethods %}
+							<option value="{{ id }}"
+									{% if id == cart.paymentMethodId %}selected{% endif %}>{{ name }}</option>
+						{% endfor %}
+					</select>
+
+					{% set currencies = craft.commerce.paymentCurrencies %}
+					{% if currencies|length > 1 %}
+					<select id="paymentCurrency" name="paymentCurrency"
+							class="form-control">
+						{% for currency in currencies %}
+							<option value="{{ currency.iso }}" {% if currency.iso == cart.paymentCurrency %}selected{% endif %}>{{ currency.name }} {{  currency.iso }} - {{ cart.totalPrice|commerceCurrency(currency.iso,convert=true) }}</option>
+						{% endfor %}
+					</select>
+					{% endif %}
+				</form>
+			{% endif %}
+
 
       {# ------------------------------------  PAYMENT GATEWAYS START HERE ------------------------------------   #}
 
@@ -267,7 +296,7 @@
 #}
 
 
-
+{#
 			{% if craft.commerce.paymentMethods|length %}
 				<form method="POST" id="paymentMethod" class="form-inline">
 
@@ -296,7 +325,7 @@
 					{% endif %}
 				</form>
 			{% endif %}
-
+#}
 
 
 
@@ -355,6 +384,7 @@
 		</div>
 	</div>
 {% endif %}
+	{% includeJsFile '/assets/js/stripeBtn.js' %}
 	{% includejs %}
 	$('#paymentMethodId , #paymentCurrency').change(function(){
 		$('form#paymentMethod').submit();
