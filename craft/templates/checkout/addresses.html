@@ -34,7 +34,7 @@
                     name: 'shippingAddress'
                 } %}
 
-                <input type="hidden" name="sameAddress" value="1">
+		<input type="hidden" name="sameAddress" value=>
 
                 <label for="sameAddress"><input id="sameAddress" name="sameAddress" type="checkbox"/><span class="label-body">Use same address for
                 billing</span></label>
@@ -82,6 +82,9 @@
     var shipState = document.getElementById('shippingAddress-stateId')
     var billState = document.getElementById('billingAddress-stateId')
 
+    var shipPhone = document.getElementById('shippingAddress-phone')
+    var billPhone = document.getElementById('billingAddress-phone')
+
     var sameAddress = document.getElementById('sameAddress')
     var submitButton = document.querySelectorAll('input[type=submit]')
 
@@ -92,8 +95,11 @@
     shipZipcode.addEventListener('change', billAddressFill, false)
     shipCountry.addEventListener('change', billAddressFill, false)
     shipState.addEventListener('change', billAddressFill, false)
+    shipPhone.addEventListener('change', billAddressFill, false)
     sameAddress.addEventListener('change', billAddressFill, false)
-
+    sameAddress.addEventListener('change', function () {
+      console.log(sameAddress.checked)
+    })
 
 
     function billAddressFill () {
@@ -106,6 +112,7 @@
         billZipcode.value = shipZipcode.value
         billCountry.value = shipCountry.value
         billState.value = shipState.value
+	billPhone.value = shipPhone.value
       } else {
         billFirstName.value = " "
         billLastName.value = " "
@@ -114,6 +121,7 @@
         billZipcode.value = " "
         billCountry.value = " "
         billState.value = " "
+	billPhone.value = ''
       }
     }
 
