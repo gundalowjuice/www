@@ -68,7 +68,7 @@
 
 		<div class="three columns">
 			<label for="{{ modelName }}-zipCode">Zip Code *</label>
-			<input  type="text" pattern="[0-9]*" maxlength="5" minlength="5" id="{{ modelName }}-zipCode" class="u-full-width" name="{{ modelName }}[zipCode]" value="{{ model ? model.zipCode : '' }}">
+			<input required type="text" pattern="[0-9]*" maxlength="5" minlength="5" id="{{ modelName }}-zipCode" class="u-full-width" name="{{ modelName }}[zipCode]" value="{{ model ? model.zipCode : '' }}">
 			{% if model and model.getErrors('zipCode') %}
 				<span class="flash">{{ model.getErrors('zipCode')|join }}</span>
 			{% endif %}
