@@ -2131,3 +2131,39 @@ footer {
 #password-reset form {
   text-align: center;
   margin: 1em; }
+
+#subscriptions #wrapper {
+  width: 80%;
+  margin: auto; }
+  #subscriptions #wrapper h1 {
+    text-align: center;
+    margin: 2em 0; }
+  #subscriptions #wrapper section {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center; }
+    @media (min-width: 44em) {
+      #subscriptions #wrapper section {
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-pack: justify;
+        justify-content: space-between; } }
+    #subscriptions #wrapper section .sub-wrapper {
+      width: 90%;
+      margin-bottom: 2em; }
+      @media (min-width: 44em) {
+        #subscriptions #wrapper section .sub-wrapper {
+          width: 30%; } }
+      #subscriptions #wrapper section .sub-wrapper h2 {
+        margin-bottom: .5em; }
+      #subscriptions #wrapper section .sub-wrapper p {
+        margin-bottom: 2em;
+        text-align: left; }
+      #subscriptions #wrapper section .sub-wrapper .button {
+        border: 1px solid black;
+        border-radius: .25em;
+        padding: .5em; }
