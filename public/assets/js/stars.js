@@ -1,6 +1,7 @@
 var carousel = document.getElementById('product-image')
 
 carousel.addEventListener('click', ratingDisplay, false)
+window.addEventListener('keyup', ratingDisplay, false)
 window.addEventListener('load', function () {
   setTimeout(function () {
     ratingDisplay()
