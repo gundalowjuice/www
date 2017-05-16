@@ -28,7 +28,6 @@ function minusCart () {
     target.value = ('add to basket')
     qty.value = total
   }
-  console.log(total)
 }
 
 function zeroButton () {
@@ -39,6 +38,4 @@ function zeroButton () {
 
   target.value = 'Add to Basket'
   qty.value = total
-
-  console.log(total)
 }
