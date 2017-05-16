@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta content="telephone=no" name="format-detection">
-    <title>Order Confirmation</title>
+    <title>Dana Email</title>
     <style type="text/css">
       /* Based on The MailChimp Reset INLINE: Yes. */
       /* Client-specific Styles */
@@ -46,6 +46,8 @@
     </style>
   </head>
 
+  {% set orderConfirmEmail = craft.globals.getSetByHandle('orderConfirmationEmail')%}
+
 <body style="margin:0;padding:0;font-family:Helvetica,Arial,sans-serif;font-size: 8px;color:#000000;text-align:left;background-color:#FFFFFF;">
 
   <!-- BEGIN: Container Table -->
@@ -59,7 +61,7 @@
             <td width="216" style="background:#030000;"></td>
             <td>
               <a href="http://gundalowjuice.com" title="" target="_blank">
-                <img src="http://kevindouglass.io/gj/logo.jpg" alt="Gundalow Juice" width="168" height="59" border="0" style="display:block;">
+                <img src="{{ orderConfirmationEmail.gjLogo.first().url() }}" alt="Gundalow Juice" width="168" height="59" border="0" style="display:block;">
               </a>
             </td>
             <td width="216" style="background:#030000;"></td>
@@ -73,7 +75,7 @@
           <tr>
             <td>
               <a href="http://gundalowjuice.com" title="" target="_blank">
-                <img src="http://kevindouglass.io/gj/hero.jpg" alt="Shop Now!" width="600" height="294" border="0" style="display:block;">
+                <img src="{{ orderConfirmationEmail.heroImage.first().url() }}" alt="Shop Now!" width="600" height="294" border="0" style="display:block;">
               </a>
             </td>
           </tr>
@@ -90,7 +92,7 @@
         <table width="600" cellpadding="0" cellspacing="0" border="0" style="margin:0;">
           <tr>
             <td width="600" style="color: #030000; font-family: Arial,sans-serif; font-size: 22px; line-height:24px; letter-spacing: 0.7px; text-align: center; padding: 20px 0 22px 0;">
-              THANK YOU!
+              {{ orderConfirmationEmail.emailHeader }}
             </td>
           </tr>
         </table>
@@ -98,8 +100,7 @@
         <table width="600" cellpadding="0" cellspacing="0" border="0" style="margin:0;">
           <tr>
             <td width="600" style="color:#030000; font-family:Arial,sans-serif; font-size:14px; line-height: 24px; text-align:left; letter-spacing: 0.3px; padding: 0 75px 30px 75px">
-              We have received your order and are charting the course to you now.<br>
-              See below for your order confirmation details.<br><br>
+                {{ orderConfirmationEmail.emailMessage }}<br>
 
               Order #{{ order.id }}<br>
               Order Qty {{ order.totalQty }}<br>

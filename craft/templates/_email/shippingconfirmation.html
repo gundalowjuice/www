@@ -46,6 +46,8 @@
     </style>
   </head>
 
+  {% set shippingconfirmEmail = craft.globals.getSetByHandle('shippingConfirmationEmail')%}
+
 <body style="margin:0;padding:0;font-family:Helvetica,Arial,sans-serif;font-size: 8px;color:#000000;text-align:left;background-color:#FFFFFF;">
 
   <!-- BEGIN: Container Table -->
@@ -59,7 +61,7 @@
             <td width="216" style="background:#030000;"></td>
             <td>
               <a href="http://gundalowjuice.com" title="" target="_blank">
-                <img src="http://kevindouglass.io/gj/logo.jpg" alt="Gundalow Juice" width="168" height="59" border="0" style="display:block;">
+                <img src="{{ shippingConfirmEmail.gjLogo.first().url() }}" alt="Gundalow Juice" width="168" height="59" border="0" style="display:block;">
               </a>
             </td>
             <td width="216" style="background:#030000;"></td>
@@ -73,7 +75,7 @@
           <tr>
             <td>
               <a href="http://gundalowjuice.com" title="" target="_blank">
-                <img src="http://kevindouglass.io/gj/hero.jpg" alt="Shop Now!" width="600" height="294" border="0" style="display:block;">
+                <img src="{{ shippingConfirmEmail.heroImage.first().url() }}" alt="Shop Now!" width="600" height="294" border="0" style="display:block;">
               </a>
             </td>
           </tr>
@@ -90,7 +92,7 @@
         <table width="600" cellpadding="0" cellspacing="0" border="0" style="margin:0;">
           <tr>
             <td width="600" style="color: #030000; font-family: Arial,sans-serif; font-size: 22px; line-height:24px; letter-spacing: 0.7px; text-align: center; padding: 20px 0 22px 0;">
-              HELLO!
+              {{ shippingConfirmEmail.emailHeader }}
             </td>
           </tr>
         </table>
@@ -98,7 +100,7 @@
         <table width="600" cellpadding="0" cellspacing="0" border="0" style="margin:0;">
           <tr>
             <td width="600" style="color:#606060; font-family:Arial,sans-serif; font-size:16px; line-height: 24px; text-align:center; letter-spacing: 0.3px; padding: 0 75px 30px 75px">
-              Our Arrival
+              {{ shippingConfirmEmail.headerTwo }}
             </td>
           </tr>
         </table>
@@ -106,9 +108,7 @@
         <table width="600" cellpadding="0" cellspacing="0" border="0" style="margin:0;p">
           <tr>
             <td width="600" style="color:#606060; font-family:Arial,sans-serif; font-size:14px; line-height: 24px; text-align:center; letter-spacing: 0.3px; padding: 0 75px 30px 75px;">
-              The wind is in our sails and your Gundalow Juice order is on its way!<br>
-              Below you will find your tracking information,<br>
-              as well as some FAQs’s about our juices.<br><br>
+              {{ shippingConfirmEmail.emailMessage }}
               Order #{{ order.id }}<br>
               Tracking #{{ order.message }}<br>
             </td>
@@ -119,7 +119,7 @@
           <tr>
             <td width="600" style="color:#606060; font-family:Arial,sans-serif; font-size:14px; line-height: 24px; text-align:center; letter-spacing: 0.3px; padding: 0 75px 30px 75px;">
               Have questions about your order?<br>
-              Emails at <a style="color:#606060; font-family:Arial,sans-serif; font-size:14px; line-height: 24px; text-align:center; letter-spacing: 0.3px; text-decoration: none;" href="mailto:Mail@GunadalowJuice.com" target="_top">Mail@GunadalowJuice.com</a>
+              Email us at <a style="color:#606060; font-family:Arial,sans-serif; font-size:14px; line-height: 24px; text-align:center; letter-spacing: 0.3px; text-decoration: none;" href="mailto:Mail@GunadalowJuice.com" target="_top">Mail@GunadalowJuice.com</a>
             </td>
           </tr>
         </table>
