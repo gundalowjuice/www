@@ -1323,6 +1323,9 @@ footer {
   #shipping #shipping-address .one-third.column {
     -ms-flex-pack: distribute;
     justify-content: space-around; }
+  #shipping #shipping-address .edit {
+    font-size: 1.25em;
+    font-weight: bold; }
 
 #payment main {
   width: 90%;

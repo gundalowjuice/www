@@ -72,7 +72,7 @@
                 <h5 class="label">Billing Address</h5>
                 {% if cart.billingAddress %}
                     {% include '_includes/addresses/address' with {'address': cart.billingAddress} %}
-                    {% if currentUser %}<a class="edit" href="{{ url('customer/addresses/edit') }}?addressId={{ cart.billingAddressId }}&redirect={{ craft.request.path }}">Edit</a>{% endif %}
+                    {% if currentUser %}<a class="edit" href="{{ url('customer/addresses/edit') }}?addressId={{ cart.billingAddressId }}&redirect={{ craft.request.path }}">Edit Address</a>{% endif %}
                 {% else %}
                     <p>No billing address selected.</p>
                 {% endif %}
