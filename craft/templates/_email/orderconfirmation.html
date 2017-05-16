@@ -61,7 +61,7 @@
             <td width="216" style="background:#030000;"></td>
             <td>
               <a href="http://gundalowjuice.com" title="" target="_blank">
-                <img src="{{ orderConfirmationEmail.gjLogo.first().url() }}" alt="Gundalow Juice" width="168" height="59" border="0" style="display:block;">
+                <img src="{{ orderConfirmEmail.gjLogo.first().url() }}" alt="Gundalow Juice" width="168" height="59" border="0" style="display:block;">
               </a>
             </td>
             <td width="216" style="background:#030000;"></td>
@@ -75,7 +75,7 @@
           <tr>
             <td>
               <a href="http://gundalowjuice.com" title="" target="_blank">
-                <img src="{{ orderConfirmationEmail.heroImage.first().url() }}" alt="Shop Now!" width="600" height="294" border="0" style="display:block;">
+                <img src="{{ orderConfirmEmail.heroImage.first().url() }}" alt="Shop Now!" width="600" height="294" border="0" style="display:block;">
               </a>
             </td>
           </tr>
@@ -92,7 +92,7 @@
         <table width="600" cellpadding="0" cellspacing="0" border="0" style="margin:0;">
           <tr>
             <td width="600" style="color: #030000; font-family: Arial,sans-serif; font-size: 22px; line-height:24px; letter-spacing: 0.7px; text-align: center; padding: 20px 0 22px 0;">
-              {{ orderConfirmationEmail.emailHeader }}
+              {{ orderConfirmEmail.emailHeader }}
             </td>
           </tr>
         </table>
@@ -100,7 +100,7 @@
         <table width="600" cellpadding="0" cellspacing="0" border="0" style="margin:0;">
           <tr>
             <td width="600" style="color:#030000; font-family:Arial,sans-serif; font-size:14px; line-height: 24px; text-align:left; letter-spacing: 0.3px; padding: 0 75px 30px 75px">
-                {{ orderConfirmationEmail.emailMessage }}<br>
+                {{ orderConfirmEmail.emailMessage }}<br>
 
               Order #{{ order.id }}<br>
               Order Qty {{ order.totalQty }}<br>
