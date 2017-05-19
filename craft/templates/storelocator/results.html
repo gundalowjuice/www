@@ -1,6 +1,8 @@
 {% extends '_layout' %}
 
 {% block content %}
+{{ dump(craft.smartMap.visitor) }}
+
 {% set target = craft.request.getParam('stores') %}
 {% set params = {
     target: target,
@@ -8,9 +10,10 @@
     units: 'miles'
 } %}
 
+
 {% set entry = craft.entries.slug('store-locator').first %}
 {% set locations = entry.locations %}
-{% set blocks = entry.locations.mySmartMapField(params).find() %}
+{% set blocks = entry.locations.address(params).find() %}
 
 <h1>Showing results for "{{ target }}"...</h1>
   {% for block in blocks %}
