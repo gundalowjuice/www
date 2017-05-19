@@ -1,7 +1,6 @@
 {% extends '_layout' %}
 
 {% block content %}
-{{ dump(craft.smartMap.visitor) }}
 
 {% set target = craft.request.getParam('stores') %}
 {% set params = {
