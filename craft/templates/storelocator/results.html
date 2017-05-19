@@ -1,0 +1,26 @@
+{% extends '_layout' %}
+
+{% block content %}
+{% set target = craft.request.getParam('stores') %}
+{% set params = {
+    target: target,
+    range: 5,
+    units: 'miles'
+} %}
+
+{% set entry = craft.entries.slug('store-locator').first %}
+{% set locations = entry.locations %}
+{% set blocks = entry.locations.mySmartMapField(params).find() %}
+
+<h1>Showing results for "{{ target }}"...</h1>
+  {% for block in blocks %}
+    <h2>{{ block.storeName }}</h2>
+    <div>
+        {{ block.address.street1 }}<br />
+        {{ block.address.city }}, {{ block.address.state }} {{ block.address.zip }}<br>
+        <strong>{{ block.address.distance | number_format(1) }} miles away</strong>
+    </div>
+{% else %}
+    <h2>No results found</h2>
+{% endfor %}
+{% endblock %}

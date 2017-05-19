@@ -32,7 +32,10 @@
       maxWidth: 200
   }
 } %}
-
+      <form action="{{ url('storelocator/results') }}">
+        <input type="search" name="stores" placeholder="Search">
+        <input type="submit" value="Search">
+      </form>
 <div id="map-wrapper">
 <div id="location-list">
   {% for block in locations %}
@@ -51,7 +54,5 @@
   {{ craft.smartMap.map(locations, options) }}
 </div>
 </div>
-
-
 
 {% endblock%}
