@@ -1,0 +1,25 @@
+#search-results {
+  #location-list {
+    width: 100%;
+    order: 2;
+    margin: auto;
+
+    @media (min-width: 44em) {
+      width: 35%;
+    }
+
+    h2 {
+      margin: 1em auto;
+    }
+
+    p {
+      margin: auto 1em;
+      padding: 1em;
+      border-bottom: 1px dotted $gj-grey;
+
+      .bold {
+        font-weight: bold;
+      }
+    }
+  }
+}

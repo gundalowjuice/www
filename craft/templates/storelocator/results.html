@@ -1,28 +1,35 @@
 {% extends '_layout' %}
+{% set bodyId = "search-results" %}
 
 {% block content %}
 
 {% set target = craft.request.getParam('stores') %}
 {% set params = {
     target: target,
-    range: 5,
+    range: 25,
     units: 'miles'
 } %}
-
 
 {% set entry = craft.entries.slug('store-locator').first %}
 {% set locations = entry.locations %}
 {% set blocks = entry.locations.address(params).find() %}
 
-<h1>Showing results for "{{ target }}"...</h1>
+
+<div id="location-list">
+  <h2>Showing results for "{{ target }}"...</h2>
   {% for block in blocks %}
-    <h2>{{ block.storeName }}</h2>
-    <div>
-        {{ block.address.street1 }}<br />
-        {{ block.address.city }}, {{ block.address.state }} {{ block.address.zip }}<br>
-        <strong>{{ block.address.distance | number_format(1) }} miles away</strong>
-    </div>
-{% else %}
-    <h2>No results found</h2>
-{% endfor %}
+    {% if block.type == 'stores' %}
+      <p>
+        <span class="bold">{{ block.storeName }}</span><br>
+        <span>{{ block.address.street1 }}</span><br>
+        <span>{{ block.address.city }}, {{ block.address.state }}, {{ block.address.zip }}</span><br>
+        <span class='bold'>{{ block.address.distance | number_format(1) }} miles away</span>
+      </p>
+    {% else %}
+      <h2>No results found</h2>
+    {% endif %}
+  {% endfor %}
+
+</div>
+
 {% endblock %}

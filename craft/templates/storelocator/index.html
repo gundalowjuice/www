@@ -11,8 +11,8 @@
  #}
 
 {% extends "_layout" %}
-
 {% set bodyId = "store-locator" %}
+
 
 {% block content%}
 
@@ -32,27 +32,29 @@
       maxWidth: 200
   }
 } %}
-      <form action="{{ url('storelocator/results') }}">
-        <input type="search" name="stores" placeholder="Search">
-        <input type="submit" value="Search">
-      </form>
+
+<form id="store-search" action="{{ url('storelocator/results') }}">
+  <input type="search" name="stores" placeholder="Enter your address">
+  <input type="submit" value="Search">
+</form>
+
 <div id="map-wrapper">
-<div id="location-list">
-  {% for block in locations %}
-  {% if block.type == 'stores' %}
-    <p>
-      <span id="store-name">{{ block.storeName }}</span><br>
-      <span>{{ block.address.street1 }}</span><br>
-      <span>{{ block.address.city }}, {{ block.address.state }}, {{ block.address.zip }}</span>
-    </p>
-  {% endif %}
-  {% endfor %}
+  <div id="location-list">
+    {% for block in locations %}
+      {% if block.type == 'stores' %}
+        <p>
+          <span class="bold">{{ block.storeName }}</span><br>
+          <span>{{ block.address.street1 }}</span><br>
+          <span>{{ block.address.city }}, {{ block.address.state }}, {{ block.address.zip }}</span>
+        </p>
+      {% endif %}
+    {% endfor %}
 
-</div>
+  </div>
 
-<div id="map">
-  {{ craft.smartMap.map(locations, options) }}
-</div>
+  <div id="map">
+    {{ craft.smartMap.map(locations, options) }}
+  </div>
 </div>
 
 {% endblock%}
