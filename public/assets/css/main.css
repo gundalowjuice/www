@@ -2184,3 +2184,9 @@ footer {
     border-bottom: 1px dotted #58595b; }
     #search-results #location-list p .bold {
       font-weight: bold; }
+
+#search-results #search-wrapper {
+  width: 90%;
+  margin: 2em auto; }
+  #search-results #search-wrapper h1 {
+    line-height: 125%; }
