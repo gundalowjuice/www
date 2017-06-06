@@ -9,7 +9,6 @@
 
   <div id='shipping-address'>
     <h3>Shipping Method</h3>
-    <p>confirm shipping state</p>
 
     <div class="row">
 
@@ -36,7 +35,7 @@
 
             {% for handle, method in craft.commerce.availableShippingMethods %}
                 <div class="shipping-select">
-                        <input required="required" type="radio" name="shippingMethod" value="{{ handle }}"
+                        <input required="required" type="hidden" name="shippingMethod" value="{{ handle }}"
                                {% if handle == cart.shippingMethodHandle %}checked{% endif %} />
                         <strong>{{ method.name }}</strong>
 
@@ -51,7 +50,7 @@
             {% endfor %}
             <span class="flash">{{ cart.getErrors('shippingMethod')|join }}</span>
 
-            <p><input type="submit" class="button button-primary" value="Save & Continue"/></p>
+            <p><input type="submit" class="button button-primary" value="Continue to Payment"/></p>
 
         </form>
         {% endif %}
@@ -66,13 +65,13 @@
                 {% else %}
                     <p>No shipping address selected.</p>
                 {% endif %}
-                {% if currentUser %}<a class="edit" href="{{ url('customer/addresses/edit') }}?addressId={{ cart.shippingAddressId }}&redirect={{ craft.request.path }}">Edit</a>{% endif %}
+                {% if currentUser %}<a class="edit" href="{{ url('customer/addresses/edit') }}?addressId={{ cart.shippingAddressId }}&redirect={{ craft.request.path }}">Edit Address</a>{% endif %}
             </div>
             <div class="address-card">
                 <h5 class="label">Billing Address</h5>
                 {% if cart.billingAddress %}
                     {% include '_includes/addresses/address' with {'address': cart.billingAddress} %}
-                    {% if currentUser %}<a class="edit" href="{{ url('customer/addresses/edit') }}?addressId={{ cart.billingAddressId }}&redirect={{ craft.request.path }}">Edit</a>{% endif %}
+                    {% if currentUser %}<a class="edit" href="{{ url('customer/addresses/edit') }}?addressId={{ cart.billingAddressId }}&redirect={{ craft.request.path }}">Edit Address</a>{% endif %}
                 {% else %}
                     <p>No billing address selected.</p>
                 {% endif %}

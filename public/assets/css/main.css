@@ -289,7 +289,8 @@ header {
         -ms-flex-order: 2;
         order: 2;
         -ms-flex-positive: 2;
-        flex-grow: 2; } }
+        flex-grow: 2;
+        padding-left: 3em; } }
     header ul #basket {
       cursor: pointer; }
       @media (min-width: 44em) {
@@ -1323,6 +1324,9 @@ footer {
   #shipping #shipping-address .one-third.column {
     -ms-flex-pack: distribute;
     justify-content: space-around; }
+  #shipping #shipping-address .edit {
+    font-size: 1.25em;
+    font-weight: bold; }
 
 #payment main {
   width: 90%;
@@ -1535,8 +1539,7 @@ footer {
     #store-locator #map-wrapper {
       -ms-flex-direction: row;
       flex-direction: row;
-      height: 71.5vh;
-      margin: 3em 0; } }
+      height: 71.5vh; } }
   #store-locator #map-wrapper #location-list {
     width: 100%;
     -ms-flex-order: 2;
@@ -1549,7 +1552,7 @@ footer {
       margin: auto 1em;
       padding: 1em;
       border-bottom: 1px dotted #58595b; }
-      #store-locator #map-wrapper #location-list p #store-name {
+      #store-locator #map-wrapper #location-list p .bold {
         font-weight: bold; }
   #store-locator #map-wrapper #map {
     width: 100%;
@@ -1558,6 +1561,39 @@ footer {
     @media (min-width: 44em) {
       #store-locator #map-wrapper #map {
         width: 65%; } }
+
+#store-locator #store-search {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  width: 100%;
+  margin: 1em auto; }
+  @media (min-width: 44em) {
+    #store-locator #store-search {
+      -ms-flex-direction: row;
+      flex-direction: row;
+      width: 35%; } }
+  #store-locator #store-search input {
+    margin: 1em auto; }
+  #store-locator #store-search input[type="search"] {
+    border: 1px solid #999999;
+    box-shadow: inset 0.5px 0.5px 0.5px #999999;
+    width: 12em;
+    font-size: 1em;
+    border-radius: 3px; }
+    @media (min-width: 64em) {
+      #store-locator #store-search input[type="search"] {
+        width: 15em; } }
+  #store-locator #store-search input[type="submit"] {
+    border: 1px solid #999999;
+    box-shadow: inset 0.5px 0.5px 0.5px #999999;
+    width: 5em;
+    font-size: 1em;
+    border-radius: 3px;
+    text-align: center; }
 
 #error #wrapper {
   display: -ms-flexbox;
@@ -2225,3 +2261,26 @@ footer {
       border-radius: .5em; }
   #subscriptions main input {
     border: 1px solid #58595b; }
+
+#search-results #location-list {
+  width: 100%;
+  -ms-flex-order: 2;
+  order: 2;
+  margin: auto; }
+  @media (min-width: 44em) {
+    #search-results #location-list {
+      width: 35%; } }
+  #search-results #location-list h2 {
+    margin: 1em auto; }
+  #search-results #location-list p {
+    margin: auto 1em;
+    padding: 1em;
+    border-bottom: 1px dotted #58595b; }
+    #search-results #location-list p .bold {
+      font-weight: bold; }
+
+#search-results #search-wrapper {
+  width: 90%;
+  margin: 2em auto; }
+  #search-results #search-wrapper h1 {
+    line-height: 125%; }

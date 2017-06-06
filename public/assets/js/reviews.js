@@ -4,6 +4,7 @@ var carousel = document.getElementById('product-image')
 
 carousel.addEventListener('click', colorChange, false)
 window.addEventListener('load', colorChange, false)
+window.addEventListener('keyup', colorChange, false)
 carousel.addEventListener('touchend', function () {
   setTimeout( function () {
     colorChange()
@@ -55,6 +56,7 @@ function colorChange () {
 
 carousel.addEventListener('click', reviewDisplay, false)
 window.addEventListener('load', reviewDisplay, false)
+window.addEventListener('keyup', reviewDisplay, false)
 carousel.addEventListener('touchend', function () {
   setTimeout( function () {
     reviewDisplay()

@@ -1,59 +1,4 @@
-// console.log('ready')
-//
-// $(document).ready(function () {
-//   checkDisplay()
-//
-//
-// $(document).keydown(function(t) {
-//   juiceChange()
-//   contentDisplay()
-//   iconDisplay()
-//   ingredient()
-//   ingredientColor()
-// })
-//
-// // Initialize flickity
-//
-//   $('.carousel').flickity({
-//     cellAlign: 'center',
-//     wrapAround: true,
-//     isSelected: true,
-//     initialIndex: 0
-//   })
-//
-// var $carousel = $('.carousel').flickity()
-//
-// $carousel.on( 'staticClick.flickity', function( event, pointer, cellElement, cellIndex ) {
-//   if ( typeof cellIndex == 'number' ) {
-//     $carousel.flickity( 'selectCell', cellIndex );
-//   }
-// });
-//
-// // Nav drop down
-//
-//   $('#nav svg').click(function () {
-//     $('nav').fadeToggle('fast')
-//     console.log('clicked')
-//   })
-//
-// // Basket dropdown
-//
-//
-//   $('#basket').click(function () {
-//     $('#basket-dropdown').slideToggle('slow')
-//   })
-//
-// })
-//
-// function checkDisplay () {
-//   if ($('p:nth-of-type(2)').css('display') === 'none') {
-//     $('#shipping-info').on('click', function () {
-//       $('p:nth-of-type(2)').slideToggle('slow')
-//     })
-//   }
-// }
-
-// change juice content and color in product carousel
+// ajax call for juice product info
 
 (function (window) {
   // create products object and make it a property on the global window object
@@ -88,15 +33,13 @@ carousel.addEventListener('touchend', function () {
     juiceChange()
   }, 500)
 }, false)
-carousel.addEventListener('touchmove', function () {
-  setTimeout(function () {
-    juiceChange()
-    console.log('juice change')
-  }, 500)
-}, false)
-flkty.on('dragEnd', function () {
-  juiceChange()
-} )
+//carousel.addEventListener('touchmove', function () {
+  //setTimeout(function () {
+    //juiceChange()
+    //console.log('juice change')
+  //}, 500)
+//}, false)
+window.addEventListener('keyup', juiceChange, false)
 
 var carouselImage = document.getElementsByClassName('carousel-cell')
 
@@ -373,10 +316,10 @@ function juiceChange () {
 
 carousel.addEventListener('click', ingredient, false)
 carousel.addEventListener('touchend', ingredient, false)
+window.addEventListener('keyup', ingredient, false)
 carousel.addEventListener('touchmove', function () {
   setTimeout(function () {
     ingredient()
-    console.log('delay')
   }, 500)
 })
 
@@ -424,109 +367,112 @@ function ingredient () {
 
 carousel.addEventListener('click', iconDisplay, false)
 window.addEventListener('load', iconDisplay, false)
-carousel.addEventListener('touchend', iconDisplay, false)
-carousel.addEventListener('touchmove', function () {
+window.addEventListener('keyup', iconDisplay, false)
+carousel.addEventListener('touchend', function () {
   setTimeout(function () {
     iconDisplay()
-    console.log('delay')
-  }, 500)
+  })
 })
-
-// Display ingredient icons based on juice displayed
+//carousel.addEventListener('touchmove', function () {
+  //setTimeout(function () {
+    //iconDisplay()
+    //console.log('delay')
+  //}, 500)
+//})
 
 function iconDisplay () {
   var carousel = document.getElementsByClassName('carousel-cell') // get product carousel
-  var icons = document.querySelectorAll('#icons svg') // get ingredient icons
+  var iconArray = document.getElementsByClassName('icon') // get ingredient icons
 
 // Iterate over products to find is-selected class
   for (var i = 0; i < carousel.length; i++) {
     if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('starboard-strawberry')) {
 // iterate over icons and remove hide class
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('ss')) {
-          icons[j].classList.remove('hide')
+      for (var j = 0; j < iconArray.length; j++) {
+        if (iconArray[j].classList.contains('ss')) {
+          iconArray[j].classList.remove('hide')
         } else {
-          icons[j].classList.add('hide') // add hide class
+          iconArray[j].classList.add('hide') // add hide class
         }
       } // iterate over icons and remove hide class
     } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('dockside-sunrise')) {
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('ds')) {
-          icons[j].classList.remove('hide')
+      for (var j = 0; j < iconArray.length; j++) {
+        if (iconArray[j].classList.contains('ds')) {
+          iconArray[j].classList.remove('hide')
         } else {
-          icons[j].classList.add('hide') // add hide class
+          iconArray[j].classList.add('hide') // add hide class
         }
       } // iterate over icons and remove hide class
     } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('harbor-voyage')) {
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('hv')) {
-          icons[j].classList.remove('hide')
+      for (var j = 0; j < iconArray.length; j++) {
+        if (iconArray[j].classList.contains('hv')) {
+          iconArray[j].classList.remove('hide')
         } else {
-          icons[j].classList.add('hide') // add hide class
+          iconArray[j].classList.add('hide') // add hide class
         }
       } // iterate over icons and remove hide class
     } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('sailors-delight')) {
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('sd')) {
-          icons[j].classList.remove('hide')
+      for (var j = 0; j < iconArray.length; j++) {
+        if (iconArray[j].classList.contains('sd')) {
+          iconArray[j].classList.remove('hide')
         } else {
-          icons[j].classList.add('hide') // add hide class
+          iconArray[j].classList.add('hide') // add hide class
         }
       } // iterate over icons and remove hide class
     } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('watermelon-waves')) {
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('ww')) {
-          icons[j].classList.remove('hide')
+      for (var j = 0; j < iconArray.length; j++) {
+        if (iconArray[j].classList.contains('ww')) {
+          iconArray[j].classList.remove('hide')
         } else {
-          icons[j].classList.add('hide') // add hide class
+          iconArray[j].classList.add('hide') // add hide class
         }
       } // iterate over icons and remove hide class
     } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('s-s-veggie')) {
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('ss-veg')) {
-          icons[j].classList.remove('hide')
+      for (var j = 0; j < iconArray.length; j++) {
+        if (iconArray[j].classList.contains('ss-veg')) {
+          iconArray[j].classList.remove('hide')
         } else {
-          icons[j].classList.add('hide') // add hide class
+          iconArray[j].classList.add('hide') // add hide class
         }
       } // iterate over icons and remove hide class
     } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('mainstay-green')) {
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('mg')) {
-          icons[j].classList.remove('hide')
+      for (var j = 0; j < iconArray.length; j++) {
+        if (iconArray[j].classList.contains('mg')) {
+          iconArray[j].classList.remove('hide')
         } else {
-          icons[j].classList.add('hide') // add hide class
+          iconArray[j].classList.add('hide') // add hide class
         }
       }
     } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('crew-case')) {
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('crew-case')) {
-          icons[j].classList.remove('hide')
+      for (var j = 0; j < iconArray.length; j++) {
+        if (iconArray[j].classList.contains('crew-case')) {
+          iconArray[j].classList.remove('hide')
         } else {
-          icons[j].classList.add('hide') // add hide class
+          iconArray[j].classList.add('hide') // add hide class
         }
       }
     } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('anchor-case')) {
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('anchor-case')) {
-          icons[j].classList.remove('hide')
+      for (var j = 0; j < iconArray.length; j++) {
+        if (iconArray[j].classList.contains('anchor-case')) {
+          iconArray[j].classList.remove('hide')
         } else {
-          icons[j].classList.add('hide') // add hide class
+          iconArray[j].classList.add('hide') // add hide class
         }
       }
     } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('compass-case')) {
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('compass-case')) {
-          icons[j].classList.remove('hide')
+      for (var j = 0; j < iconArray.length; j++) {
+        if (iconArray[j].classList.contains('compass-case')) {
+          iconArray[j].classList.remove('hide')
         } else {
-          icons[j].classList.add('hide') // add hide class
+          iconArray[j].classList.add('hide') // add hide class
         }
       }
     } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('lighthouse-case')) {
-      for (var j = 0; j < icons.length; j++) {
-        if (icons[j].classList.contains('lighthouse-case')) {
-          icons[j].classList.remove('hide')
+      for (var j = 0; j < iconArray.length; j++) {
+        if (iconArray[j].classList.contains('lighthouse-case')) {
+          iconArray[j].classList.remove('hide')
         } else {
-          icons[j].classList.add('hide') // add hide class
+          iconArray[j].classList.add('hide') // add hide class
         }
       }
     }
@@ -539,9 +485,11 @@ var svgIcon = document.querySelectorAll('svg use')
 
 iconParent.addEventListener('click', activeIcon, false) 
 iconParent.addEventListener('click', activeSvg, false)
+window.addEventListener('keyup', activeIcon, false)
+window.addEventListener('keyup', activeSvg, false)
 document.addEventListener('click', activeIcon, false)
 document.addEventListener('click', activeSvg, false)
-carousel.addEventListener('touchend', activeIcon, false)
+//carousel.addEventListener('touchend', activeIcon, false)
 //carousel.addEventListener('touchend', activeSvg, false)
 //carousel.addEventListener('touchmove', function () {
  // setTimeout(function () {
@@ -557,6 +505,7 @@ carousel.addEventListener('touchend', activeIcon, false)
 //})
 
 function activeSvg (e) {
+  console.log('active svg')
 	if (e.target !== e.currentTarget) {
 		for (let i = 0; i < svgIcon.length; i++) {
 			svgIcon[i].classList.remove('active')
@@ -577,16 +526,9 @@ function activeIcon (e) {
   e.stopPropagation()
 }
 
-//var ingredientContent = document.querySelectorAll('#ingredient-content div') // get all ingredient-content p tags
+var ingredientContent = document.querySelectorAll('#ingredient-content div') // get all ingredient-content p tags
 
-//iconParent.addEventListener('click', contentDisplay, false)
-carousel.addEventListener('touchend', contentDisplay, false)
-carousel.addEventListener('touchmove', function () {
-  setTimeout(function () {
-    contentDisplay()
-    console.log('delay')
-  }, 500)
-})
+
 
 // function contentDisplay () {
 // var iconList = document.querySelector('#icons')
@@ -607,14 +549,25 @@ carousel.addEventListener('touchmove', function () {
 //   e.stopPropagation()
 // }
 
-var ingredientContent = document.querySelectorAll('#ingredient-content div') // get all ingredient-content p tags
 
 iconParent.addEventListener('click', contentDisplay, false)
 iconParent.addEventListener('click', contentDisplaySvg, false)
 carousel.addEventListener('click', contentDisplay, false)
 document.addEventListener('click', contentDisplay, false)
+carousel.addEventListener('touchend', contentDisplay, false)
+carousel.addEventListener('touchend', contentDisplaySvg, false)
+carousel.addEventListener('touchmove', function () {
+  setTimeout(function () {
+    contentDisplay()
+    contentDisplaySvg()
+    console.log('delay')
+  }, 500)
+})
+
+
 
 function contentDisplaySvg () {
+var ingredientContent = document.querySelectorAll('#ingredient-content div') // get all ingredient-content p tags
 	for (let i = 0; i < svgIcon.length; i++) {
 		if (svgIcon[i].classList.contains('blackberry-icon') && svgIcon[i].classList.contains('active')) { 
 			for (let j = 0; j < ingredientContent.length; j++) {
@@ -774,7 +727,8 @@ function contentDisplaySvg () {
 
 function contentDisplay () {
 // hide ingredient content on juice change
-
+var iconChild = document.getElementsByClassName('icon')
+var ingredientContent = document.querySelectorAll('#ingredient-content div') // get all ingredient-content p tags
   for (var i = 0; i < ingredientContent.length; i++) {
     if ( ingredientContent[i].classList.contains('hide') ) {
     } else {
@@ -940,6 +894,7 @@ function contentDisplay () {
 }
 
 carousel.addEventListener('click', ingredientColor, false)
+window.addEventListener('keyup', ingredientColor, false)
 carousel.addEventListener('touchend', ingredientColor, false)
 carousel.addEventListener('touchmove', function () {
   setTimeout(function () {
@@ -1037,13 +992,13 @@ var ingredientH2 = document.querySelectorAll('.header h2')
 var parent = document.querySelector('.header')
 
 parent.addEventListener('click', handler, false)
-carousel.addEventListener('touchend', handler, false)
-carousel.addEventListener('touchmove', function () {
-  setTimeout(function () {
-    handler()
-    console.log('delay')
-  }, 500)
-})
+//carousel.addEventListener('touchend', handler, false)
+//carousel.addEventListener('touchmove', function () {
+  //setTimeout(function () {
+    //handler()
+    //console.log('delay')
+  //}, 500)
+//})
 
 function handler (e) {
   if (e.target !== e.currentTarget) {
@@ -1056,13 +1011,13 @@ function handler (e) {
 }
 
 parent.addEventListener('click', iconLabelDisplay, false)
-carousel.addEventListener('touchend', iconLabelDisplay, false)
-carousel.addEventListener('touchmove', function () {
-  setTimeout(function () {
-    iconLabelDisplay()
-    console.log('delay')
-  }, 500)
-})
+//carousel.addEventListener('touchend', iconLabelDisplay, false)
+//carousel.addEventListener('touchmove', function () {
+  //setTimeout(function () {
+    //iconLabelDisplay()
+    //console.log('delay')
+  //}, 500)
+//})
 
 function iconLabelDisplay () {
   var icons = document.getElementById('icons')

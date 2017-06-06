@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta content="telephone=no" name="format-detection">
-    <title>Shipping Confirmation</title>
+    <title>Order Confirmation</title>
     <style type="text/css">
       /* Based on The MailChimp Reset INLINE: Yes. */
       /* Client-specific Styles */
@@ -46,7 +46,7 @@
     </style>
   </head>
 
-  {% set shippingConfirmEmail = craft.globals.getSetByHandle('shippingConfirmationEmail')%}
+  {% set danaEmail = craft.globals.getSetByHandle('danaEmail')%}
 
 <body style="margin:0;padding:0;font-family:Helvetica,Arial,sans-serif;font-size: 8px;color:#000000;text-align:left;background-color:#FFFFFF;">
 
@@ -61,7 +61,7 @@
             <td width="216" style="background:#030000;"></td>
             <td>
               <a href="http://gundalowjuice.com" title="" target="_blank">
-                <img src="{{ shippingConfirmEmail.gjLogo.first().url() }}" alt="Gundalow Juice" width="168" height="59" border="0" style="display:block;">
+                  <img src="{{ danaEmail.gjLogo.first().getUrl() }}" alt="Gundalow Juice" width="168" height="59" border="0" style="display:block;">
               </a>
             </td>
             <td width="216" style="background:#030000;"></td>
@@ -75,7 +75,7 @@
           <tr>
             <td>
               <a href="http://gundalowjuice.com" title="" target="_blank">
-                <img src="{{ shippingConfirmEmail.heroImage.first().url() }}" alt="Shop Now!" width="600" height="294" border="0" style="display:block;">
+                <img src="{{ danaEmail.heroImage.first().getUrl() }}" alt="Shop Now!" width="600" height="294" border="0" style="display:block;">
               </a>
             </td>
           </tr>
@@ -92,34 +92,15 @@
         <table width="600" cellpadding="0" cellspacing="0" border="0" style="margin:0;">
           <tr>
             <td width="600" style="color: #030000; font-family: Arial,sans-serif; font-size: 22px; line-height:24px; letter-spacing: 0.7px; text-align: center; padding: 20px 0 22px 0;">
-              {{ shippingConfirmEmail.emailHeader }}
+              {{ danaEmail.emailHeader }}
             </td>
           </tr>
         </table>
 
         <table width="600" cellpadding="0" cellspacing="0" border="0" style="margin:0;">
           <tr>
-            <td width="600" style="color:#606060; font-family:Arial,sans-serif; font-size:16px; line-height: 24px; text-align:center; letter-spacing: 0.3px; padding: 0 75px 30px 75px">
-              {{ shippingConfirmEmail.headerTwo }}
-            </td>
-          </tr>
-        </table>
-
-        <table width="600" cellpadding="0" cellspacing="0" border="0" style="margin:0;p">
-          <tr>
-            <td width="600" style="color:#606060; font-family:Arial,sans-serif; font-size:14px; line-height: 24px; text-align:center; letter-spacing: 0.3px; padding: 0 75px 30px 75px;">
-              {{ shippingConfirmEmail.emailMessage }}
-              Order #{{ order.id }}<br>
-              Tracking #{{ order.message }}<br>
-            </td>
-          </tr>
-        </table>
-
-        <table width="600" cellpadding="0" cellspacing="0" border="0" style="margin:0;p">
-          <tr>
-            <td width="600" style="color:#606060; font-family:Arial,sans-serif; font-size:14px; line-height: 24px; text-align:center; letter-spacing: 0.3px; padding: 0 75px 30px 75px;">
-              Have questions about your order?<br>
-              Email us at <a style="color:#606060; font-family:Arial,sans-serif; font-size:14px; line-height: 24px; text-align:center; letter-spacing: 0.3px; text-decoration: none;" href="mailto:Mail@GunadalowJuice.com" target="_top">Mail@GunadalowJuice.com</a>
+            <td width="600" style="color:#030000; font-family:Arial,sans-serif; font-size:14px; line-height: 24px; text-align:left; letter-spacing: 0.3px; padding: 0 75px 30px 75px">
+              {{ danaEmail.emailMessage }}
             </td>
           </tr>
         </table>
@@ -130,7 +111,7 @@
               <td width="170" height="35" style="background:#FFFFFF;"></td>
             </td>
             <td width="260" height="35" style="border-radius: 5px; background: #606060; text-align: center;">
-              <a href="https://www.fedex.com/apps/fedextrack/?tracknumbers={{ order.message }}" style="background: #606060; font-family:Arial,sans-serif; font-size: 18px; line-height: 1.1; letter-spacing: 1.5px; text-align: center; text-decoration: none; display: block; border-radius: 5px; color: #FFFFFF;">TRACK YOUR PACKAGE</a>
+              <a href="mailto:{{ danaEmail.danaEmail }}" style="background: #606060; font-family:Arial,sans-serif; font-size: 18px; line-height: 1.1; letter-spacing: 1.5px; text-align: center; text-decoration: none; display: block; border-radius: 5px; color: #FFFFFF;">Email Dana</a>
             </td>
             <td>
               <td width="170" height="35" style="background:#FFFFFF;"></td>
@@ -140,7 +121,7 @@
 
         <table width="600" border="0" cellpadding="0" cellspacing="0">
           <tr>
-            <td style="width: 100%; color: #6d6e71; font-family:Arial,sans-serif; font-size: 12px; line-height: 1.1; letter-spacing: 0px; text-align: center; padding: 43px 0 10px;">FOLLOW ALONG</td>
+            <td style="width: 100%; color: #6d6e71; font-family:Arial,sans-serif; font-size: 12px; line-height: 1.1; letter-spacing: 0px; text-align: center; padding: 15px 0 10px;">FOLLOW ALONG</td>
           </tr>
         </table>
 
@@ -149,17 +130,17 @@
             <td width="247"></td>
             <td width="35">
               <a href="https://twitter.com/GundalowJuice" title="Twitter" target="_blank">
-              	<img src="http://kevindouglass.io/gj/tw.jpg" alt="Twitter" width="25" height="25" border="0" style="display:block; margin: 0 auto; text-align: center;">
+                <img src="http://kevindouglass.io/gj/tw.jpg" alt="Twitter" width="25" height="25" border="0" style="display:block; margin: 0 auto; text-align: center;">
               </a>
             </td>
             <td width="35">
               <a href="https://www.facebook.com/gundalowjuice/" title="Facebook" target="_blank">
-              	<img src="http://kevindouglass.io/gj/fb.jpg" alt="Facebook" width="25" height="25" border="0" style="display:block; margin: 0 auto; text-align: center;">
+                <img src="http://kevindouglass.io/gj/fb.jpg" alt="Facebook" width="25" height="25" border="0" style="display:block; margin: 0 auto; text-align: center;">
               </a>
             </td>
             <td width="35">
               <a href="https://www.instagram.com/gundalowjuice/" title="Instagram" target="_blank">
-              	<img src="http://kevindouglass.io/gj/inst.jpg" alt="Instagram" width="25" height="25" border="0" style="display:block; margin: 0 auto; text-align: center;">
+                <img src="http://kevindouglass.io/gj/inst.jpg" alt="Instagram" width="25" height="25" border="0" style="display:block; margin: 0 auto; text-align: center;">
               </a>
             </td>
             <td width="247"></td>

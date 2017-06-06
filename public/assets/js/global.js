@@ -23,6 +23,12 @@ $(document).ready(function () {
 
 var $carousel = $('#product-image .carousel').flickity()
 
+$carousel.on('settle.flickity', function () {
+  ingredientColor()
+  activeIcon()
+  activeSvg()
+  console.log('settle')
+})
 $carousel.on( 'staticClick.flickity', function( event, pointer, cellElement, cellIndex ) {
   if ( typeof cellIndex == 'number' ) {
     $carousel.flickity( 'selectCell', cellIndex );
