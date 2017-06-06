@@ -1,0 +1,114 @@
+ {% extends "_layout" %}
+ {% import 'charge/_includes/macros/forms' as forms %}
+ {% import 'charge/_includes/macros/stripe' as stripe %}
+
+ {% set bodyId = 'subscriptions' %}
+
+ {% block content %}
+
+ <form class="form-horizontal"
+      id="charge-form"
+      method="post"
+      action=""
+      accept-charset="UTF-8"
+      data-publicKey="{{ craft.charge.getPublicKey }}">
+    {{ forms.hidden({ name : 'action', value: 'charge/charge' }) }}
+    {{ getCsrfInput() }}
+
+    {% set options = {
+        'planChoiceDefault': 'gold',
+        'planChoices' : {
+            'crew-case-28' : {
+                'label': 'Crew Case 28',
+                'planAmount' : 599,
+                'planInterval' : 'month',
+                'planIntervalCount' : 1,
+                'actions' : {
+                    'onSuccess': {
+                        'subscription' : 'crew-case-28'
+                    },
+                }
+            },
+            'crew-case-21' : {
+                'label': 'Crew Case 21',
+                'planAmount' : 99,
+                'planInterval' : 'month',
+                'planIntervalCount' : 1,
+                'actions' : {
+                    'onSuccess': {
+                        'subscription' : 'crew-case-21'
+                    },
+                }
+            },
+            'crew-case-14' : {
+                'label': 'Crew Case 14',
+                'planAmount' : 49.99,
+                'planInterval' : 'month',
+                'planIntervalCount' : 1,
+                'actions' : {
+                    'onSuccess': {
+                        'subscription' : 'crew-case-14'
+                    },
+                }
+            },
+            'crew-case-7' : {
+                'label': 'Crew Case 7',
+                'planAmount' : 49.99,
+                'planInterval' : 'month',
+                'planIntervalCount' : 1,
+                'actions' : {
+                    'onSuccess': {
+                        'subscription' : 'crew-case-7'
+                    },
+                }
+            }
+        }
+    } %}
+    {{ craft.charge.setPaymentOptions(options) }}
+
+    {% if allErrors is defined %}
+        {{ forms.errorBlock(allErrors) }}
+    {% endif %}
+
+    <div id="payment-errors" class="alert alert-error"></div>
+    <div id='sub-wrap'>
+      <div id="img-wrap">
+        <img src='/assets/images/Crew-Case-BottleShape.png'>
+      </div>  
+        
+      <div id='content'>
+        <h3>Crew Case Subscription</h3>
+        <p>Enjoy a little of everything and have enough juice for every occasion! Enjoy your Gundalow before or after your workout, while hanging with friends, making cocktails, heading to a meeting, or taking a moment to relax after a long week. </p>
+    {{ forms.radioGroupField({
+        label: 'Subscription Options',
+        name: 'planChoice',
+        id: 'planChoice',
+        options: options.planChoices,
+        value: (charge is defined ? charge.planChoice),
+        errors: (charge is defined ? charge.getErrors('planChoice'))
+    }) }}
+      </div>
+    </div>
+
+    <h4>Customer Details</h4>
+    {% include 'charge/_includes/inputs/customerDetails' %}
+
+    <h4>Card Details</h4>
+    {% include 'charge/_includes/inputs/cardDetails' %}
+    {% include 'charge/_includes/inputs/paymentButton' %}
+</form>
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="{{ resourceUrl('charge/js/stripe_v2.min.js') }}"></script>
+<script src="{{ resourceUrl('charge/js/jquery.charge.js') }}"></script>
+<script>
+    (function () {
+        Stripe.setPublishableKey('{{ craft.charge.getPublicKey() }}');
+        $(this).charge();
+    })();
+</script>
+
+ {% endblock %}

@@ -1,0 +1,47 @@
+{#
+ # Subscriptions index template
+ # -------------------
+ #
+ # This template is loaded whenever http://example.com/subscriptions is
+ # requested, because it is located at subscriptions/index.html in your
+ # craft/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+ {% extends "_layout" %}
+ {% import 'charge/_includes/macros/forms' as forms %}
+ {% import 'charge/_includes/macros/stripe' as stripe %}
+
+ {% set bodyId = 'subscription-index'%}
+
+{% block content %}
+
+<div id="wrapper">
+  <div id="hero">
+    <h1>Subscriptions</h1>
+    <p>You can now have Gundalow Juice sent automatically every month with Gundalow Juice subscription that also offer free shipping!  Sign up to receive 7, 14, 21 or 28 juices shipped to your home or office to keep you sailing windward all month long.  Subscriptions require a three month commitment.</p>
+    </div>
+  <section>
+    <div class="sub-wrapper">
+      <img src='/assets/images/Crew-Case-BottleShape.png' alt='sub-img'>
+      <h2>Crew Case</h2>
+      <p>Enjoy a little of everything and have enough juice for every occasion! Enjoy your Gundalow before or after your workout, while hanging with friends, making cocktails, heading to a meeting, or taking a moment to relax after a long week</p>
+      <a class="button" href="/subscriptions/crew-case.html">subscribe now</a>
+    </div>
+    <div class="sub-wrapper">
+      <img src='/assets/images/Anchor-Case-BottleShape.png' alt='sub-img'>
+      <h2>Anchor Case</h2>
+      <p>The best case subscription when you feel like your body needs a deep clean.  Get the Gundalow fruit and vegetable juices every month to maintain a healthy balance, no matter what life throws at you!</p>
+      <a class="button" href="#">subscribe now</a>
+    </div>
+    <div class="sub-wrapper">
+      <img src='/assets/images/Compass-Case-BottleShape.png' alt='sub-img'>
+      <h2>compass case</h2>
+      <p>Enjoy the Gundalow fruit juices each month.  Be the host with the most when you craft that perfect cocktail for your friends and enjoy the juices when you need liquid air conditioning on a hot day or after a great exercise session!</p>
+      <a class="button" href="#">subscribe now</a>
+    </div>
+  </section>
+</div>
+{% endblock %}

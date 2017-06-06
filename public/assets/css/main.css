@@ -2168,6 +2168,100 @@ footer {
   text-align: center;
   margin: 1em; }
 
+#subscription-index #wrapper {
+  width: 80%;
+  margin: auto; }
+  #subscription-index #wrapper #hero {
+    margin-bottom: 2em; }
+    #subscription-index #wrapper #hero h1 {
+      text-align: center;
+      margin: 1em 0; }
+    #subscription-index #wrapper #hero p {
+      max-width: 34em;
+      margin: 0 auto 1em; }
+    #subscription-index #wrapper #hero img {
+      margin-bottom: 1.5em; }
+  #subscription-index #wrapper section {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center; }
+    @media (min-width: 44em) {
+      #subscription-index #wrapper section {
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-pack: justify;
+        justify-content: space-between; } }
+    #subscription-index #wrapper section .sub-wrapper {
+      width: 90%;
+      margin-bottom: 2em; }
+      @media (min-width: 44em) {
+        #subscription-index #wrapper section .sub-wrapper {
+          width: 30%; } }
+      #subscription-index #wrapper section .sub-wrapper img {
+        width: 250px; }
+      #subscription-index #wrapper section .sub-wrapper h2 {
+        margin-bottom: .5em; }
+      #subscription-index #wrapper section .sub-wrapper p {
+        margin-bottom: 2em;
+        text-align: left; }
+      #subscription-index #wrapper section .sub-wrapper .button {
+        border: 1px solid black;
+        border-radius: .25em;
+        padding: .5em; }
+
+#subscriptions main {
+  width: 75%;
+  margin: auto; }
+  #subscriptions main #sub-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 2em auto; }
+    @media (min-width: 44em) {
+      #subscriptions main #sub-wrap {
+        -ms-flex-direction: row;
+        flex-direction: row; } }
+    #subscriptions main #sub-wrap #img-wrap {
+      text-align: center; }
+    #subscriptions main #sub-wrap img {
+      width: 15em;
+      padding: 1em; }
+      @media (min-width: 44em) {
+        #subscriptions main #sub-wrap img {
+          padding: 0; } }
+    #subscriptions main #sub-wrap #content {
+      max-width: 24em; }
+      @media (min-width: 44em) {
+        #subscriptions main #sub-wrap #content {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -ms-flex-pack: justify;
+          justify-content: space-between; } }
+      #subscriptions main #sub-wrap #content p {
+        padding: 1em 0; }
+  #subscriptions main h3, #subscriptions main h4 {
+    text-align: center; }
+  #subscriptions main .form-group {
+    text-align: center; }
+    #subscriptions main .form-group .btn-primary {
+      background-color: white;
+      padding: .5em;
+      margin: .5em;
+      font-size: 1em;
+      font-family: "Josefin Sans", sans-serif;
+      border-radius: .5em; }
+  #subscriptions main input {
+    border: 1px solid #58595b; }
+
 #search-results #location-list {
   width: 100%;
   -ms-flex-order: 2;

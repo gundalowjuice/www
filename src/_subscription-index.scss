@@ -1,0 +1,64 @@
+#subscription-index {
+
+  #wrapper {
+    width: 80%;
+    margin: auto;
+    
+    #hero {
+      margin-bottom: 2em;
+      h1 {
+        text-align: center;
+        margin: 1em 0;
+      }
+
+      p {
+       max-width: 34em; 
+       margin: 0 auto 1em; 
+      }
+
+      img {
+        margin-bottom: 1.5em;
+      }
+    } 
+
+    section {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      @media (min-width: 44em) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .sub-wrapper {
+        width: 90%;
+        margin-bottom: 2em;
+
+        @media (min-width: 44em) {
+          width: 30%;
+        }
+
+        img {
+          width: 250px;
+        }
+
+        h2 {
+          margin-bottom: .5em;
+        }
+
+        p {
+          margin-bottom: 2em;
+          text-align: left;
+        }
+
+        .button {
+          border: 1px solid black;
+          border-radius: .25em;
+          padding: .5em;
+        }
+      }
+    }
+  }
+}
