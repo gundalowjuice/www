@@ -29,6 +29,9 @@
  </head>
 
  <body {% if bodyId is defined %}id= {{ bodyId}} {% endif %}>
+   
+{% import 'charge/_includes/macros/forms' as forms %}
+{% import 'charge/_includes/macros/stripe' as stripe %}
 
    <script src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>

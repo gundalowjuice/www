@@ -2284,3 +2284,8 @@ footer {
   margin: 2em auto; }
   #search-results #search-wrapper h1 {
     line-height: 125%; }
+
+#sub-success #content {
+  width: 75%;
+  margin: 1em auto;
+  text-align: center; }

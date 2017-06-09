@@ -1,0 +1,20 @@
+{% extends "_layout" %}
+
+{% import 'charge/_includes/macros/forms' as forms %}
+{% import 'charge/_includes/macros/stripe' as stripe %}
+
+{% set charges = craft.charge.getChargesByUser %}
+
+{% block content %}
+    <h2>Account</h2>
+
+    {% if currentUser %}
+    <p>You have the following charges :</p>
+
+    {% for charge in charges %}
+        {% include 'subscriptions/charge/account/_single' with { charge : charge } %}
+    {% endfor %}
+    {% else %}
+        <p>Sorry, you need to be logged in to view your Charges.</p>
+    {% endif %}
+{% endblock %}

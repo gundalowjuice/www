@@ -1,0 +1,38 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+<div id="email-wrap">
+    <div class='email'>
+
+        <h3>Already Registered ?</h3>
+
+        <form method="post" accept-charset="UTF-8">
+
+            {{ getCsrfInput() }}
+
+            <input type="hidden" name="action" value="users/login">
+            <input type="hidden" name="redirect" value="subscriptions">
+
+            <label for="loginName">Email</label>
+            <input id="loginName" class="u-full-width" type="email" name="loginName" placeholder="email@site.com"
+                  >
+
+            <label for="password">Password</label>
+            <input id="password" class="u-full-width" type="password" name="password">
+
+            <label>
+                <input type="checkbox" name="rememberMe" value="1">
+                Remember me
+            </label>
+
+            <input type="submit" value="Login" class="button button-primary"/>
+
+        </form>
+
+        <p><a href="{{ url('forgot-password') }}">Forget your password?</a></p>
+        <p><a href="/customer/register">Create Account</a></p>
+
+    </div>
+
+{% endblock %}
