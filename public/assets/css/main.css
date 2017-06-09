@@ -2248,6 +2248,13 @@ footer {
           justify-content: space-between; } }
       #subscriptions main #sub-wrap #content p {
         padding: 1em 0; }
+      #subscriptions main #sub-wrap #content #sign-up {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: center;
+        align-items: center; }
   #subscriptions main h3, #subscriptions main h4 {
     text-align: center; }
   #subscriptions main .form-group {
@@ -2289,3 +2296,16 @@ footer {
   width: 75%;
   margin: 1em auto;
   text-align: center; }
+
+#sub-signup main {
+  width: 50%;
+  margin: 1em auto;
+  text-align: center; }
+
+#sub-signup form {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 15em;
+  margin: auto; }
