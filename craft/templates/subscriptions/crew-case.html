@@ -19,30 +19,19 @@
     {% set options = {
         'planChoiceDefault': 'crew-case-28',
         'planChoices' : {
-            'crew-case-28' : {
-                'label': '28 month / $168',
-                'planAmount' : 168,
+            'crew-case-7' : {
+                'label': '7 bottles / $42',
+                'planAmount' : 42,
                 'planInterval' : 'month',
                 'planIntervalCount' : 1,
                 'actions' : {
                     'onSuccess': {
-                        'subscription' : 'crew-case-28'
-                    },
-                }
-            },
-            'crew-case-21' : {
-                'label': '21 month / $126',
-                'planAmount' : 126,
-                'planInterval' : 'month',
-                'planIntervalCount' : 1,
-                'actions' : {
-                    'onSuccess': {
-                        'subscription' : 'crew-case-21'
+                        'subscription' : 'crew-case-7'
                     },
                 }
             },
             'crew-case-14' : {
-                'label': '14 month / $84',
+                'label': '14 bottles / $84',
                 'planAmount' : 84,
                 'planInterval' : 'month',
                 'planIntervalCount' : 1,
@@ -52,14 +41,25 @@
                     },
                 }
             },
-            'crew-case-7' : {
-                'label': '7 month / $42',
-                'planAmount' : 42,
+            'crew-case-21' : {
+                'label': '21 bottles / $126',
+                'planAmount' : 126,
                 'planInterval' : 'month',
                 'planIntervalCount' : 1,
                 'actions' : {
                     'onSuccess': {
-                        'subscription' : 'crew-case-7'
+                        'subscription' : 'crew-case-21'
+                    },
+                }
+            },
+            'crew-case-28' : {
+                'label': '28 bottles / $168',
+                'planAmount' : 168,
+                'planInterval' : 'month',
+                'planIntervalCount' : 1,
+                'actions' : {
+                    'onSuccess': {
+                        'subscription' : 'crew-case-28'
                     },
                 }
             }

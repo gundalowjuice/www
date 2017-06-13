@@ -19,30 +19,19 @@
     {% set options = {
         'planChoiceDefault': 'compass-case-28',
         'planChoices' : {
-            'compass-case-28' : {
-                'label': '28 month / $168',
-                'planAmount' : 168,
+            'compass-case-7' : {
+                'label': '7 bottles / $42',
+                'planAmount' : 42,
                 'planInterval' : 'month',
                 'planIntervalCount' : 1,
                 'actions' : {
                     'onSuccess': {
-                        'subscription' : 'compass-case-28'
-                    },
-                }
-            },
-            'compass-case-21' : {
-                'label': '21 month / $126',
-                'planAmount' : 126,
-                'planInterval' : 'month',
-                'planIntervalCount' : 1,
-                'actions' : {
-                    'onSuccess': {
-                        'subscription' : 'compass-case-21'
+                        'subscription' : 'compass-case-7'
                     },
                 }
             },
             'compass-case-14' : {
-                'label': '14 month / $84',
+                'label': '14 bottles / $84',
                 'planAmount' : 84,
                 'planInterval' : 'month',
                 'planIntervalCount' : 1,
@@ -52,17 +41,29 @@
                     },
                 }
             },
-            'compass-case-7' : {
-                'label': '7 month / $42',
-                'planAmount' : 42,
+            'compass-case-21' : {
+                'label': '21 bottles / $126',
+                'planAmount' : 126,
                 'planInterval' : 'month',
                 'planIntervalCount' : 1,
                 'actions' : {
                     'onSuccess': {
-                        'subscription' : 'compass-case-7'
+                        'subscription' : 'compass-case-21'
+                    },
+                }
+            },
+            'compass-case-28' : {
+                'label': '28 bottles / $168',
+                'planAmount' : 168,
+                'planInterval' : 'month',
+                'planIntervalCount' : 1,
+                'actions' : {
+                    'onSuccess': {
+                        'subscription' : 'compass-case-28'
                     },
                 }
             }
+
         }
     } %}
     {{ craft.charge.setPaymentOptions(options) }}
