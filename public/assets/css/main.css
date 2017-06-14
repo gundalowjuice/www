@@ -1642,6 +1642,9 @@ footer {
       font: 1em "Josefin Sans", sans-serif;
       font-weight: bold;
       border-radius: .2em; }
+  #register #register-wrapper #pw-reset {
+    text-align: center;
+    padding: 2em; }
 
 #register-success main {
   display: -ms-flexbox;
