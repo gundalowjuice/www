@@ -50,6 +50,9 @@ function colorChange () {
     } else if (selected[i].classList.contains('is-selected') && selected[i].classList.contains('lighthouse-case')) {
       reviewHeader.classList.add('lighthouse-case')
       reviewHeader.classList.remove('mainstay-green', 'dockside-sunrise', 'sailors-delight', 'starboard-strawberry', 'harbor-voyage', 'watermelon-waves', 'anchor-case', 'compass-case', 'crew-case', 's-s-veggie')
+    } else if (selected[i].classList.contains('is-selected') && selected[i].classList.contains('baltimore-birthday')) {
+      reviewHeader.classList.add('baltimore-birthday')
+      reviewHeader.classList.remove('mainstay-green', 'dockside-sunrise', 'sailors-delight', 'starboard-strawberry', 'harbor-voyage', 'watermelon-waves', 'anchor-case', 'compass-case', 'crew-case', 's-s-veggie', 'lighthouse-case')
     }
   }
 }
@@ -152,6 +155,14 @@ function reviewDisplay () {
     } else if (selected[i].classList.contains('is-selected') && selected[i].classList.contains('lighthouse-case')) {
       for (var j = 0; j < reviewWrapper.length; j++) {
         if (reviewWrapper[j].classList.contains('lighthouse-case')) {
+          reviewWrapper[j].classList.remove('hide')
+        } else {
+          reviewWrapper[j].classList.add('hide')
+        }
+      }
+    } else if (selected[i].classList.contains('is-selected') && selected[i].classList.contains('baltimore-birthday')) {
+      for (var j = 0; j < reviewWrapper.length; j++) {
+        if (reviewWrapper[j].classList.contains('baltimore-birthday')) {
           reviewWrapper[j].classList.remove('hide')
         } else {
           reviewWrapper[j].classList.add('hide')
