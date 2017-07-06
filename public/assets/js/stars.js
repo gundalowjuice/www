@@ -18,8 +18,8 @@ function ratingDisplay () {
   var selected = document.getElementsByClassName('is-selected')
   var stars = document.getElementsByClassName('stars')
 
-  //iterate over star divs
-  //if is-selected and star divs have matching classes remove .hide
+  // iterate over star divs
+  // if is-selected and star divs have matching classes remove .hide
   // else add .hide
 
   for (var i = 0; i < selected.length; i++) {
@@ -110,6 +110,11 @@ function ratingDisplay () {
         } else {
           stars[j].classList.add('hide')
         }
+      }
+    } else if (selected[i].classList.contains('is-selected') &&
+    selected[i].classList.contains('baltimore-birthday')) {
+      for (var j = 0; j < stars.length; j++) {
+        stars[j].classList.add('hide')
       }
     }
   }

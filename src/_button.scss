@@ -49,6 +49,10 @@
       background-color: $lighthouse-case-dark;
     }
 
+    &.baltimore-birthday {
+      background-color: $gj-grey-dark;
+    }
+
   }
   input[type='submit'] {
     display: inline-block;
@@ -135,6 +139,10 @@
     &.lighthouse-case{
       background-color: $lighthouse-case;
     }
+
+    &.baltimore-birthday {
+      background-color: $gj-grey;
+    }
   }
 
   #plus {
@@ -183,6 +191,10 @@
 
     &.lighthouse-case{
       background-color: $lighthouse-case;
+    }
+
+    &.baltimore-birthday {
+      background-color: $gj-grey;
     }
   }
 }

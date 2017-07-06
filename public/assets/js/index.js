@@ -69,13 +69,13 @@ function juiceChange () {
       title.innerHTML = window.products.data[i].title
       price.innerHTML = ('$' + window.products.data[i].price + ' / pack')
       description.innerHTML = window.products.data[i].description
-      header.classList.remove('harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'dockside-sunrise', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      header.classList.remove('harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'dockside-sunrise', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       header.classList.add('starboard-strawberry')
-      addCart.classList.remove('harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'dockside-sunrise', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      addCart.classList.remove('harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'dockside-sunrise', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       addCart.classList.add('starboard-strawberry')
-      plusBtn.classList.remove('harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'dockside-sunrise', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      plusBtn.classList.remove('harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'dockside-sunrise', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       plusBtn.classList.add('starboard-strawberry')
-      minusBtn.classList.remove('harbor-voyage-dark', 's-s-veggie-dark', 'sailors-delight-dark', 'watermelon-waves-dark', 'mainstay-green-dark', 'dockside-sunrise-dark', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      minusBtn.classList.remove('harbor-voyage-dark', 's-s-veggie-dark', 'sailors-delight-dark', 'watermelon-waves-dark', 'mainstay-green-dark', 'dockside-sunrise-dark', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       minusBtn.classList.add('starboard-strawberry-dark')
       header.appendChild(title)
       header.appendChild(price)
@@ -88,13 +88,13 @@ function juiceChange () {
           header.removeChild(header.firstChild)
         }
       }
-      header.classList.remove('starboard-strawberry', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      header.classList.remove('starboard-strawberry', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       header.classList.add('dockside-sunrise')
-      addCart.classList.remove('starboard-strawberry', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      addCart.classList.remove('starboard-strawberry', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       addCart.classList.add('dockside-sunrise')
-      plusBtn.classList.remove('starboard-strawberry', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      plusBtn.classList.remove('starboard-strawberry', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'mainstay-green', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       plusBtn.classList.add('dockside-sunrise')
-      minusBtn.classList.remove('starboard-strawberry-dark', 'harbor-voyage-dark', 's-s-veggie-dark', 'sailors-delight-dark', 'watermelon-waves-dark', 'mainstay-green-dark', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      minusBtn.classList.remove('starboard-strawberry-dark', 'harbor-voyage-dark', 's-s-veggie-dark', 'sailors-delight-dark', 'watermelon-waves-dark', 'mainstay-green-dark', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       minusBtn.classList.add('dockside-sunrise-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
@@ -111,13 +111,13 @@ function juiceChange () {
           header.removeChild(header.firstChild)
         }
       }
-      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       header.classList.add('mainstay-green')
-      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       addCart.classList.add('mainstay-green')
-      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 's-s-veggie', 'sailors-delight', 'watermelon-waves', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       plusBtn.classList.add('mainstay-green')
-      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'harbor-voyage-dark', 's-s-veggie-dark', 'sailors-delight-dark', 'watermelon-waves-dark', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'harbor-voyage-dark', 's-s-veggie-dark', 'sailors-delight-dark', 'watermelon-waves-dark', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       minusBtn.classList.add('mainstay-green-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
@@ -134,13 +134,13 @@ function juiceChange () {
           header.removeChild(header.firstChild)
         }
       }
-      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 's-s-veggie', 'watermelon-waves', 'mainstay-green', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 's-s-veggie', 'watermelon-waves', 'mainstay-green', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       header.classList.add('sailors-delight')
-      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 's-s-veggie', 'watermelon-waves', 'mainstay-green', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 's-s-veggie', 'watermelon-waves', 'mainstay-green', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       addCart.classList.add('sailors-delight')
-      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 's-s-veggie', 'watermelon-waves', 'mainstay-green', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 's-s-veggie', 'watermelon-waves', 'mainstay-green', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       plusBtn.classList.add('sailors-delight')
-      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 's-s-veggie-dark', 'watermelon-waves-dark', 'mainstay-green-dark', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 's-s-veggie-dark', 'watermelon-waves-dark', 'mainstay-green-dark', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       minusBtn.classList.add('sailors-delight-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
@@ -157,13 +157,13 @@ function juiceChange () {
           header.removeChild(header.firstChild)
         }
       }
-      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 'watermelon-waves', 'ss-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 'watermelon-waves', 'ss-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       header.classList.add('s-s-veggie')
-      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 'watermelon-waves', 'ss-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 'watermelon-waves', 'ss-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       addCart.classList.add('s-s-veggie')
-      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 'watermelon-waves', 'ss-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 'watermelon-waves', 'ss-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       plusBtn.classList.add('s-s-veggie')
-      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'harbor-voyage-dark', 'mainstay-green-dark', 'sailors-delight-dark', 'watermelon-waves', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'harbor-voyage-dark', 'mainstay-green-dark', 'sailors-delight-dark', 'watermelon-waves', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       minusBtn.classList.add('s-s-veggie-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
@@ -180,13 +180,13 @@ function juiceChange () {
           header.removeChild(header.firstChild)
         }
       }
-      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       header.classList.add('watermelon-waves')
-      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       addCart.classList.add('watermelon-waves')
-      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       plusBtn.classList.add('watermelon-waves')
-      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'harbor-voyage-dark', 'mainstay-green-dark', 'sailors-delight-dark', 's-s-veggie-dark', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'harbor-voyage-dark', 'mainstay-green-dark', 'sailors-delight-dark', 's-s-veggie-dark', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       minusBtn.classList.add('watermelon-waves-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
@@ -203,13 +203,13 @@ function juiceChange () {
           header.removeChild(header.firstChild)
         }
       }
-      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       header.classList.add('harbor-voyage')
-      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       addCart.classList.add('harbor-voyage')
-      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'watermelon-waves')
+      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'watermelon-waves', 'baltimore-birthday')
       plusBtn.classList.add('harbor-voyage')
-      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'mainstay-green-dark', 'sailors-delight-dark', 's-s-veggie-dark', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'watermelon-waves-dark')
+      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'mainstay-green-dark', 'sailors-delight-dark', 's-s-veggie-dark', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'watermelon-waves-dark', 'baltimore-birthday')
       minusBtn.classList.add('harbor-voyage-dark')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
@@ -226,13 +226,13 @@ function juiceChange () {
           header.removeChild(header.firstChild)
         }
       }
-      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'crew-case')
+      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'crew-case', 'baltimore-birthday')
       header.classList.add('lighthouse-case')
-      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case')
+      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'baltimore-birthday')
       addCart.classList.add('lighthouse-case')
-      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case')
+      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'baltimore-birthday')
       plusBtn.classList.add('lighthouse-case')
-      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'mainstay-green-dark', 'sailors-delight-dark', 's-s-veggie-dark', 'anchor-case', 'compass-case', 'crew-case')
+      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'mainstay-green-dark', 'sailors-delight-dark', 's-s-veggie-dark', 'anchor-case', 'compass-case', 'crew-case', 'baltimore-birthday')
       minusBtn.classList.add('lighthouse-case')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
@@ -249,13 +249,13 @@ function juiceChange () {
           header.removeChild(header.firstChild)
         }
       }
-      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'lighthouse-case')
+      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'lighthouse-case', 'baltimore-birthday')
       header.classList.add('crew-case')
-      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'lighthouse-case')
+      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'lighthouse-case', 'baltimore-birthday')
       addCart.classList.add('crew-case')
-      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'lighthouse-case')
+      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'lighthouse-case', 'baltimore-birthday')
       plusBtn.classList.add('crew-case')
-      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'mainstay-green-dark', 'sailors-delight-dark', 's-s-veggie-dark', 'anchor-case', 'compass-case', 'lighthouse-case')
+      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'mainstay-green-dark', 'sailors-delight-dark', 's-s-veggie-dark', 'anchor-case', 'compass-case', 'lighthouse-case', 'baltimore-birthday')
       minusBtn.classList.add('crew-case')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
@@ -272,13 +272,13 @@ function juiceChange () {
           header.removeChild(header.firstChild)
         }
       }
-      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'crew-case', 'lighthouse-case')
+      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       header.classList.add('compass-case')
-      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'crew-case', 'lighthouse-case')
+      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       addCart.classList.add('compass-case')
-      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case')
+      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'anchor-case', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       plusBtn.classList.add('compass-case')
-      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'mainstay-green-dark', 'sailors-delight-dark', 's-s-veggie-dark', 'anchor-case', 'crew-case', 'lighthouse-case')
+      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'mainstay-green-dark', 'sailors-delight-dark', 's-s-veggie-dark', 'anchor-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       minusBtn.classList.add('compass-case')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
@@ -295,13 +295,13 @@ function juiceChange () {
           header.removeChild(header.firstChild)
         }
       }
-      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'compass-case', 'crew-case', 'lighthouse-case')
+      header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       header.classList.add('anchor-case')
-      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'compass-case', 'crew-case', 'lighthouse-case')
+      addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       addCart.classList.add('anchor-case')
-      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'compass-case', 'crew-case', 'lighthouse-case')
+      plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       plusBtn.classList.add('anchor-case')
-      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'mainstay-green-dark', 'sailors-delight-dark', 's-s-veggie-dark', 'compass-case', 'crew-case', 'lighthouse-case')
+      minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'mainstay-green-dark', 'sailors-delight-dark', 's-s-veggie-dark', 'compass-case', 'crew-case', 'lighthouse-case', 'baltimore-birthday')
       minusBtn.classList.add('anchor-case')
       purchId.value = window.products.data[i].pId
       title.innerHTML = window.products.data[i].title
@@ -311,6 +311,30 @@ function juiceChange () {
       header.appendChild(price)
       div.appendChild(description)
     }
+// baltimore-birthday
+     else if (carouselImage[i].classList.contains('is-selected') && carouselImage[i].classList.contains('baltimore-birthday')) {
+      if (div.hasChildNodes()) {
+        div.removeChild(div.childNodes[2])
+        while (header.firstChild) {
+          header.removeChild(header.firstChild)
+        }
+      }
+       header.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'harbor-voyage', 'compass-case', 'crew-case', 'lighthouse-case', 'anchor-case')
+       header.classList.add('baltimore-birthday')
+       addCart.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'compass-case', 'harbor-voyage', 'crew-case', 'lighthouse-case', 'anchor-case')
+       addCart.classList.add('baltimore-birthday')
+       plusBtn.classList.remove('starboard-strawberry', 'dockside-sunrise', 'mainstay-green', 'sailors-delight', 's-s-veggie', 'compass-case', 'crew-case', 'harbor-voyage', 'lighthouse-case', 'baltimore-birthday')
+       plusBtn.classList.add('baltimore-birthday')
+       minusBtn.classList.remove('starboard-strawberry-dark', 'dockside-sunrise-dark', 'mainstay-green-dark', 'sailors-delight-dark', 's-s-veggie-dark', 'harbor-voyage-dark', 'compass-case', 'crew-case', 'lighthouse-case', 'anchor-case')
+       minusBtn.classList.add('baltimore-birthday')
+       purchId.value = window.products.data[i].pId
+       title.innerHTML = window.products.data[i].title
+       price.innerHTML = ('$' + window.products.data[i].price + ' / pack')
+       description.innerHTML = window.products.data[i].description
+       header.appendChild(title)
+       header.appendChild(price)
+       div.appendChild(description)
+     }
   }
 }
 
@@ -329,37 +353,40 @@ function ingredient () {
   for (var i = 0; i < product.length; i++) {
     if (product[i].classList.contains('is-selected') && product[i].classList.contains('starboard-strawberry')) {
       target.classList.add('starboard-strawberry')
-      target.classList.remove('dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case')
+      target.classList.remove('dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case', 'baltimore-birthday')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('dockside-sunrise')) {
       target.classList.add('dockside-sunrise')
-      target.classList.remove('starboard-strawberry', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case')
+      target.classList.remove('starboard-strawberry', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case', 'baltimore-birthday')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('harbor-voyage')) {
       target.classList.add('harbor-voyage')
-      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'baltimore-birthday')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('watermelon-waves')) {
       target.classList.add('watermelon-waves')
-      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case', 'baltimore-birthday')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('sailors-delight')) {
       target.classList.add('sailors-delight')
-      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'mainstay-green', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'mainstay-green', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case', 'baltimore-birthday')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('mainstay-green')) {
       target.classList.add('mainstay-green')
-      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case', 'baltimore-birthday')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('s-s-veggie')) {
       target.classList.add('s-s-veggie')
-      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 'anchor-case', 'lighthouse-case', 'compass-case', 'crew-case', 'baltimore-birthday')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('crew-case')) {
       target.classList.add('crew-case')
-      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 's-s-veggie', 'mainstay-green', 'anchor-case', 'lighthouse-case', 'compass-case')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 's-s-veggie', 'mainstay-green', 'anchor-case', 'lighthouse-case', 'compass-case', 'baltimore-birthday')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('anchor-case')) {
       target.classList.add('anchor-case')
-      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'crew-case', 'lighthouse-case', 'compass-case')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'crew-case', 'lighthouse-case', 'compass-case', 'baltimore-birthday')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('lighthouse-case')) {
       target.classList.add('lighthouse-case')
-      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'anchor-case', 'crew-case', 'compass-case')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'anchor-case', 'crew-case', 'compass-case', 'baltimore-birthday')
     } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('compass-case')) {
       target.classList.add('compass-case')
-      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'crew-case')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'crew-case', 'baltimore-birthday')
+    } else if (product[i].classList.contains('is-selected') && product[i].classList.contains('baltimore-birthday')) {
+      target.classList.add('baltimore-birthday')
+      target.classList.remove('starboard-strawberry', 'dockside-sunrise', 'harbor-voyage', 'watermelon-waves', 'sailors-delight', 'mainstay-green', 's-s-veggie', 'anchor-case', 'lighthouse-case', 'crew-case', 'compass-case')
     } else {
     }
   }
@@ -475,6 +502,10 @@ function iconDisplay () {
           iconArray[j].classList.add('hide') // add hide class
         }
       }
+    } else if (carousel[i].classList.contains('is-selected') && carousel[i].classList.contains('baltimore-birthday')) {
+      for (var j = 0; j < iconArray.length; j++) {
+        iconArray[j].classList.add('hide')
+      }
     }
   }
 }
@@ -483,7 +514,7 @@ var iconParent = document.getElementById('icons')
 var iconChild = document.getElementsByClassName('icon')
 var svgIcon = document.querySelectorAll('svg use')
 
-iconParent.addEventListener('click', activeIcon, false) 
+iconParent.addEventListener('click', activeIcon, false)
 iconParent.addEventListener('click', activeSvg, false)
 window.addEventListener('keyup', activeIcon, false)
 window.addEventListener('keyup', activeSvg, false)
@@ -569,13 +600,13 @@ carousel.addEventListener('touchmove', function () {
 function contentDisplaySvg () {
 var ingredientContent = document.querySelectorAll('#ingredient-content div') // get all ingredient-content p tags
 	for (let i = 0; i < svgIcon.length; i++) {
-		if (svgIcon[i].classList.contains('blackberry-icon') && svgIcon[i].classList.contains('active')) { 
+		if (svgIcon[i].classList.contains('blackberry-icon') && svgIcon[i].classList.contains('active')) {
 			for (let j = 0; j < ingredientContent.length; j++) {
 				if (ingredientContent[j].classList.contains('blackberry')) {
 					ingredientContent[j].classList.remove('hide')
 				} else {
 					ingredientContent[j].classList.add('hide')
-				}	
+				}
 			}
 		} else if (svgIcon[i].classList.contains('tangerine-icon') && svgIcon[i].classList.contains('active')) {
 			for (let j = 0; j < ingredientContent.length; j++) {
@@ -1156,6 +1187,8 @@ function hideCaseHeader () {
   } else if (ingredientsParent.classList.contains('lighthouse-case')) {
     ingredientHeader.classList.contains('hide')
   } else if (ingredientsParent.classList.contains('anchor-case')) {
+    ingredientHeader.classList.add('hide')
+  } else if (ingredientsParent.classList.contains('baltimore-birthday')) {
     ingredientHeader.classList.add('hide')
   } else {
     ingredientHeader.classList.remove('hide')
