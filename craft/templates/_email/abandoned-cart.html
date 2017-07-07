@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta content="telephone=no" name="format-detection">
-    <title>Order Confirmation</title>
+    <title>Dana Email</title>
     <style type="text/css">
       /* Based on The MailChimp Reset INLINE: Yes. */
       /* Client-specific Styles */
@@ -61,7 +61,7 @@
             <td width="216" style="background:#030000;"></td>
             <td>
               <a href="http://gundalowjuice.com" title="" target="_blank">
-                  <img src="{{ abandonedCart.gjLogo.first().getUrl() }}" alt="Gundalow Juice" width="168" height="59" border="0" style="display:block;">
+                <img src="{{ orderConfirmEmail.gjLogo.first().url() }}" alt="Gundalow Juice" width="168" height="59" border="0" style="display:block;">
               </a>
             </td>
             <td width="216" style="background:#030000;"></td>
@@ -75,7 +75,7 @@
           <tr>
             <td>
               <a href="http://gundalowjuice.com" title="" target="_blank">
-                <img src="{{ danaEmail.heroImage.first().getUrl() }}" alt="Shop Now!" width="600" height="294" border="0" style="display:block;">
+                <img src="{{ abandonedCart.heroImage.first().url() }}" alt="Shop Now!" width="300" height="300" border="0" style="display:block;">
               </a>
             </td>
           </tr>
@@ -100,145 +100,46 @@
         <table width="600" cellpadding="0" cellspacing="0" border="0" style="margin:0;">
           <tr>
             <td width="600" style="color:#030000; font-family:Arial,sans-serif; font-size:14px; line-height: 24px; text-align:left; letter-spacing: 0.3px; padding: 0 75px 30px 75px">
-              {{ abandonedCart.emailMessage }}
+                {{ abandonedCart.emailMessage }}<br>
+
+              Order #{{ order.id }}<br>
+              Order Qty {{ order.totalQty }}<br>
+              Date Ordered {{ order.dateOrdered }}<br><br><br>
+
+              {% for item in order.lineItems %}
+                Description: {{ item.description }}<br>
+                Qty: {{ item.qty }}<br>
+                Item Total: {{ order.itemTotal | commerceCurrency(order.currency) }}<br>
+              {% endfor %}
+
+              Order Price {{ order.totalPrice | commerceCurrency(order.currency) }}<br>
+
             </td>
           </tr>
         </table>
 
-        <div style="margin:0px auto;max-width:600px;background:#568feb;">
-            <table role="presentation" cellpadding="0" cellspacing="0" style="font-size:0px;width:100%;background:#568feb;"
-                   align="center" border="0">
-                <tbody>
-                <tr>
-                    <td style="text-align:center;vertical-align:top;direction:ltr;font-size:0px;padding:20px 0px;padding-bottom:15px;padding-left:15px;padding-right:15px;padding-top:15px;">
-                        <!--[if mso | IE]>
-                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                            <tr>
-                                <td style="vertical-align:top;width:600px;">
-                        <![endif]-->
-                        <div class="mj-column-per-100 outlook-group-fix"
-                             style="vertical-align:top;display:inline-block;direction:ltr;font-size:13px;text-align:left;width:100%;">
-                            <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-                                <tbody>
-                                <tr>
-                                    <td style="word-wrap:break-word;font-size:0px;">
-                                        <table style="color:#ffffff;font-family:Roboto, Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;"
-                                               width="100%" border="0">
-                                            <thead>
-                                            <tr style="border-bottom:1px solid #ecedee;">
-                                                <th style="font-weight:700;padding:10px 20px;text-align:left;text-transform:uppercase;font-family:Roboto, Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;">
-                                                    Product Name
-                                                </th>
-                                                <th style="font-weight:700;padding:10px 20px;text-align:left;text-transform:uppercase;font-family:Roboto, Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;">
-                                                    Price
-                                                </th>
-                                                <th style="font-weight:700;padding:10px 20px;text-align:right;text-transform:uppercase;font-family:Roboto, Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;">
-                                                    Quantity
-                                                </th>
-                                            </tr>
-                                            </thead>
-                                            ,
-                                            <tbody>
-                                            {% for item in order.lineItems %}
-                                            {% set image = item.purchasable.variantImages.first() %}
-                                            <tr>
-                                                <td style="font-weight:500;line-height:1;color:#ffffff;font-family:Roboto, Ubuntu, Helvetica, Arial, sans-serif;font-size:14px;padding:10px 20px;text-align:left;word-break:break-all;">
-                                                    {{ item.description }}
-                                                </td>
-                                                <td style="font-weight:500;line-height:1;color:#ffffff;font-family:Roboto, Ubuntu, Helvetica, Arial, sans-serif;font-size:14px;padding:10px 20px;text-align:left;">
-                                                    {% if item.onSale -%}
-                                                        <strike>{{ item.price|commerceCurrency(order.paymentCurrency, convert=true) }}</strike> {{ item.salePrice|commerceCurrency(order.paymentCurrency, convert=true) }}
-                                                    {% else %}
-                                                        {{ item.price|commerceCurrency(order.paymentCurrency, convert=true) }}
-                                                    {% endif %}
-                                                </td>
-                                                <td style="font-weight:500;line-height:1;color:#ffffff;font-family:Roboto, Ubuntu, Helvetica, Arial, sans-serif;font-size:14px;padding:10px 20px;text-align:right;">
-                                                    {{ item.qty }}
-                                                </td>
-                                            </tr>
-                                            {% endfor %}
-                                            {# End cart lines #}
-                                            </tbody>
-                                            ,
-                                            <tfoot>
-                                            <tr style="border-top:1px solid #ecedee;">
-                                                <th colspan="2"
-                                                    style="font-weight:700;padding:10px 20px;text-align:left;text-transform:uppercase;font-family:Roboto, Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;">
-                                                    Total:
-                                                </th>
-                                                <td style="font-family:Roboto, Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;font-weight:700;line-height:22px;padding:10px 20px;text-align:right;">
-                                                    {{ order.totalPrice|commerceCurrency(order.paymentCurrency, convert=true) }}
-                                                </td>
-                                            </tr>
-                                            </tfoot>
-                                        </table>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!--[if mso | IE]>
-                        </td></tr></table>
-                        <![endif]--></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+        <table width="600" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td>
+              <td width="170" height="35" style="background:#FFFFFF;"></td>
+            </td>
+            <td width="260" height="35" style="border-radius: 5px; background: #606060; text-align: center;">
+              <a href="http://gundalowjuice.com/customer/order?number={{ order.number }}" style="background: #606060; font-family:Arial,sans-serif; font-size: 18px; line-height: 1.1; letter-spacing: 1.5px; text-align: center; text-decoration: none; display: block; border-radius: 5px; color: #FFFFFF;">Order Details</a>
+            </td>
+            <td>
+              <td width="170" height="35" style="background:#FFFFFF;"></td>
+            </td>
+          </tr>
+        </table>
 
-        <div style="margin:0px auto;max-width:600px;background:#356CC7;">
-            <table role="presentation" cellpadding="0" cellspacing="0" style="font-size:0px;width:100%;background:#356CC7;"
-                   align="center" border="0">
-                <tbody>
-                <tr>
-                    <td style="text-align:center;vertical-align:top;direction:ltr;font-size:0px;padding:20px 0px;padding-bottom:20px;padding-top:20px;">
-                        <!--[if mso | IE]>
-                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                            <tr>
-                                <td style="vertical-align:top;width:300px;">
-                        <![endif]-->
-                        <div class="mj-column-per-50 outlook-group-fix"
-                             style="vertical-align:top;display:inline-block;direction:ltr;font-size:13px;text-align:left;width:100%;">
-                            <table role="presentation" cellpadding="0" cellspacing="0" style="vertical-align:top;"
-                                   width="100%" border="0">
-                                <tbody>
-                                <tr>
-                                    <td style="word-wrap:break-word;font-size:0px;padding:15px 30px;padding-top:10px;padding-bottom:10px;padding-right:25px;padding-left:25px;"
-                                        align="center">
-                                        <table role="presentation" cellpadding="0" cellspacing="0"
-                                               style="border-collapse:separate;" align="center" border="0">
-                                            <tbody>
-                                            <tr>
-                                                <td style="border:none;border-radius:10px;color:#FFF;cursor:auto;padding:10px 25px;"
-                                                    align="center" valign="middle" bgcolor="#ffae00"><a
-                                                            href="{{ recovery.getRestoreUrl() }}"
-                                                            style="text-decoration:none;line-height:100%;background:#ffae00;color:#FFF;font-family:Helvetica;font-size:14px;font-weight:bold;text-transform:none;margin:0px;"
-                                                            target="_blank">Complete your purchase</a></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                                {% if recovery.hasCoupon() %}
-                                    <tr>
-                                        <td style="word-wrap:break-word;font-size:0px;padding:10px 25px;padding-top:5px;padding-bottom:5px;"
-                                            align="center">
-                                            <div class=""
-                                                 style="cursor:auto;color:#FFF;font-family:Helvetica;font-size:13px;line-height:22px;text-align:center;">
-                                            <span style="font-size: 15px; color: #fff; ">Get 10% off your purchase with coupon code <strong
-                                                        style="text-transform:uppercase;">{{ recovery.getCouponCode() }}</strong></span></div>
-                                        </td>
-                                    </tr>
-                                {% endif %}
-                                </tbody>
-                            </table>
-                        </div>
-                        <!--[if mso | IE]>
-                        </td></tr></table>
-                        <![endif]--></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+        <table width="600" cellpadding="0" cellspacing="0" border="0" style="margin:0;padding: 20px 0 0 0;">
+          <tr>
+            <td width="600" style="color:#030000; font-family:Arial,sans-serif; font-size:14px; line-height: 24px; text-align:left; letter-spacing: 0.3px; padding: 0 75px 30px 75px;">
+              This email will be followed by a shipping confirmation once your package ships from the facility.
+            </td>
+          </tr>
+        </table>
+
 
         <table width="600" border="0" cellpadding="0" cellspacing="0">
           <tr>
