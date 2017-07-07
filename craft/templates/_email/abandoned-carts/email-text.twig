@@ -2,8 +2,9 @@
 
 {{ abandonedCart.emailHeader }}
 
- {% if recovery.firstName %}{{ recovery.firstName }}{% endif %}
+{{ abandonedCart.emailBody }}
 
+ {% if recovery.firstName %}{{ recovery.firstName }}{% endif %}
 
 {% for item in order.lineItems %}
     {{ item.description }}
@@ -18,8 +19,6 @@
 Total: {{ order.totalPrice|commerceCurrency(order.paymentCurrency, convert=true) }}
 
 Complete your purchase: {{ recovery.getRestoreUrl() }}
-
-{{ abandonedCart.emailBody }}
 
 {% if recovery.hasCoupon() %}
     Get 10% off your purchase with coupon code: {{ recovery.getCouponCode() }}
