@@ -102,6 +102,10 @@
         }
     </style>
 </head>
+
+
+{% set abandonedCart = craft.globals.getSetByHandle('abandonedCart')%}
+
 <body style="background: #fce7b4;">
 <div style="background-color:#fce7b4;"><!--[if mso | IE]>
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" align="center"
@@ -231,7 +235,9 @@
                                     align="center">
                                     <div class=""
                                          style="cursor:auto;color:#ABCDEA;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;text-align:center;">
-                                        HELLO
+
+                                         { abandonedCart.emailHeader}
+                                         
                                         {% if recovery.firstName %}
                                         <p style="font-size:16px; color:white">{{ recovery.firstName }}</p></div>
                                         {% endif %}

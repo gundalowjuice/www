@@ -1,6 +1,7 @@
+{% set abandonedCart = craft.globals.getSetByHandle('abandonedCart')%}
+
 Hello {% if recovery.firstName %}{{ recovery.firstName }}{% endif %}
 
-Your cart is waiting for you.
 
 {% for item in order.lineItems %}
     {{ item.description }}
