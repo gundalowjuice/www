@@ -1,5 +1,6 @@
 {% set abandonedCart = craft.globals.getSetByHandle('abandonedCart')%}
 
+{{ abandonedCart.heroImage.first().url()}}
 {{ abandonedCart.emailHeader }}
 
  {% if recovery.firstName %}{{ recovery.firstName }}{% endif %}
