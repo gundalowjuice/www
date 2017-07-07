@@ -20,6 +20,8 @@ Total: {{ order.totalPrice|commerceCurrency(order.paymentCurrency, convert=true)
 
 Complete your purchase: {{ recovery.getRestoreUrl() }}
 
+{{ abandonedCart.emailMessage }}
+
 {% if recovery.hasCoupon() %}
     Get 10% off your purchase with coupon code: {{ recovery.getCouponCode() }}
 {% endif %}
