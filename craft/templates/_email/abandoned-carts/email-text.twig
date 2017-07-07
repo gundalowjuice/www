@@ -1,0 +1,23 @@
+Hello {% if recovery.firstName %}{{ recovery.firstName }}{% endif %}
+
+Your cart is waiting for you.
+
+{% for item in order.lineItems %}
+    {{ item.description }}
+    {% if item.onSale -%}
+        Before: {{ item.price|commerceCurrency(order.paymentCurrency, convert=true) }}
+        Now: {{ item.salePrice|commerceCurrency(order.paymentCurrency, convert=true) }}
+    {% else %}
+        Price: {{ item.price|commerceCurrency(order.paymentCurrency, convert=true) }} x {{ item.qty }}
+    {% endif %}
+{% endfor %}
+
+Total: {{ order.totalPrice|commerceCurrency(order.paymentCurrency, convert=true) }}
+
+Complete your purchase: {{ recovery.getRestoreUrl() }}
+
+{% if recovery.hasCoupon() %}
+    Get 10% off your purchase with coupon code: {{ recovery.getCouponCode() }}
+{% endif %}
+
+Dont want to receive e-mails from us? Go to {{ recovery.getUnsubscribeUrl() }} to unsubscribe.
