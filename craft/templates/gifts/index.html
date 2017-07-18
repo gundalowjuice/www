@@ -1,0 +1,58 @@
+{#
+ # Gifts index template
+ # -------------------
+ #
+ # This template is loaded whenever http://example.com/gifts is
+ # requested, because it is located at gifts/index.html in your
+ # craft/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+{% set title = entry.seoTitle %}
+{% set description = entry.seoDesc %}
+{% set bodyId = "shop-gifts" %}
+
+{% block content %}
+  {% set gifts = craft.commerce.products.type('gifts').find() %}
+
+<div id="gift-wrapper">
+
+  {% for gift in gifts %}
+    <div class="row product-details">
+        <img src="{{ gift.productImage.first().getUrl('productCarousel') }}" width="{{ gift.productImage.first().getWidth('productCarousel') }}"
+        height="{{ gift.productImage.first().getHeight('productCarousel') }}" alt="" />
+          <h2>{{ gift.title }}</h2>
+          <p>{{ gift.description }}</p>
+          {% for purchasable in gift.variants %}
+          <p>{{ purchasable.price | commerceCurrency(cart.currency) }}</p>
+         <div class="form-wrap">
+          <form method="POST">
+              <input type="hidden" name="action" value="commerce/cart/updateCart">
+              <input type="hidden" name="redirect" value="cart">
+              <input type="hidden" name="qty" value="1">
+
+                <input type="hidden" name="purchasableId" value="{{ purchasable.purchasableId  }}">
+
+              {{ getCsrfInput() }}
+              {#
+              <select name="purchasableId">
+                  {% for purchasable in gift.variants %}
+                      <option {% if purchasable.stock <= 0 and purchasable.unlimitedStock == false %}disabled {% endif %}
+                              value="{{ purchasable.purchasableId }}">{{ purchasable.sku }} {{ purchasable.description }} {{ purchasable.price|commerceCurrency(cart.currency) }}</option>
+                  {% endfor %}
+              </select>
+              #}
+              <input type="submit" value="{{ "Add to cart"|t }}" class="button"/>
+          </form>
+          </div>
+          {% endfor %}
+    </div>
+
+  {% endfor %}
+
+</div>
+
+{% endblock %}
