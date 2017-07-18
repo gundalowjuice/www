@@ -1880,7 +1880,13 @@ footer {
   #shop-gifts #gift-wrapper .product-details {
     -ms-flex: 0 1 20%;
     flex: 0 1 20%;
-    text-align: center; }
+    text-align: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around; }
     #shop-gifts #gift-wrapper .product-details h2 {
       margin: .5em 0; }
     #shop-gifts #gift-wrapper .product-details p {
@@ -2310,13 +2316,11 @@ footer {
 
 #sub-signup main {
   width: 50%;
-  margin: 1em auto;
-  text-align: center; }
+  margin: 1em auto; }
 
 #sub-signup form {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 15em;
-  margin: auto; }
+  width: 15em; }
